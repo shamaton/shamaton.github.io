@@ -3,7 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://shamaton.github.io/posts/firstpost/</loc>
+    <loc>https://shamaton.github.io/logs/second/</loc>
+    <lastmod>2019-03-31T22:02:34+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shamaton.github.io/logs/firstpost/</loc>
     <lastmod>2019-03-30T22:46:07+09:00</lastmod>
   </url>
   
@@ -13,19 +18,44 @@
   </url>
   
   <url>
-    <loc>https://shamaton.github.io/posts/</loc>
+    <loc>https://shamaton.github.io/tags/first/</loc>
     <lastmod>2019-03-30T22:46:07+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shamaton.github.io/categories/log/</loc>
+    <lastmod>2019-03-31T22:02:34+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shamaton.github.io/logs/</loc>
+    <lastmod>2019-03-31T22:02:34+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shamaton.github.io/tags/posting/</loc>
+    <lastmod>2019-03-31T22:02:34+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://shamaton.github.io/tags/second/</loc>
+    <lastmod>2019-03-31T22:02:34+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://shamaton.github.io/tags/</loc>
+    <lastmod>2019-03-30T22:46:07+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://shamaton.github.io/</loc>
-    <lastmod>2019-03-30T22:46:07+09:00</lastmod>
+    <lastmod>2019-03-31T22:02:34+09:00</lastmod>
     <priority>0</priority>
   </url>
   
