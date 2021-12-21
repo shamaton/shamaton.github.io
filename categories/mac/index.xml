@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac on shamaton</title>
+    <link>https://shamaton.dev/categories/mac/</link>
+    <description>Recent content in Mac on shamaton</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 02 Dec 2017 14:31:19 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/mac/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Mac] Karabiner-Elementsをとりあえず設定する</title>
+      <link>https://shamaton.dev/posts/446/</link>
+      <pubDate>Sat, 02 Dec 2017 14:31:19 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/446/</guid>
+      <description>お世話になっております。 しゃまとんです。 以前にWindowsのキーボードをMacで使えるようにするための記事を書いたのですが、 MacをSie</description>
+    </item>
+    
+    <item>
+      <title>Macでcompletionするアレコレ</title>
+      <link>https://shamaton.dev/posts/333/</link>
+      <pubDate>Wed, 05 Apr 2017 15:10:31 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/333/</guid>
+      <description>お世話になっております。 しゃまとんです。 皆さんcompletion使ってますでしょうか。 gitやdockerを使うときにcompletion</description>
+    </item>
+    
+    <item>
+      <title>[Mac] pkgでインストールしたjenkinsのportを変更する</title>
+      <link>https://shamaton.dev/posts/276/</link>
+      <pubDate>Thu, 23 Feb 2017 15:36:57 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/276/</guid>
+      <description>お世話になっております。 しゃまとんです。 macのでjenkins導入方法は色々あるようですが、公式のサイトからpkgを取得してインストールし</description>
+    </item>
+    
+    <item>
+      <title>[Docker] docker.qcow2のサイズを小さくする回避策</title>
+      <link>https://shamaton.dev/posts/326/</link>
+      <pubDate>Wed, 02 Nov 2016 15:08:52 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/326/</guid>
+      <description>お世話になっております。 しゃまとんです。 Docker for Macに関するちょっとしたメモです。 現状のDockerではどうやら使っていると容量がどんどん大き</description>
+    </item>
+    
+    <item>
+      <title>iTermでいい感じにテキストを選択したい</title>
+      <link>https://shamaton.dev/posts/257/</link>
+      <pubDate>Thu, 20 Oct 2016 14:26:11 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/257/</guid>
+      <description>お世話になっております。 しゃまとんです。 Macではデフォルトでターミナルが入っていますが、 自分はiTermというターミナルアプリケーションを</description>
+    </item>
+    
+    <item>
+      <title>sshでローカル環境だけにパスワード認証を有効にする</title>
+      <link>https://shamaton.dev/posts/258/</link>
+      <pubDate>Sat, 17 Sep 2016 02:25:33 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/258/</guid>
+      <description>お世話になっております。 しゃまとんです。 環境構築のテストをしていて、ssh前の環境から鍵情報をもってきてgit操作したいなーと思い調査してい</description>
+    </item>
+    
+    <item>
+      <title>windowsのキーボードをmacで使う</title>
+      <link>https://shamaton.dev/posts/61/</link>
+      <pubDate>Tue, 06 Jan 2015 04:43:28 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/61/</guid>
+      <description>&lt;p&gt;MacでSierraをお使いの方は使えないのでこちらを参照してください〜&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=https%3a%2f%2fshamaton.dev%2fposts%2f446&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;お世話になっております。&lt;/p&gt;
+&lt;p&gt;しゃまとんです。&lt;/p&gt;
+&lt;p&gt;ちょっと前からmacを使いはじめました。&lt;br&gt;
+その前まではwindowsPCを使っていて、filcoのMajestouchを使用していたのですが、macでも使えたらいいなーと思いつつ、
+公式ではサポートしていないとのこと。&lt;/p&gt;
+
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=http%3a%2f%2fwww.diatec.co.jp%2fproducts%2fdet.php%3fprod_c%3d760&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;でも使いたい！とのことで、調べておりましたら、カスタマイズしている方もちらほらいたみたいなので、
+参考にしながら、設定してみました。&lt;/p&gt;
+&lt;p&gt;キーボード環境としては&lt;br&gt;
+mac : JIS配列(スペースの横に英数・かながあるやつ)&lt;br&gt;
+使いたいキーボード : flico majestouch(ちなみに茶軸)&lt;br&gt;
+となります。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[cocos2dx]ver3.xへのUpdate時の注意</title>
+      <link>https://shamaton.dev/posts/56/</link>
+      <pubDate>Sun, 24 Aug 2014 15:23:58 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/56/</guid>
+      <description>&lt;p&gt;お世話になります。&lt;/p&gt;
+&lt;p&gt;しゃまとんです。&lt;/p&gt;
+&lt;p&gt;最近、めっきり遠のいていましたが、cocos2d-xも知らぬ間に3.x系の安定版が出ているということで、
+ダウンロードして、素のプロジェクトをビルドしてみることにしました。&lt;/p&gt;
+&lt;p&gt;他のサイト様を参考にさせていただいたのですが、つまずいたところがあったので、メモ書きしておきます。&lt;/p&gt;
+&lt;p&gt;versionは3.2への乗り換えでした。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>XcodeをVer5.1にしたらCocos2dxをビルドできない</title>
+      <link>https://shamaton.dev/posts/44/</link>
+      <pubDate>Thu, 13 Mar 2014 02:51:14 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/44/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;/p&gt;
+&lt;p&gt;しゃまとんです。&lt;/p&gt;
+&lt;p&gt;先日、使っているmacを更新した時にXcodeが、updateされました。&lt;br&gt;
+特に気にせず更新したら、cocos2dxのビルドができなくなりました。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

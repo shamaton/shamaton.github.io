@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>リリース on shamaton</title>
+    <link>https://shamaton.dev/categories/%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9/</link>
+    <description>Recent content in リリース on shamaton</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 11 Jun 2016 23:45:18 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>アプリ – Reflect Number – をリリースしました</title>
+      <link>https://shamaton.dev/posts/200/</link>
+      <pubDate>Sat, 11 Jun 2016 23:45:18 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/200/</guid>
+      <description>お世話になっております。 しゃまとんです。 昨日ですが、初めてUnityで作ったアプリをリリースしました。 Reflect Numberというタイトルです。 Un</description>
+    </item>
+    
+    <item>
+      <title>アプリ – つくてん – をリリースしました</title>
+      <link>https://shamaton.dev/posts/98/</link>
+      <pubDate>Sat, 23 May 2015 15:50:20 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/98/</guid>
+      <description>&lt;p&gt;お世話になります。&lt;/p&gt;
+&lt;p&gt;しゃまとんです。&lt;/p&gt;
+&lt;p&gt;また、大したものではないですが、アプリをリリースしました。&lt;br&gt;
+何か、本当にひまつぶしになるようなアプリってないかなーという短絡的発想から&lt;br&gt;
+ただただタッチするだけのアプリを作りました。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>アプリ – 決めろ武神覇斬 – をリリースしました</title>
+      <link>https://shamaton.dev/posts/76/</link>
+      <pubDate>Sun, 15 Mar 2015 09:35:06 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/76/</guid>
+      <description>&lt;p&gt;お世話になります。&lt;/p&gt;
+&lt;p&gt;しゃまとんです。&lt;/p&gt;
+&lt;p&gt;cocos2dxに関する記事を書いておりましたが、その過程を経てアプリをリリースすることができました。&lt;/p&gt;
+&lt;p&gt;そんなに凝ったものではありませんが、自分の思い描いていたものを少しだけ形にすることができました。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

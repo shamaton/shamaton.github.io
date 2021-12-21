@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shader on shamaton</title>
+    <link>https://shamaton.dev/categories/shader/</link>
+    <description>Recent content in shader on shamaton</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 18 Jul 2016 02:17:58 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/shader/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Unity] Shaderで波紋のようなものを出してみる（2Dだよ）</title>
+      <link>https://shamaton.dev/posts/250/</link>
+      <pubDate>Mon, 18 Jul 2016 02:17:58 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/250/</guid>
+      <description>お世話になっております。 しゃまとんです。 UnityのShader初心者でございます。ちょっとエフェクト作ってみようかなということで、 触ってい</description>
+    </item>
+    
+  </channel>
+</rss>

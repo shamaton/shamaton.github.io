@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mysql on shamaton</title>
+    <link>https://shamaton.dev/categories/mysql/</link>
+    <description>Recent content in mysql on shamaton</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 07 Nov 2015 09:19:33 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MySQLの空コミットが気になったので調べてみた</title>
+      <link>https://shamaton.dev/posts/136/</link>
+      <pubDate>Sat, 07 Nov 2015 09:19:33 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/136/</guid>
+      <description>お世話になっております。 しゃまとんです。 webの開発をやっていると、データベースは切っても切れないものだと思います。 自分はMySQLを使うこ</description>
+    </item>
+    
+  </channel>
+</rss>

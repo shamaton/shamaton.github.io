@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on shamaton</title>
+    <link>https://shamaton.dev/categories/docker/</link>
+    <description>Recent content in docker on shamaton</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 14 Jul 2019 10:23:09 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Docker] 32bit環境のコンテナを作る</title>
+      <link>https://shamaton.dev/posts/675/</link>
+      <pubDate>Sun, 14 Jul 2019 10:23:09 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/675/</guid>
+      <description>お世話になっております。 しゃまとんです。 先日、msgpackにissueが 立っていたので確認したところwindows/386 on Windows 10でbui</description>
+    </item>
+    
+    <item>
+      <title>[Docker] CentOS6でwingを使わず最新のgitにする</title>
+      <link>https://shamaton.dev/posts/567/</link>
+      <pubDate>Sun, 04 Nov 2018 13:21:38 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/567/</guid>
+      <description>お世話になっております。 しゃまとんです。 この前、Docker Hubに公開していたあるコンテナのリポジトリにissueが飛んできてたので確認し</description>
+    </item>
+    
+    <item>
+      <title>[Docker] gcloudとkubectlが使えるコンテナを用意してみる</title>
+      <link>https://shamaton.dev/posts/464/</link>
+      <pubDate>Sun, 14 Jan 2018 04:41:26 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/464/</guid>
+      <description>お世話になっております。 しゃまとんです。 gcloudとkubectlを自分のPCにinstallして使えるようにしているのですが、 ふとコンテ</description>
+    </item>
+    
+    <item>
+      <title>[Docker] prometheusをとりあえず動かしてみた</title>
+      <link>https://shamaton.dev/posts/363/</link>
+      <pubDate>Thu, 19 Jan 2017 15:01:38 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/363/</guid>
+      <description>お世話になっております。 しゃまとんです。 少し前にTLにqiita経由で流れてきたprometheusについてずっと気になっていたので 触ってみ</description>
+    </item>
+    
+    <item>
+      <title>[Docker] CentOS6でMySQLコンテナを作成してみる</title>
+      <link>https://shamaton.dev/posts/318/</link>
+      <pubDate>Tue, 13 Dec 2016 02:30:28 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/318/</guid>
+      <description>お世話になっております。 しゃまとんです。 前回はRedisと連携をやってみたので、今回はMySQLコンテナを作ってみようと思います。 MySQL</description>
+    </item>
+    
+    <item>
+      <title>[Docker] golangとredisのコンテナを繋いでみた</title>
+      <link>https://shamaton.dev/posts/310/</link>
+      <pubDate>Tue, 22 Nov 2016 16:22:28 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/310/</guid>
+      <description>お世話になっております。 しゃまとんです。 先月のDocker触ってみた話に引き続いて、作ったgolang環境からredisに繋いでみるテストを</description>
+    </item>
+    
+    <item>
+      <title>[Docker] docker.qcow2のサイズを小さくする回避策</title>
+      <link>https://shamaton.dev/posts/326/</link>
+      <pubDate>Wed, 02 Nov 2016 15:08:52 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/326/</guid>
+      <description>お世話になっております。 しゃまとんです。 Docker for Macに関するちょっとしたメモです。 現状のDockerではどうやら使っていると容量がどんどん大き</description>
+    </item>
+    
+    <item>
+      <title>[Docker] CentOS6でGo言語の開発環境を作ってみた</title>
+      <link>https://shamaton.dev/posts/305/</link>
+      <pubDate>Sat, 08 Oct 2016 03:08:44 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/305/</guid>
+      <description>お世話になっております。 しゃまとんです。 巷で話題のdockerに興味が湧いてしまいまして、試しに何かやってみようということでイメージを作って</description>
+    </item>
+    
+  </channel>
+</rss>

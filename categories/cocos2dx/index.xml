@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cocos2dx on shamaton</title>
+    <link>https://shamaton.dev/categories/cocos2dx/</link>
+    <description>Recent content in cocos2dx on shamaton</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 29 Aug 2016 13:01:33 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/cocos2dx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[cocos2dx] IntのVectorクラスを雑に作った</title>
+      <link>https://shamaton.dev/posts/132/</link>
+      <pubDate>Mon, 29 Aug 2016 13:01:33 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/132/</guid>
+      <description>お世話になっております。 しゃまとんです。 以前にcocosで作業をしていた際に、タイルマップ的な処理をするときに 通常のVectorクラスはfl</description>
+    </item>
+    
+    <item>
+      <title>[cocos2dx]タッチイベント処理を削除する</title>
+      <link>https://shamaton.dev/posts/130/</link>
+      <pubDate>Sun, 04 Oct 2015 04:36:57 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/130/</guid>
+      <description>お世話になっております。 しゃまとんです。 レイヤーを複数に分けていて、あるレイヤーのタッチ処理を切り分けたかったのですが、 検索してもあまり出て</description>
+    </item>
+    
+    <item>
+      <title>[cocos2dx]TMXTiledMapの各タイルからスプライトを複製する</title>
+      <link>https://shamaton.dev/posts/123/</link>
+      <pubDate>Tue, 01 Sep 2015 15:15:37 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/123/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;ファミコンのドラクエやFFで使われていた、マップチップを利用したRPGを作成しようかと考えているのですが、
+cocos2d-xではTiledというツールで作成したデータをそのまま利用することができるTMXTiledMapというクラスが用意されており、
+簡単にマップ処理を実装することができます。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[cocos2dx]photonを使ってみた – その1</title>
+      <link>https://shamaton.dev/posts/84/</link>
+      <pubDate>Wed, 08 Apr 2015 01:25:13 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/84/</guid>
+      <description>&lt;p&gt;お世話になります。&lt;/p&gt;
+&lt;p&gt;しゃまとんです。&lt;/p&gt;
+&lt;p&gt;すこし前ですが、CEDECに行ってきた際にphoton cloudの存在に興味を引かれまして、
+セッションに参加してきたのですが、あまりの手軽さに驚きました。&lt;/p&gt;
+&lt;p&gt;ちなみにphotonというのは、オンラインゲーム(マルチプレイヤーゲーム)を簡単に作ることができる、ネットワークエンジンです。&lt;/p&gt;
+
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=https%3a%2f%2fwww.photonengine.com%2fja%2fphoton&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;その時はUnityでのチュートリアルだったのですが、cocos2d-xでもやってくれないかなと思っていたところ、
+GMOでサンプルを記事にしてくださっていました。(SDKはもともとあった)&lt;/p&gt;
+
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=http%3a%2f%2frecruit.gmo.jp%2fengineer%2fjisedai%2fblog%2fcocos2d-x_photon%2f&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;上記の記事では、version3のSDKを使っていますが、4がリリースされていたので、今後は4が使われるだろうと思い、version4を使いました。&lt;br&gt;
+合わせて、そのままやっていくと、ビルドできなかったり、Androidでうまく実行できなかったりしたので、ハマった部分をメモしておきます。&lt;/p&gt;
+&lt;p&gt;cocos2d-xのバージョンはv3.2でした。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[cocos2dx]Androidのdebug,releaseビルドの切り替え</title>
+      <link>https://shamaton.dev/posts/89/</link>
+      <pubDate>Sun, 29 Mar 2015 13:40:09 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/89/</guid>
+      <description>&lt;p&gt;お世話になります。&lt;/p&gt;
+&lt;p&gt;しゃまとんです。&lt;/p&gt;
+&lt;p&gt;以前に[こちらの記事][1]でリリースビルドについて書いたのですが、&lt;br&gt;
+Androidについて切り替えがプロジェクトのプロパティから切り替えが可能なようです。&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=https%3a%2f%2fshamaton.dev%2fposts%2f49&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;こちらもメモしておこうと思います。&lt;br&gt;
+cocos2d-xのver3.2を使用しています。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[cocos2dx]内部でテクスチャを作成して、クリッピングする</title>
+      <link>https://shamaton.dev/posts/73/</link>
+      <pubDate>Mon, 02 Mar 2015 09:46:29 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/73/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;/p&gt;
+&lt;p&gt;しゃまとんです。&lt;/p&gt;
+&lt;p&gt;cocos2dxをいじっていて、画面の一定領域を流れるメッセージを作りたいなぁと思い、
+クリッピング処理はできないだろうかと模索していたときのメモです。&lt;br&gt;
+この時は横に流れるメッセージを作ろうとしていました。&lt;/p&gt;
+&lt;p&gt;cocosのバージョンは3.2です。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[cocos2dx]ver3.xへのUpdate時の注意</title>
+      <link>https://shamaton.dev/posts/56/</link>
+      <pubDate>Sun, 24 Aug 2014 15:23:58 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/56/</guid>
+      <description>&lt;p&gt;お世話になります。&lt;/p&gt;
+&lt;p&gt;しゃまとんです。&lt;/p&gt;
+&lt;p&gt;最近、めっきり遠のいていましたが、cocos2d-xも知らぬ間に3.x系の安定版が出ているということで、
+ダウンロードして、素のプロジェクトをビルドしてみることにしました。&lt;/p&gt;
+&lt;p&gt;他のサイト様を参考にさせていただいたのですが、つまずいたところがあったので、メモ書きしておきます。&lt;/p&gt;
+&lt;p&gt;versionは3.2への乗り換えでした。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>cocos2dxのリリースビルド設定</title>
+      <link>https://shamaton.dev/posts/49/</link>
+      <pubDate>Tue, 01 Apr 2014 15:38:54 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/49/</guid>
+      <description>&lt;p&gt;お世話になります。&lt;/p&gt;
+&lt;p&gt;しゃまとんです。&lt;/p&gt;
+&lt;p&gt;アプリを公開する前にリリースビルドして問題ないか確認する必要があります。&lt;br&gt;
+毎回、検索してしまうので、参考にさせて頂いているリンクとメモをしておきます。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>cocos2dxのプロジェクトを複製する</title>
+      <link>https://shamaton.dev/posts/48/</link>
+      <pubDate>Fri, 28 Mar 2014 10:57:08 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/48/</guid>
+      <description>&lt;p&gt;どうもお世話になります。&lt;/p&gt;
+&lt;p&gt;しゃまとんです。&lt;/p&gt;
+&lt;p&gt;Cocos2dxのプロジェクトは作成しっぱなしだと、MyAppとなっているので、
+自分が決めたプロジェクト名に変えたいと思い、色々調べた時の備忘録です。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>cocos2dxで作ったアプリのアイコンを変更するには</title>
+      <link>https://shamaton.dev/posts/46/</link>
+      <pubDate>Tue, 25 Mar 2014 01:18:03 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/46/</guid>
+      <description>&lt;p&gt;どうもお世話になります。&lt;/p&gt;
+&lt;p&gt;しゃまとんです。&lt;/p&gt;
+&lt;p&gt;cocos2dxでアプリの作成をしているのですが、アイコンをそろそろ変えようと思い、調べた時のメモです。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

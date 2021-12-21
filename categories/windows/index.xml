@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on shamaton</title>
+    <link>https://shamaton.dev/categories/windows/</link>
+    <description>Recent content in Windows on shamaton</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Wed, 11 Sep 2013 00:39:04 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cocos2d-html5の開発する環境を作る@win</title>
+      <link>https://shamaton.dev/posts/30/</link>
+      <pubDate>Wed, 11 Sep 2013 00:39:04 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/30/</guid>
+      <description>&lt;p&gt;お世話になります。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;ちょっと前にcocos2d-xの開発環境をwindowsで作成をしてみました。&lt;br&gt;
+それはこちら。&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=https%3a%2f%2fshamaton.dev%2fposts%2f24&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;で、今回はブラウザ上でcocos2dを使ったアプリが公開できるcocos2d-html5があるというこで、まずはHello worldまでやってみました。&lt;br&gt;
+お手軽に出力までいけました。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

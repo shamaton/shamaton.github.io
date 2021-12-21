@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>photon on shamaton</title>
+    <link>https://shamaton.dev/categories/photon/</link>
+    <description>Recent content in photon on shamaton</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Wed, 08 Apr 2015 01:25:13 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/photon/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[cocos2dx]photonを使ってみた – その1</title>
+      <link>https://shamaton.dev/posts/84/</link>
+      <pubDate>Wed, 08 Apr 2015 01:25:13 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/84/</guid>
+      <description>&lt;p&gt;お世話になります。&lt;/p&gt;
+&lt;p&gt;しゃまとんです。&lt;/p&gt;
+&lt;p&gt;すこし前ですが、CEDECに行ってきた際にphoton cloudの存在に興味を引かれまして、
+セッションに参加してきたのですが、あまりの手軽さに驚きました。&lt;/p&gt;
+&lt;p&gt;ちなみにphotonというのは、オンラインゲーム(マルチプレイヤーゲーム)を簡単に作ることができる、ネットワークエンジンです。&lt;/p&gt;
+
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=https%3a%2f%2fwww.photonengine.com%2fja%2fphoton&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;その時はUnityでのチュートリアルだったのですが、cocos2d-xでもやってくれないかなと思っていたところ、
+GMOでサンプルを記事にしてくださっていました。(SDKはもともとあった)&lt;/p&gt;
+
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=http%3a%2f%2frecruit.gmo.jp%2fengineer%2fjisedai%2fblog%2fcocos2d-x_photon%2f&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;上記の記事では、version3のSDKを使っていますが、4がリリースされていたので、今後は4が使われるだろうと思い、version4を使いました。&lt;br&gt;
+合わせて、そのままやっていくと、ビルドできなかったり、Androidでうまく実行できなかったりしたので、ハマった部分をメモしておきます。&lt;/p&gt;
+&lt;p&gt;cocos2d-xのバージョンはv3.2でした。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

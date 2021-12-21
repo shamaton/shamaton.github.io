@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on shamaton</title>
+    <link>https://shamaton.dev/categories/git/</link>
+    <description>Recent content in git on shamaton</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 02 Jul 2017 06:40:20 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Unity] GitHub for Unityを触ってみたかった…</title>
+      <link>https://shamaton.dev/posts/419/</link>
+      <pubDate>Sun, 02 Jul 2017 06:40:20 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/419/</guid>
+      <description>お世話になっております。 しゃまとんです。 2017年3月頃にアナウンスされていて「GitHub for Unity」がついに公開されたようです！ という</description>
+    </item>
+    
+    <item>
+      <title>[Unity] UnityでGit LFSを使う時の設定</title>
+      <link>https://shamaton.dev/posts/418/</link>
+      <pubDate>Sat, 01 Jul 2017 16:13:52 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/418/</guid>
+      <description>お世話になっております。 しゃまとんです。 なかなか個人制作レベルだとgitを使うぐらいになりますが、例えばエクセルデータだったり、 大きなサイズ</description>
+    </item>
+    
+    <item>
+      <title>[golang]pre-commit-hookでビルドチェックしてみる</title>
+      <link>https://shamaton.dev/posts/183/</link>
+      <pubDate>Sat, 14 May 2016 12:48:14 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/183/</guid>
+      <description>お世話になっております。 しゃまとんです。 gitでプロジェクトやコードを管理する場合、commit時にhookをいれて変なcommitが混ざら</description>
+    </item>
+    
+    <item>
+      <title>git管理用メモ</title>
+      <link>https://shamaton.dev/posts/38/</link>
+      <pubDate>Mon, 28 Oct 2013 12:15:45 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/38/</guid>
+      <description>&lt;p&gt;どうもお世話になります。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;完全にメモ用です。&lt;br&gt;
+よろしくお願い致します。&lt;/p&gt;
+&lt;p&gt;メモなので、追記しまくるかもしれません。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>macでgitを導入するときにやっておくこと。</title>
+      <link>https://shamaton.dev/posts/28/</link>
+      <pubDate>Tue, 03 Sep 2013 16:16:22 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/28/</guid>
+      <description>&lt;p&gt;お世話になります。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;macで何か開発をしているときにGitを使って管理したいときに、見るメモというかリンク集です。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

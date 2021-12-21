@@ -1,21 +1,100 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Test Site</title>
-    <link>https://shamaton.github.io/categories/</link>
-    <description>Recent content in Categories on Test Site</description>
+    <title>Categories on shamaton</title>
+    <link>https://shamaton.dev/categories/</link>
+    <description>Recent content in Categories on shamaton</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-JP</language>
-    
-	<atom:link href="https://shamaton.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    
+    <language>ja-jp</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 25 Nov 2021 06:23:09 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ruby</title>
+      <link>https://shamaton.dev/categories/ruby/</link>
+      <pubDate>Thu, 25 Nov 2021 06:23:09 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/categories/ruby/</guid>
+      <description></description>
+    </item>
     
     <item>
-      <title>Log</title>
-      <link>https://shamaton.github.io/categories/log/</link>
-      <pubDate>Sun, 31 Mar 2019 22:02:34 +0900</pubDate>
+      <title>go</title>
+      <link>https://shamaton.dev/categories/go/</link>
+      <pubDate>Tue, 31 Aug 2021 13:50:09 +0000</pubDate>
       
-      <guid>https://shamaton.github.io/categories/log/</guid>
+      <guid>https://shamaton.dev/categories/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GCP</title>
+      <link>https://shamaton.dev/categories/gcp/</link>
+      <pubDate>Wed, 18 Aug 2021 10:23:09 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/categories/gcp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://shamaton.dev/categories/hugo/</link>
+      <pubDate>Wed, 18 Aug 2021 10:23:09 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/categories/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://shamaton.dev/categories/docker/</link>
+      <pubDate>Sun, 14 Jul 2019 10:23:09 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/categories/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Concourse</title>
+      <link>https://shamaton.dev/categories/concourse/</link>
+      <pubDate>Sun, 07 Jul 2019 12:22:19 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/categories/concourse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>メモ</title>
+      <link>https://shamaton.dev/categories/%E3%83%A1%E3%83%A2/</link>
+      <pubDate>Sun, 30 Dec 2018 13:18:52 +0900</pubDate>
+      
+      <guid>https://shamaton.dev/categories/%E3%83%A1%E3%83%A2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>unity</title>
+      <link>https://shamaton.dev/categories/unity/</link>
+      <pubDate>Tue, 18 Dec 2018 15:03:44 +0900</pubDate>
+      
+      <guid>https://shamaton.dev/categories/unity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://shamaton.dev/categories/linux/</link>
+      <pubDate>Sun, 04 Nov 2018 13:21:38 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>開発</title>
+      <link>https://shamaton.dev/categories/%E9%96%8B%E7%99%BA/</link>
+      <pubDate>Sat, 13 Oct 2018 13:47:33 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/categories/%E9%96%8B%E7%99%BA/</guid>
       <description></description>
     </item>
     

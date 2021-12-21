@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gRPC on shamaton</title>
+    <link>https://shamaton.dev/categories/grpc/</link>
+    <description>Recent content in gRPC on shamaton</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 09 Aug 2018 23:36:14 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/grpc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[gRPC] UnityとgolangでgRPCを使ってみる（iOSも）</title>
+      <link>https://shamaton.dev/posts/563/</link>
+      <pubDate>Thu, 09 Aug 2018 23:36:14 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/563/</guid>
+      <description>お世話になっております。 しゃまとんです。 前回の記事でiOSで実行できなかったので、追加記事を作成しました。 こちらで一応iOSでもビルドが通る</description>
+    </item>
+    
+    <item>
+      <title>[gRPC] UnityとgolangでgRPCを使ってみる（androidまで）</title>
+      <link>https://shamaton.dev/posts/553/</link>
+      <pubDate>Thu, 09 Aug 2018 13:57:14 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/553/</guid>
+      <description>お世話になっております。 しゃまとんです。 前の記事でまずはgolangでgRPCを使って動作させてみました。 今回はclient側にUnityを</description>
+    </item>
+    
+    <item>
+      <title>[gRPC] golangでgRPCを使ってみる</title>
+      <link>https://shamaton.dev/posts/542/</link>
+      <pubDate>Wed, 08 Aug 2018 13:45:46 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/542/</guid>
+      <description>お世話になっております。 しゃまとんです。 gRPC触ってみたいぞ！ってことで、Unity x golang x gRPC を試してみましょう。 今回はよくある方のgola</description>
+    </item>
+    
+  </channel>
+</rss>

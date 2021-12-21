@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="しゃまとん">
+<meta name="description" content="お世話になっております。 しゃまとんです。 今回はGoで位置情報を扱ってみることにしました。 ちなみに作者の稚拙アプリ「ことだまっぷ」でも似たよう" />
+<meta name="keywords" content="shamaton" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://shamaton.dev/posts/415/" />
+
+
+    <title>
+        
+            [Go] Go &#43; Redisで位置情報を扱ってみる :: shamaton  — I ❤ engineering.
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://shamaton.dev/main.d7bdd8ee18bfbf4c605488a7e5b1b92cd980dfeed2bdaeab4dd5e931a7a78bc0.css">
+
+
+    
+        <link rel="stylesheet" type="text/css" href="https://shamaton.dev/lightbox/css/lightbox.min.css">
+    
+
+    
+        <link rel="stylesheet" type="text/css" href="https://shamaton.dev/design/button.css">
+    
+
+    
+        <link rel="stylesheet" type="text/css" href="https://shamaton.dev/design/appbanner.css">
+    
+
+    
+        <link rel="stylesheet" type="text/css" href="https://shamaton.dev/design/sharing-buttons.css">
+    
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://shamaton.dev/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://shamaton.dev/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://shamaton.dev/favicon-16x16.png">
+    <link rel="manifest" href="https://shamaton.dev/site.webmanifest">
+    <link rel="mask-icon" href="https://shamaton.dev/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="shortcut icon" href="https://shamaton.dev/favicon.ico">
+    <meta name="msapplication-TileColor" content="#1b1c1d">
+    <meta name="theme-color" content="#1b1c1d">
+
+
+
+<meta itemprop="name" content="[Go] Go &#43; Redisで位置情報を扱ってみる">
+<meta itemprop="description" content="お世話になっております。 しゃまとんです。 今回はGoで位置情報を扱ってみることにしました。 ちなみに作者の稚拙アプリ「ことだまっぷ」でも似たよう">
+<meta itemprop="datePublished" content="2018-01-29T15:11:40+00:00" />
+<meta itemprop="dateModified" content="2018-01-29T15:11:40+00:00" />
+<meta itemprop="wordCount" content="935">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Go] Go &#43; Redisで位置情報を扱ってみる"/>
+<meta name="twitter:description" content="お世話になっております。 しゃまとんです。 今回はGoで位置情報を扱ってみることにしました。 ちなみに作者の稚拙アプリ「ことだまっぷ」でも似たよう"/>
+
+
+
+
+    <meta property="og:title" content="[Go] Go &#43; Redisで位置情報を扱ってみる" />
+<meta property="og:description" content="お世話になっております。 しゃまとんです。 今回はGoで位置情報を扱ってみることにしました。 ちなみに作者の稚拙アプリ「ことだまっぷ」でも似たよう" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://shamaton.dev/posts/415/" />
+<meta property="article:published_time" content="2018-01-29T15:11:40+00:00" />
+<meta property="article:modified_time" content="2018-01-29T15:11:40+00:00" />
+
+
+
+
+    <meta property="article:section" content="go" />
+
+    <meta property="article:section" content="プログラミング関連" />
+
+
+
+    <meta property="article:published_time" content="2018-01-29 15:11:40 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+<script data-ad-client="ca-pub-7096410827554575" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://shamaton.dev/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text">$ go run .</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://shamaton.dev/about/">About</a></li><li><a href="https://shamaton.dev/posts/">Posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        2 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://shamaton.dev/posts/415/">[Go] Go + Redisで位置情報を扱ってみる</a>
+      </h1>
+
+      
+
+      
+
+      <div class="post-content">
+        <p>お世話になっております。<br>
+しゃまとんです。</p>
+<p>今回はGoで位置情報を扱ってみることにしました。<br>
+ちなみに作者の稚拙アプリ「ことだまっぷ」でも似たようなことをして位置情報を利用しています。</p>
+
+
+
+
+
+
+
+<div id="appreach-box" style="text-align: left;">
+    <p>
+<img src="https://lh3.googleusercontent.com/AxCAhC3nUgPKVfKQlyZtGL0D0tKaghSsH-tV7NlXc5fSftWBPPBt5SHEIlHIlFexnG92=w170" alt="ことだまっぷ" style="float: left; margin: 10px; width: 25%; max-width: 120px; border-radius: 10%;" />
+    </p>
+
+<div class="appreach-info" style="margin: 10px;">
+    <div id="appreach-appname">
+        ことだまっぷ
+    </div>
+
+
+    <div id="appreach-developer" style="font-size: 80%; display: inline-block; _display: inline;">
+        開発元:<a id="appreach-developerurl" href="" target="_blank" rel="nofollow noopener">shamaton</a>
+    </div>
+
+    <div id="appreach-price" style="font-size: 80%; display: inline-block; _display: inline;">
+        無料
+    </div>
+
+
+
+
+
+    <div class="appreach-links" style="float: left;">
+        <div id="appreach-itunes-link" style="display: inline-block; _display: inline;">
+            <a id="appreach-itunes" href="https://itunes.apple.com/jp/app/%E3%81%93%E3%81%A8%E3%81%A0%E3%81%BE%E3%81%A3%E3%81%B7/id1312331217?mt=8&amp;uo=4" target="_blank" rel="nofollow noopener"><br /> <img src="https://nabettu.github.io/appreach/img/itune_ja.svg" style="height: 40px; width: 135px;" /><br /> </a>
+        </div>
+
+        <div id="appreach-gplay-link" style="display: inline-block; _display: inline;">
+            <a id="appreach-gplay" href="https://play.google.com/store/apps/details?id=com.shamaton.kotoda.map" target="_blank" rel="nofollow noopener"><br /> <img src="https://nabettu.github.io/appreach/img/gplay_ja.png" style="height: 40px; width: 134.5px;" /><br /> </a>
+        </div>
+    </div>
+</div>
+
+<div class="appreach-footer" style="margin-bottom: 10px; clear: left;">
+</div>
+</div>
+<p>位置情報を扱うために、Redisを利用しています。<br>
+実装の際にRDBMSでできるかな～と思っていたのですが、
+色々しらべたところRedisが対応していてパフォーマンスも良さそうなのでredisを使うことにしました。</p>
+<p>Goでredisを扱えるようにするパッケージは色々あり、個人的には<a href="https://github.com/garyburd/redigo">redigo</a>を使っていたのですが、
+位置情報を扱えるようになっていませんでした。そこで別パッケージのgo-redisが対応されているということで使っています。</p>
+
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fgithub.com%2fgo-redis%2fredis" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+
+<p>実装の前にgo-redisを取得しておきましょう。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">go get -u github.com/go-redis/redis
+</code></pre></div><p>確認用コードは下記のようになります。<br>
+処理的には指定座標の半径10km以内のデータを取得するようなものです。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+    <span style="color:#e6db74">&#34;github.com/go-redis/redis&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+
+    <span style="color:#a6e22e">client</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">redis</span>.<span style="color:#a6e22e">NewClient</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">redis</span>.<span style="color:#a6e22e">Options</span>{
+            <span style="color:#a6e22e">Addr</span>:     <span style="color:#e6db74">&#34;localhost:6379&#34;</span>,
+            <span style="color:#a6e22e">Password</span>: <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#75715e">// no password set
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">DB</span>:       <span style="color:#ae81ff">0</span>,  <span style="color:#75715e">// use default DB
+</span><span style="color:#75715e"></span>    })
+
+    <span style="color:#75715e">// query
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">query</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">redis</span>.<span style="color:#a6e22e">GeoRadiusQuery</span>{
+        <span style="color:#a6e22e">Radius</span>:      <span style="color:#ae81ff">10</span>,
+        <span style="color:#a6e22e">Unit</span>:        <span style="color:#e6db74">&#34;km&#34;</span>,
+        <span style="color:#a6e22e">WithGeoHash</span>: <span style="color:#66d9ef">false</span>,
+        <span style="color:#a6e22e">WithCoord</span>:   <span style="color:#66d9ef">true</span>,
+        <span style="color:#a6e22e">WithDist</span>:    <span style="color:#66d9ef">false</span>,
+        <span style="color:#a6e22e">Count</span>:       <span style="color:#ae81ff">10</span>,
+        <span style="color:#a6e22e">Sort</span>:        <span style="color:#e6db74">&#34;ASC&#34;</span>,
+    }
+
+    <span style="color:#75715e">// get
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">client</span>.<span style="color:#a6e22e">GeoRadius</span>(<span style="color:#e6db74">&#34;test&#34;</span>, <span style="color:#ae81ff">12.4764785766602</span>, <span style="color:#ae81ff">41.9107551574707</span>, <span style="color:#a6e22e">query</span>).<span style="color:#a6e22e">Result</span>()
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">redis</span>.<span style="color:#a6e22e">Nil</span> {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;redis nil........&#34;</span>)
+    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+        panic(<span style="color:#a6e22e">err</span>)
+    } <span style="color:#66d9ef">else</span> {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;result : &#34;</span>, len(<span style="color:#a6e22e">res</span>))
+    }
+
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">res</span> {
+        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Name</span>, <span style="color:#e6db74">&#34;:&#34;</span>, <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Latitude</span>, <span style="color:#e6db74">&#34;:&#34;</span>, <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">Longitude</span>)
+    }
+}
+</code></pre></div><p>コードを実装したら、Redisに確認用データを入れておきます。<br>
+Redisに接続して下記のコマンドを実行し位置情報を入れておきます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">GEOADD test 12.4762840270996 41.910514831543  &#34;geo_1&#34;
+GEOADD test 12.4756031036377 41.910514831543  &#34;geo_2&#34;
+GEOADD test 12.4768190383911 41.910514831543  &#34;geo_3&#34;
+GEOADD test 12.4764785766602 41.9107551574707 &#34;geo_4&#34;
+GEOADD test 12.4760408401489 41.9107551574707 &#34;geo_5&#34;
+</code></pre></div><p>実行してみます。<br>
+返り値はgo-redis側で用意されているので、扱いやすい状態になっています。<br>
+というかgo-redisが結構使いやすい気がします。結果はこんな感じ。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">go run main.go
+result :  <span style="color:#ae81ff">5</span>
+geo_4 : 41.910756366557116 : 12.476480305194855
+geo_1 : 41.91051556804698 : 12.476281821727753
+geo_5 : 41.910756366557116 : 12.476040422916412
+geo_3 : 41.91051556804698 : 12.476818263530731
+geo_2 : 41.91051556804698 : 12.47560054063797
+</code></pre></div><p>これで位置情報も扱っていけそうです。<br>
+ちなみに環境を汚したくないという方はDockerfileも置いておくので良かったら使ってください。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> centos:7</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">MAINTAINER</span><span style="color:#e6db74"> shamaton</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> yum -y install wget git epel-release<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> yum -y install redis<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> mkdir -p /root/go <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span>  echo <span style="color:#e6db74">&#34;GOPATH=/root/go&#34;</span> &gt;&gt; /root/.bashrc<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> wget https://redirector.gvt1.com/edgedl/go/go1.9.2.linux-amd64.tar.gz <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span>  tar -C /usr/local -xzf go1.9.2.linux-amd64.tar.gz <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span>  rm go1.9.2.linux-amd64.tar.gz <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span>  echo <span style="color:#e6db74">&#34;PATH=</span>$PATH<span style="color:#e6db74">:/usr/local/go/bin:</span>$GOPATH<span style="color:#e6db74">/bin&#34;</span> &gt;&gt; /root/.bashrc <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span>  source /root/.bashrc<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> /usr/local/go/bin/go get -u github.com/go-redis/redis<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /root</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;/bin/sh&#34;</span>]&lt;/pre&gt;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>コンテナのビルドと実行は下記な感じで。<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>&lt;pre class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lang:default decode:true &#34;</span>&gt;docker build -t goredis .<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>docker run --name go_redis -i -t goredis:latest /bin/bash<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 確認</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>go version<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>ls go/src/github.com<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># redisの起動（コンテナ内）</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>redis-server &amp;<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>以上です。</p>
+<p>■ 参考</p>
+
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=http%3a%2f%2fblog.shimar.me%2f2016%2f11%2f21%2fredis-georadius.html" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://shamaton.dev/categories/go/">go</a></span>
+        <span class="tag"><a href="https://shamaton.dev/categories/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E9%96%A2%E9%80%A3/">プログラミング関連</a></span>
+        
+    </p>
+
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        935 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2018-01-30 00:11
+        
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
+      <div class="sharing-buttons">
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fshamaton.dev"
+  target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M12 0C5.38 0 0 5.38 0 12s5.38 12 12 12 12-5.38 12-12S18.62 0 12 0zm3.6 11.5h-2.1v7h-3v-7h-2v-2h2V8.34c0-1.1.35-2.82 2.65-2.82h2.35v2.3h-1.4c-.25 0-.6.13-.6.66V9.5h2.34l-.24 2z" />
+      </svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link"
+  href="https://twitter.com/intent/tweet/?text=A%20Software%20engineer&#x27;s%20site.&amp;url=https%3A%2F%2Fshamaton.dev"
+  target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M12 0C5.38 0 0 5.38 0 12s5.38 12 12 12 12-5.38 12-12S18.62 0 12 0zm5.26 9.38v.34c0 3.48-2.64 7.5-7.48 7.5-1.48 0-2.87-.44-4.03-1.2 1.37.17 2.77-.2 3.9-1.08-1.16-.02-2.13-.78-2.46-1.83.38.1.8.07 1.17-.03-1.2-.24-2.1-1.3-2.1-2.58v-.05c.35.2.75.32 1.18.33-.7-.47-1.17-1.28-1.17-2.2 0-.47.13-.92.36-1.3C7.94 8.85 9.88 9.9 12.06 10c-.04-.2-.06-.4-.06-.6 0-1.46 1.18-2.63 2.63-2.63.76 0 1.44.3 1.92.82.6-.12 1.95-.27 1.95-.27-.35.53-.72 1.66-1.24 2.04z" />
+      </svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link"
+  href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=A%20Software%20engineer&#x27;s%20site.&amp;caption=A%20Software%20engineer&#x27;s%20site.&amp;content=https%3A%2F%2Fshamaton.dev&amp;canonicalUrl=https%3A%2F%2Fshamaton.dev&amp;shareSource=tumblr_share_button"
+  target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
+      <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24"
+        enable-background="new 0 0 24 24" xml:space="preserve">
+        <path
+          d="M12,0C5.383,0,0,5.383,0,12s5.383,12,12,12s12-5.383,12-12S18.617,0,12,0z M15.492,17.616C11.401,19.544,9.5,17,9.5,14.031 V9.5h-2V8.142c0.549-0.178,1.236-0.435,1.627-0.768c0.393-0.334,0.707-0.733,0.943-1.2c0.238-0.467,0.401-0.954,0.49-1.675H12.5v3h2 v2h-2v3.719c0,2.468,1.484,2.692,2.992,1.701V17.616z" />
+      </svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link"
+  href="mailto:?subject=A%20Software%20engineer&#x27;s%20site.&amp;body=https%3A%2F%2Fshamaton.dev" target="_self"
+  rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M12 0C5.38 0 0 5.38 0 12s5.38 12 12 12 12-5.38 12-12S18.62 0 12 0zm8 16c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2h12c1.1 0 2 .9 2 2v8z" />
+        <path
+          d="M17.9 8.18c-.2-.2-.5-.24-.72-.07L12 12.38 6.82 8.1c-.22-.16-.53-.13-.7.08s-.15.53.06.7l3.62 2.97-3.57 2.23c-.23.14-.3.45-.15.7.1.14.25.22.42.22.1 0 .18-.02.27-.08l3.85-2.4 1.06.87c.1.04.2.1.32.1s.23-.06.32-.1l1.06-.9 3.86 2.4c.08.06.17.1.26.1.17 0 .33-.1.42-.25.15-.24.08-.55-.15-.7l-3.57-2.22 3.62-2.96c.2-.2.24-.5.07-.72z" />
+      </svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link"
+  href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fshamaton.dev&amp;media=https%3A%2F%2Fshamaton.dev&amp;description=A%20Software%20engineer&#x27;s%20site."
+  target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M12 0C5.38 0 0 5.38 0 12s5.38 12 12 12 12-5.38 12-12S18.62 0 12 0zm1.4 15.56c-1 0-1.94-.53-2.25-1.14l-.65 2.52c-.4 1.45-1.57 2.9-1.66 3-.06.1-.2.07-.22-.04-.02-.2-.32-2 .03-3.5l1.18-5s-.3-.6-.3-1.46c0-1.36.8-2.37 1.78-2.37.85 0 1.25.62 1.25 1.37 0 .85-.53 2.1-.8 3.27-.24.98.48 1.78 1.44 1.78 1.73 0 2.9-2.24 2.9-4.9 0-2-1.35-3.5-3.82-3.5-2.8 0-4.53 2.07-4.53 4.4 0 .5.1.9.25 1.23l-1.5.82c-.36-.64-.54-1.43-.54-2.28 0-2.6 2.2-5.74 6.57-5.74 3.5 0 5.82 2.54 5.82 5.27 0 3.6-2 6.3-4.96 6.3z" />
+      </svg>
+    </div>
+  </div>
+</a>
+      </div>
+
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"></span>
+          <hr />
+        </div>
+
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="https://shamaton.dev/posts/465/">
+                <span class="button__icon">←</span>
+                <span class="button__text">[Unity] TextMeshProで日本語と使いたい文字を使えるようにする</span>
+              </a>
+            </span>
+          
+
+          
+            <span class="button next">
+              <a href="https://shamaton.dev/posts/518/">
+                <span class="button__text">[CC] BitZenyをDockerでマイニングしてみる</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            <span><a href="https://shamaton.dev/">shamaton</a></span>
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span><span><a href="https://shamaton.dev/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://shamaton.dev/bundle.min.af435e44374f1e99a669ea8cd5bb9a2fceed80588941a451bfddb66b86a67c9f40b0f417e9543a763f809aa7e9300d7b1d69bf99615810ba02ac70396d50fad5.js" integrity="sha512-r0NeRDdPHpmmaeqM1buaL87tgFiJQaRRv922a4amfJ9AsPQX6VQ6dj&#43;AmqfpMA17HWm/mWFYELoCrHA5bVD61Q=="></script>
+
+
+    
+        <script src="https://shamaton.dev/jq/3.5.1.min.js"></script>
+    
+
+    
+        <script src="https://shamaton.dev/lightbox/js/lightbox.min.js"></script>
+    
+
+
+    </body>
+</html>

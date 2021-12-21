@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on shamaton</title>
+    <link>https://shamaton.dev/categories/linux/</link>
+    <description>Recent content in Linux on shamaton</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 04 Nov 2018 13:21:38 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Docker] CentOS6でwingを使わず最新のgitにする</title>
+      <link>https://shamaton.dev/posts/567/</link>
+      <pubDate>Sun, 04 Nov 2018 13:21:38 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/567/</guid>
+      <description>お世話になっております。 しゃまとんです。 この前、Docker Hubに公開していたあるコンテナのリポジトリにissueが飛んできてたので確認し</description>
+    </item>
+    
+    <item>
+      <title>[Server] nginx &#43; golang な環境をhttps化する</title>
+      <link>https://shamaton.dev/posts/493/</link>
+      <pubDate>Mon, 26 Feb 2018 15:11:10 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/493/</guid>
+      <description>お世話になっております。 しゃまとんです。 前回の記事につづいてnginx + golangな環境をhttps化してみました。 今回もLet&amp;rsqu</description>
+    </item>
+    
+    <item>
+      <title>[Server] nginx &#43; golangな環境で502 Bad Gatewayになった時のこと</title>
+      <link>https://shamaton.dev/posts/497/</link>
+      <pubDate>Sat, 17 Feb 2018 11:52:29 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/497/</guid>
+      <description>お世話になっております。 しゃまとんです。 Goを使って、Webアプリケーションを作る際に80ポートを直接設定できない（しづらい）ので 何か公開す</description>
+    </item>
+    
+    <item>
+      <title>[GCP] Compute Engine(CentOS7)でdocker/gitを使えるようにする</title>
+      <link>https://shamaton.dev/posts/432/</link>
+      <pubDate>Thu, 21 Dec 2017 15:33:45 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/432/</guid>
+      <description>お世話になっております。 しゃまとんです。 GCPが無料で試せるということで、Compute Engineを使ってみることにしました。 個人的にdo</description>
+    </item>
+    
+    <item>
+      <title>[Server] letsencryptを使ってhttps化しました</title>
+      <link>https://shamaton.dev/posts/426/</link>
+      <pubDate>Fri, 04 Aug 2017 16:11:25 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/426/</guid>
+      <description>お世話になっております。 しゃまとんです。 少し前から気になっていたホームページのHTTPS化ですが、なんとなくやる気持ちになったので対応してみ</description>
+    </item>
+    
+    <item>
+      <title>Macでcompletionするアレコレ</title>
+      <link>https://shamaton.dev/posts/333/</link>
+      <pubDate>Wed, 05 Apr 2017 15:10:31 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/333/</guid>
+      <description>お世話になっております。 しゃまとんです。 皆さんcompletion使ってますでしょうか。 gitやdockerを使うときにcompletion</description>
+    </item>
+    
+    <item>
+      <title>[Docker] prometheusをとりあえず動かしてみた</title>
+      <link>https://shamaton.dev/posts/363/</link>
+      <pubDate>Thu, 19 Jan 2017 15:01:38 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/363/</guid>
+      <description>お世話になっております。 しゃまとんです。 少し前にTLにqiita経由で流れてきたprometheusについてずっと気になっていたので 触ってみ</description>
+    </item>
+    
+    <item>
+      <title>dplyのボタンつくってみた</title>
+      <link>https://shamaton.dev/posts/341/</link>
+      <pubDate>Wed, 28 Dec 2016 14:49:32 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/341/</guid>
+      <description>お世話になっております。 しゃまとんです。 dplyという2時間無料で使えるVPSサービスがはじまったそうです。 お金を払えば、長期間維持すること</description>
+    </item>
+    
+    <item>
+      <title>sshでローカル環境だけにパスワード認証を有効にする</title>
+      <link>https://shamaton.dev/posts/258/</link>
+      <pubDate>Sat, 17 Sep 2016 02:25:33 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/258/</guid>
+      <description>お世話になっております。 しゃまとんです。 環境構築のテストをしていて、ssh前の環境から鍵情報をもってきてgit操作したいなーと思い調査してい</description>
+    </item>
+    
+  </channel>
+</rss>

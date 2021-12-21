@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CC on shamaton</title>
+    <link>https://shamaton.dev/categories/cc/</link>
+    <description>Recent content in CC on shamaton</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 21 Jan 2018 02:57:17 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/cc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[CC] BitZenyをDockerでマイニングしてみる</title>
+      <link>https://shamaton.dev/posts/518/</link>
+      <pubDate>Sun, 21 Jan 2018 02:57:17 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/518/</guid>
+      <description>お世話になっております。 しゃまとんです。 仮想通貨が盛り上がっておりますね。 かくいう私もちょっとしたきっかけがあり、知識をつけたいと思い少しず</description>
+    </item>
+    
+  </channel>
+</rss>

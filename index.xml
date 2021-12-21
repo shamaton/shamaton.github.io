@@ -1,44 +1,107 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Test Site</title>
-    <link>https://shamaton.github.io/</link>
-    <description>Recent content on Test Site</description>
+    <title>shamaton</title>
+    <link>https://shamaton.dev/</link>
+    <description>Recent content on shamaton</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-JP</language>
-    <lastBuildDate>Sun, 31 Mar 2019 22:02:34 +0900</lastBuildDate>
-    
-	<atom:link href="https://shamaton.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>ja-jp</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 25 Nov 2021 06:23:09 +0000</lastBuildDate><atom:link href="https://shamaton.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Second</title>
-      <link>https://shamaton.github.io/logs/second/</link>
-      <pubDate>Sun, 31 Mar 2019 22:02:34 +0900</pubDate>
+      <title>[Ruby] msgpackの公式サイトを修正しました</title>
+      <link>https://shamaton.dev/posts/679/</link>
+      <pubDate>Thu, 25 Nov 2021 06:23:09 +0000</pubDate>
       
-      <guid>https://shamaton.github.io/logs/second/</guid>
-      <description>&lt;p&gt;画像貼り付けテスト
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;test.png&#34;  /&gt;
-    
-    
-&lt;/figure&gt;
-&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://shamaton.dev/posts/679/</guid>
+      <description>お世話になっております。 しゃまとんです😊 shamaton/msgpackを作ったところから、たまにmsgpack.orgを見に行っていたので</description>
     </item>
     
     <item>
-      <title>タイトルテスト</title>
-      <link>https://shamaton.github.io/logs/firstpost/</link>
-      <pubDate>Sat, 30 Mar 2019 22:46:07 +0900</pubDate>
+      <title>[Go] unsafe.Pointerを使うのをやめた</title>
+      <link>https://shamaton.dev/posts/678/</link>
+      <pubDate>Tue, 31 Aug 2021 13:50:09 +0000</pubDate>
       
-      <guid>https://shamaton.github.io/logs/firstpost/</guid>
-      <description>&lt;h2 id=&#34;今日は寒かった&#34;&gt;今日は寒かった&lt;/h2&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://shamaton.dev/posts/678/</guid>
+      <description>お世話になっております。 しゃまとんです😊 少し前にmsgpackとmsgpackgenを更新しました。 （個人的に）内部に割と大きめの変更点を入</description>
+    </item>
+    
+    <item>
+      <title>[Go/GCP] Hugo&#43;GCSでwordpressからお引越し</title>
+      <link>https://shamaton.dev/posts/677/</link>
+      <pubDate>Wed, 18 Aug 2021 10:23:09 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/677/</guid>
+      <description>お世話になっております。 しゃまとんです。 これまで運用していたドメインshamaton.orz.hmからブログの引っ越しを行いました。 (しばら</description>
+    </item>
+    
+    <item>
+      <title>[Go] MessagePackのコードを生成するパッケージ(msgpackgen)を作りました</title>
+      <link>https://shamaton.dev/posts/676/</link>
+      <pubDate>Wed, 17 Mar 2021 10:23:09 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/676/</guid>
+      <description>お世話になっております。 しゃまとんです。 GoのMessagePackパッケージ、msgpackgenをリリースしました。 以下、作った背景と使</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://shamaton.dev/about/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/about/</guid>
+      <description>Thank you for your visit my website. I am a software engineer and usually work at an company. After work, I also create some games, services and OSS.
+I have been posting articles about technology and so on. If you are interested my posts, please visit it.(I&amp;rsquo;m sorry but I write in Japanese)
+Experience Programming language is tool.
+Business:
+C++ / C# / Go / Perl
+Hobby:
+Dart(flutter) / Java / Ruby / Python &amp;hellip; and so on.</description>
+    </item>
+    
+    <item>
+      <title>[Docker] 32bit環境のコンテナを作る</title>
+      <link>https://shamaton.dev/posts/675/</link>
+      <pubDate>Sun, 14 Jul 2019 10:23:09 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/675/</guid>
+      <description>お世話になっております。 しゃまとんです。 先日、msgpackにissueが 立っていたので確認したところwindows/386 on Windows 10でbui</description>
+    </item>
+    
+    <item>
+      <title>[CI] concourseでUnityのビルドをCIしてみる – 動作編</title>
+      <link>https://shamaton.dev/posts/668/</link>
+      <pubDate>Sun, 07 Jul 2019 12:22:19 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/668/</guid>
+      <description>前回の導入編につづいて、iOSのビルド作業ができるところまでやってみます！ （今回はArchiveまでを行ってみます。IPA出力は今回は割愛し</description>
+    </item>
+    
+    <item>
+      <title>[CI] concourseでUnityのビルドをCIしてみる – 導入編</title>
+      <link>https://shamaton.dev/posts/664/</link>
+      <pubDate>Tue, 02 Jul 2019 13:49:22 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/664/</guid>
+      <description>お世話になっております。 しゃまとんです。 Unityで開発をしているとビルド作業が煩わしくなって自動化したい…なんて話になると思います。 それで</description>
+    </item>
+    
+    <item>
+      <title>[メモ] 2018年の振り返り</title>
+      <link>https://shamaton.dev/posts/583/</link>
+      <pubDate>Sun, 30 Dec 2018 13:18:52 +0900</pubDate>
+      
+      <guid>https://shamaton.dev/posts/583/</guid>
+      <description>お世話になっております。 しゃまとんです。 年末なのでことしも一応（ちゃちゃっと）振り返ってみようかと思います。 wordpressのバージョンが</description>
+    </item>
+    
+    <item>
+      <title>[Unity/Golang]データ圧縮にdeflateが使えなかった</title>
+      <link>https://shamaton.dev/posts/548/</link>
+      <pubDate>Tue, 18 Dec 2018 15:03:44 +0900</pubDate>
+      
+      <guid>https://shamaton.dev/posts/548/</guid>
+      <description>お世話になっております。 しゃまとんです。 以前にデータ圧縮の記事を書いたのですが、 どうやら、Androidで利用しようとするとエラーになってし</description>
     </item>
     
   </channel>

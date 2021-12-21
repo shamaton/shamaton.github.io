@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes on shamaton</title>
+    <link>https://shamaton.dev/categories/kubernetes/</link>
+    <description>Recent content in Kubernetes on shamaton</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Tue, 15 May 2018 22:41:44 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[GKE] kube-legoを使ってドメインからアクセスできるようにする</title>
+      <link>https://shamaton.dev/posts/477/</link>
+      <pubDate>Tue, 15 May 2018 22:41:44 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/477/</guid>
+      <description>お世話になっております。 しゃまとんです。 GKEでサービスをある程度作って公開しようとなったとき、HTTPSで通信させたくなります。 というもの</description>
+    </item>
+    
+    <item>
+      <title>[GCP] kubernetesでノードを新しく用意してPodを移動させてみる</title>
+      <link>https://shamaton.dev/posts/496/</link>
+      <pubDate>Sun, 29 Apr 2018 14:26:22 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/496/</guid>
+      <description>お世話になっております。 しゃまとんです。 kubernetesでサーバー運営をする際、ノード上の配置される様々なPodでサービス運営を行うわけ</description>
+    </item>
+    
+    <item>
+      <title>[Kubernetes] Skaffoldをとりあえず試してみた</title>
+      <link>https://shamaton.dev/posts/530/</link>
+      <pubDate>Thu, 29 Mar 2018 15:05:12 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/530/</guid>
+      <description>お世話になっております。 しゃまとんです。 Skaffoldというツールがリリースされたので試してみました。 （確認したバージョンはv0.2.0で</description>
+    </item>
+    
+  </channel>
+</rss>

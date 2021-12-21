@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web関連 on shamaton</title>
+    <link>https://shamaton.dev/categories/web%E9%96%A2%E9%80%A3/</link>
+    <description>Recent content in Web関連 on shamaton</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 26 Feb 2018 15:11:10 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/web%E9%96%A2%E9%80%A3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Server] nginx &#43; golang な環境をhttps化する</title>
+      <link>https://shamaton.dev/posts/493/</link>
+      <pubDate>Mon, 26 Feb 2018 15:11:10 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/493/</guid>
+      <description>お世話になっております。 しゃまとんです。 前回の記事につづいてnginx + golangな環境をhttps化してみました。 今回もLet&amp;rsqu</description>
+    </item>
+    
+    <item>
+      <title>[Server] Let&#39;s Encryptのrenewに失敗した</title>
+      <link>https://shamaton.dev/posts/414/</link>
+      <pubDate>Sun, 07 Jan 2018 13:50:12 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/414/</guid>
+      <description>お世話になっております。 しゃまとんです。 以前にLet&amp;rsquo;s Encryptを使ってホームページをHTTPSに対応させた記事をあげてい</description>
+    </item>
+    
+    <item>
+      <title>[Server] awstatsをHTTPSに対応させる</title>
+      <link>https://shamaton.dev/posts/430/</link>
+      <pubDate>Fri, 15 Dec 2017 14:20:23 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/430/</guid>
+      <description>お世話になっております。 しゃまとんです。 少し前にサイトをhttps化したのですが、その影響でアクセスログ解析がうまく動かなくなっていました。</description>
+    </item>
+    
+    <item>
+      <title>[Server] letsencryptを使ってhttps化しました</title>
+      <link>https://shamaton.dev/posts/426/</link>
+      <pubDate>Fri, 04 Aug 2017 16:11:25 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/426/</guid>
+      <description>お世話になっております。 しゃまとんです。 少し前から気になっていたホームページのHTTPS化ですが、なんとなくやる気持ちになったので対応してみ</description>
+    </item>
+    
+    <item>
+      <title>dplyのボタンつくってみた</title>
+      <link>https://shamaton.dev/posts/341/</link>
+      <pubDate>Wed, 28 Dec 2016 14:49:32 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/341/</guid>
+      <description>お世話になっております。 しゃまとんです。 dplyという2時間無料で使えるVPSサービスがはじまったそうです。 お金を払えば、長期間維持すること</description>
+    </item>
+    
+    <item>
+      <title>sshでローカル環境だけにパスワード認証を有効にする</title>
+      <link>https://shamaton.dev/posts/258/</link>
+      <pubDate>Sat, 17 Sep 2016 02:25:33 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/258/</guid>
+      <description>お世話になっております。 しゃまとんです。 環境構築のテストをしていて、ssh前の環境から鍵情報をもってきてgit操作したいなーと思い調査してい</description>
+    </item>
+    
+    <item>
+      <title>GithubクローンのGitBucketをCentOS6に入れる</title>
+      <link>https://shamaton.dev/posts/154/</link>
+      <pubDate>Sat, 20 Feb 2016 03:41:24 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/154/</guid>
+      <description>お世話になっております。 しゃまとんです。 ひょんなことから、プライベートなgitホスティングサービスを触ってみる機会があったのですが、 以前に「</description>
+    </item>
+    
+    <item>
+      <title>wordpressのエイリアスをDBから変更する</title>
+      <link>https://shamaton.dev/posts/105/</link>
+      <pubDate>Tue, 04 Aug 2015 15:34:59 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/105/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;自分のサイトですが、wordpressを使って、shamaton.orz.hmでアクセスするとTOPページが表示されるようにしていたのですが、
+新たにTOPページをつくり、別のコンテンツページを簡単に用意できるようにしたかったので、&lt;/p&gt;
+&lt;p&gt;shamaton.orz.hm&lt;/p&gt;
+&lt;p&gt;↓&lt;/p&gt;
+&lt;p&gt;shamaton.orz.hm/blog&lt;/p&gt;
+&lt;p&gt;で表示されるように変更しました。&lt;br&gt;
+変更するに辺り、色々なやり方があると思いますが、こちらではwordpress用に作成されたdatabase
+に手を加えることによって変更する手順となります。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ServersMan VPSでWebサーバー構築#5(WordPress)</title>
+      <link>https://shamaton.dev/posts/16/</link>
+      <pubDate>Sat, 17 Aug 2013 15:55:35 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/16/</guid>
+      <description>&lt;p&gt;さて、いよいよ最後のステップWordPressの導入です。&lt;br&gt;
+WordPressは導入するだけで簡単にブログサイトを開設できるソフトウェアです。&lt;/p&gt;
+&lt;p&gt;様々なプラグインやテーマがあり、個性的なブログを作ることができます。&lt;/p&gt;
+&lt;p&gt;最後も同様にスーパーユーザで作業を行います。&lt;br&gt;
+それでは以下、手順です。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ServersMan VPSでWebサーバー構築#4(MySQL)</title>
+      <link>https://shamaton.dev/posts/15/</link>
+      <pubDate>Thu, 15 Aug 2013 15:19:01 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/15/</guid>
+      <description>&lt;p&gt;Webサーバーができたところで、次にWordPressをいざ導入…の前にWordPressにはMySQLというデータベースが必要なので、MySQLを使えるようにします。&lt;/p&gt;
+&lt;p&gt;ここでも基本的にスーパーユーザ(su)で作業を行なっていきます。&lt;/p&gt;
+&lt;p&gt;それでは手順です。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
