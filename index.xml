@@ -50,13 +50,12 @@
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://shamaton.dev/about/</guid>
-      <description>Thank you for your visit my website. I am a software engineer and usually work at an company. After work, I also create some games, services and OSS.
-I have been posting articles about technology and so on. If you are interested my posts, please visit it.(I&amp;rsquo;m sorry but I write in Japanese)
-Experience Programming language is tool.
-Business:
-C++ / C# / Go / Perl
-Hobby:
-Dart(flutter) / Java / Ruby / Python &amp;hellip; and so on.</description>
+      <description>Thank you for your visit my website. I am a software engineer and usually work at an company. After work, I also create game, service and OSS.
+I have been posting articles about technology and so on. If you are interested my posts, visit here.(in Japanese)
+Works OSS 📌 github.com/shamaton/msgpackgen
+📌 github.com/shamaton/msgpack
+📌 github.com/shamaton/zeroformatter
+App    Kotodamap Using: Unity / Go / GCP       Kotodamap is messaging app using by geo information.</description>
     </item>
     
     <item>
