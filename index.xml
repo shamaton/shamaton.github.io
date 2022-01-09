@@ -14,7 +14,7 @@
       <pubDate>Sun, 09 Jan 2022 11:20:09 +0000</pubDate>
       
       <guid>https://shamaton.dev/posts/2022010901/</guid>
-      <description>お世話になっております。 しゃまとんです😊 gPRCのシリアライザにProtocol Buffersが使われています。 以前から、JSONに置き換え</description>
+      <description>お世話になっております。 しゃまとんです😊 gPRCのデフォルトシリアライザにはProtocol Buffersが使われています。 以前から、JSO</description>
     </item>
     
     <item>

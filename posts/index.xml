@@ -15,10 +15,10 @@
             <pubDate>Sun, 09 Jan 2022 11:20:09 +0000</pubDate>
             
             <guid>https://shamaton.dev/posts/2022010901/</guid>
-            <description>お世話になっております。 しゃまとんです😊 gPRCのシリアライザにProtocol Buffersが使われています。 以前から、JSONに置き換え</description>
+            <description>お世話になっております。 しゃまとんです😊 gPRCのデフォルトシリアライザにはProtocol Buffersが使われています。 以前から、JSO</description>
             <content type="html"><![CDATA[<p>お世話になっております。<br>
 しゃまとんです😊</p>
-<p>gPRCのシリアライザにProtocol Buffersが使われています。<br>
+<p>gPRCのデフォルトシリアライザにはProtocol Buffersが使われています。<br>
 以前から、JSONに置き換えることはこちらの記事で知っていたのですが、JSONに置き換えられるのならMessagePackにも出来るのかな？と思ったのでやってみました。</p>
 
 
