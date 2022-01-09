@@ -7,22 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 25 Nov 2021 06:23:09 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Jan 2022 11:20:09 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>go</title>
+      <link>https://shamaton.dev/categories/go/</link>
+      <pubDate>Sun, 09 Jan 2022 11:20:09 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/categories/go/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>ruby</title>
       <link>https://shamaton.dev/categories/ruby/</link>
       <pubDate>Thu, 25 Nov 2021 06:23:09 +0000</pubDate>
       
       <guid>https://shamaton.dev/categories/ruby/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>go</title>
-      <link>https://shamaton.dev/categories/go/</link>
-      <pubDate>Tue, 31 Aug 2021 13:50:09 +0000</pubDate>
-      
-      <guid>https://shamaton.dev/categories/go/</guid>
       <description></description>
     </item>
     

@@ -5,16 +5,16 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="しゃまとん">
-<meta name="description" content="お世話になっております。 しゃまとんです😊 shamaton/msgpackを作ったところから、たまにmsgpack.orgを見に行っていたので" />
+<meta name="description" content="お世話になっております。 しゃまとんです😊 gPRCのシリアライザにProtocol Buffersが使われています。 以前から、JSONに置き換え" />
 <meta name="keywords" content="shamaton" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="https://shamaton.dev/posts/679/" />
+<link rel="canonical" href="https://shamaton.dev/posts/2022010901/" />
 
 
     <title>
         
-            [Ruby] msgpackの公式サイトを修正しました :: shamaton  — I ❤ engineering.
+            gRPCのCodecをmsgpackに変更する :: shamaton  — I ❤ engineering.
         
     </title>
 
@@ -57,38 +57,38 @@
 
 
 
-<meta itemprop="name" content="[Ruby] msgpackの公式サイトを修正しました">
-<meta itemprop="description" content="お世話になっております。 しゃまとんです😊 shamaton/msgpackを作ったところから、たまにmsgpack.orgを見に行っていたので">
-<meta itemprop="datePublished" content="2021-11-25T06:23:09+00:00" />
-<meta itemprop="dateModified" content="2021-11-25T06:23:09+00:00" />
-<meta itemprop="wordCount" content="530">
+<meta itemprop="name" content="gRPCのCodecをmsgpackに変更する">
+<meta itemprop="description" content="お世話になっております。 しゃまとんです😊 gPRCのシリアライザにProtocol Buffersが使われています。 以前から、JSONに置き換え">
+<meta itemprop="datePublished" content="2022-01-09T11:20:09+00:00" />
+<meta itemprop="dateModified" content="2022-01-09T11:20:09+00:00" />
+<meta itemprop="wordCount" content="1343">
 
 
 
 <meta itemprop="keywords" content="" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="[Ruby] msgpackの公式サイトを修正しました"/>
-<meta name="twitter:description" content="お世話になっております。 しゃまとんです😊 shamaton/msgpackを作ったところから、たまにmsgpack.orgを見に行っていたので"/>
+<meta name="twitter:title" content="gRPCのCodecをmsgpackに変更する"/>
+<meta name="twitter:description" content="お世話になっております。 しゃまとんです😊 gPRCのシリアライザにProtocol Buffersが使われています。 以前から、JSONに置き換え"/>
 
 
 
 
-    <meta property="og:title" content="[Ruby] msgpackの公式サイトを修正しました" />
-<meta property="og:description" content="お世話になっております。 しゃまとんです😊 shamaton/msgpackを作ったところから、たまにmsgpack.orgを見に行っていたので" />
+    <meta property="og:title" content="gRPCのCodecをmsgpackに変更する" />
+<meta property="og:description" content="お世話になっております。 しゃまとんです😊 gPRCのシリアライザにProtocol Buffersが使われています。 以前から、JSONに置き換え" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://shamaton.dev/posts/679/" />
-<meta property="article:published_time" content="2021-11-25T06:23:09+00:00" />
-<meta property="article:modified_time" content="2021-11-25T06:23:09+00:00" />
+<meta property="og:url" content="https://shamaton.dev/posts/2022010901/" />
+<meta property="article:published_time" content="2022-01-09T11:20:09+00:00" />
+<meta property="article:modified_time" content="2022-01-09T11:20:09+00:00" />
 
 
 
 
-    <meta property="article:section" content="ruby" />
+    <meta property="article:section" content="go" />
 
 
 
-    <meta property="article:published_time" content="2021-11-25 06:23:09 &#43;0000 &#43;0000" />
+    <meta property="article:published_time" content="2022-01-09 11:20:09 &#43;0000 &#43;0000" />
 
 
 
@@ -150,7 +150,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        2 minutes
+        3 minutes
 
         
       </p>
@@ -158,7 +158,7 @@
 
     <article>
       <h1 class="post-title">
-        <a href="https://shamaton.dev/posts/679/">[Ruby] msgpackの公式サイトを修正しました</a>
+        <a href="https://shamaton.dev/posts/2022010901/">gRPCのCodecをmsgpackに変更する</a>
       </h1>
 
       
@@ -168,8 +168,8 @@
       <div class="post-content">
         <p>お世話になっております。<br>
 しゃまとんです😊</p>
-<p><a href="https://github.com/shamaton/msgpack">shamaton/msgpack</a>を作ったところから、たまにmsgpack.orgを見に行っていたのですが、
-ある時から表示がおかしくなっていました。</p>
+<p>gPRCのシリアライザにProtocol Buffersが使われています。<br>
+以前から、JSONに置き換えることはこちらの記事で知っていたのですが、JSONに置き換えられるのならMessagePackにも出来るのかな？と思ったのでやってみました。</p>
 
 
 
@@ -178,19 +178,13 @@
 
 
 <iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
-    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fmsgpack.org%2f" title="" scrolling="no" frameborder="0">
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fqiita.com%2fyugui%2fitems%2f238dcdb75cd40d0f1ece" title="" scrolling="no" frameborder="0">
     <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
         class="mce_SELRES_start">
     </span>
 </iframe>
 
-<p>なにがおかしいかというと、この公式サイトではgithub.comで公開されているmessagepackに関するパッケージを紹介してくれているんですね。
-こんな感じで。</p>
-<p><img src="https://user-images.githubusercontent.com/4637556/130205938-8225d1b5-fbae-4fcd-b816-f90d9bd6b4d4.png" alt="image"></p>
-<p>それが出なくなっていたんです。これは切ない。</p>
-<p><img src="https://user-images.githubusercontent.com/4637556/130206144-7396b287-b469-44f0-8526-ef5d8c7a70bf.png" alt="image"></p>
-<p>気になって仕方がなくなったので、ちょっと調べてみることにしました。
-サイトの生成にはrubyが使われていて、いけるかな〜どうかな〜という感じだったのですが試行錯誤することで、htmlの更新をするところにこぎつけました。</p>
+<p>ちなみに Unity/C# では、MagicOnion というgRPC上にMessagePackがのっているフレームワークが公開されておりますね。</p>
 
 
 
@@ -199,16 +193,14 @@
 
 
 <iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
-    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fgithub.com%2fmsgpack%2fwebsite" title="" scrolling="no" frameborder="0">
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fgithub.com%2fCysharp%2fMagicOnion" title="" scrolling="no" frameborder="0">
     <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
         class="mce_SELRES_start">
     </span>
 </iframe>
 
-<p>原因はというと、NokogoriでHTMLをパースするところが上手くいっておらず、すべてのパッケージで動作不良になってしまっていました。<br>
-悲しい。😢</p>
-<p>表示されるようになっていたのですが、一部パッケージが上手く取り込まれない感じになっていたのでその辺も合わせて修正。<br>
-これ関連。</p>
+<p>手元で試す場合まずは、protocなどのコマンドを用意する必要がありますが、最新のバージョンを入れるようにしましょう！出力結果や実行オプションが違ってたりしました。<br>
+しゃらくせぇ！って方は今回試したものをリポジトリにしているのでよしなにしてください。</p>
 
 
 
@@ -217,14 +209,13 @@
 
 
 <iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
-    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fgithub.blog%2fchangelog%2f2020-10-01-the-default-branch-for-newly-created-repositories-is-now-main%2f" title="" scrolling="no" frameborder="0">
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fgithub.com%2fshamaton%2fgrpc-msgpack-sample" title="" scrolling="no" frameborder="0">
     <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
         class="mce_SELRES_start">
     </span>
 </iframe>
 
-<p>なんやかんやしてプルリクだして、マージしてもらいました！<br>
-(いろんな人がコメントつけたりしてくれてました)</p>
+<p>CodecはJSONに習って <code>encoding.Codec</code> を満たすようにしておけば良いです。（試していたときは難しいのでは&hellip;？と思っていたけど、そんなことはなかった。さすがgoogle）</p>
 
 
 
@@ -233,14 +224,81 @@
 
 
 <iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
-    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fgithub.com%2fmsgpack%2fwebsite%2fpull%2f44" title="" scrolling="no" frameborder="0">
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fgithub.com%2fgrpc%2fgrpc-go%2fblob%2fmaster%2fDocumentation%2fencoding.md" title="" scrolling="no" frameborder="0">
     <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
         class="mce_SELRES_start">
     </span>
 </iframe>
 
-<p>最終結果的には、言語ごとに表示されるようにして見やすくもできた😊</p>
-<p><img src="https://user-images.githubusercontent.com/4637556/130207582-176440f0-00a0-419a-bd8a-03478e1414e5.png" alt="image"></p>
+<p>リポジトリにはgRPCのexampleにある <code>HelloRequest/HelloResponse</code> を使っていますが、
+ここにはこれらのデータがinterfaceで入ってくるので、ただシリアライズすればよいのですね。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MsgpackCodecName</span> = <span style="color:#e6db74">&#34;msgpack&#34;</span>
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">msgpackCodec</span> <span style="color:#66d9ef">struct</span> {
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">msgpackCodec</span>) <span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">v</span> <span style="color:#66d9ef">interface</span>{}) ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>) {
+	<span style="color:#75715e">// protoからgenerateされていればproto.Messageを満たすはず
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">msg</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">v</span>.(<span style="color:#a6e22e">proto</span>.<span style="color:#a6e22e">Message</span>)
+	<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">ok</span> {
+		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>, <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;not a proto message but %T: %v&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">v</span>)
+	}
+
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">msgpack</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">msg</span>)
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">msgpackCodec</span>) <span style="color:#a6e22e">Unmarshal</span>(<span style="color:#a6e22e">data</span> []<span style="color:#66d9ef">byte</span>, <span style="color:#a6e22e">v</span> <span style="color:#66d9ef">interface</span>{}) <span style="color:#66d9ef">error</span> {
+	<span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">v</span>.(<span style="color:#a6e22e">proto</span>.<span style="color:#a6e22e">Message</span>)
+	<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">ok</span> {
+		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;not a proto message but %T: %v&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">v</span>)
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">msgpack</span>.<span style="color:#a6e22e">Unmarshal</span>(<span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">v</span>)
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">msgpackCodec</span>) <span style="color:#a6e22e">Name</span>() <span style="color:#66d9ef">string</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">MsgpackCodecName</span>
+}
+</code></pre></div><p>あとはCodecをサーバ起動時に登録し、クライアントでは使うように設定すればよいです。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// server
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">encoding</span>.<span style="color:#a6e22e">RegisterCodec</span>()
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// client
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">opts</span> <span style="color:#f92672">:=</span> []<span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">DialOption</span>{
+	<span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">WithDefaultCallOptions</span>(<span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">CallContentSubtype</span>(<span style="color:#a6e22e">encoding</span>.<span style="color:#a6e22e">MsgpackCodecName</span>)),
+}
+</code></pre></div><p>ここで、HelloRequestのコードを見てみましょう。JSONはタグが使われていますね。
+msgpackはタグがありません。つけなくても動くのは動くんですが、JSONと同じようについてないのでなんとかしてつけたくなりました。（データとして使うメンバ以外はprivateになっているため）
+どうやってやればいいのかというと<a href="https://github.com/protocolbuffers/protobuf-go/blob/fb30439f551a7e79e413e7b4f5f4dfb58e117d73/cmd/protoc-gen-go/internal_gengo/main.go#L700">protobuf-goのこの辺</a>をイジる必要があるんですね。
+うまいこと注入できる感じだと良かったんだけどなーという印象。</p>
+<p><a href="https://github.com/grpc/grpc-go/blob/master/examples/helloworld/helloworld/helloworld.pb.go#L48">https://github.com/grpc/grpc-go/blob/master/examples/helloworld/helloworld/helloworld.pb.go#L48</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">HelloRequest</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">state</span>         <span style="color:#a6e22e">protoimpl</span>.<span style="color:#a6e22e">MessageState</span>
+	<span style="color:#a6e22e">sizeCache</span>     <span style="color:#a6e22e">protoimpl</span>.<span style="color:#a6e22e">SizeCache</span>
+	<span style="color:#a6e22e">unknownFields</span> <span style="color:#a6e22e">protoimpl</span>.<span style="color:#a6e22e">UnknownFields</span>
+
+	<span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`protobuf:&#34;bytes,1,opt,name=name,proto3&#34; json:&#34;name,omitempty&#34;`</span>
+}
+</code></pre></div><p><a href="https://github.com/protocolbuffers/protobuf-go/blob/fb30439f551a7e79e413e7b4f5f4dfb58e117d73/cmd/protoc-gen-go/internal_gengo/main.go#L700">https://github.com/protocolbuffers/protobuf-go/blob/fb30439f551a7e79e413e7b4f5f4dfb58e117d73/cmd/protoc-gen-go/internal_gengo/main.go#L700</a></p>
+<p>仕方がなかったので、protobuf-goをforkして、tagを設定している箇所でmsgpackも同じように設定してあげるようにしました。</p>
+<p><a href="https://github.com/shamaton/protobuf-go/commit/56cfa3aa7824c592d2bcef9dcb098a293919b5bb#diff-9d6e6c652dbe94644b20e53076db2ae4306dd0a4e62aa48dbc2dd2690bffb8fcR405">https://github.com/shamaton/protobuf-go/commit/56cfa3aa7824c592d2bcef9dcb098a293919b5bb#diff-9d6e6c652dbe94644b20e53076db2ae4306dd0a4e62aa48dbc2dd2690bffb8fcR405</a></p>
+<p>これを加えた上で protoc を実行すると&hellip;タグがつくようになりました 🙆</p>
+<p><img src="https://user-images.githubusercontent.com/4637556/148683471-4f291db9-755d-4b97-88a2-1dfe8a7218f9.png" alt="image"></p>
+<p>一応、この状態で実行してみると&hellip;
+replyが返ってきます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">// go run ./cmd/client
+2022/01/09 22:24:27 send bytes: 81 a4 6e 61 6d 65 a5 77 6f 72 6c 64
+2022/01/09 22:24:27 recv bytes: 81 a7 6d 65 73 73 61 67 65 ac 48 65 6c 6c 6f 20 77 6f 72 6c 64 2e
+2022/01/09 22:24:27 Greeting: Hello world.
+
+// go run ./cmd/server
+2022/01/09 22:24:27 recv bytes: 81 a4 6e 61 6d 65 a5 77 6f 72 6c 64
+2022/01/09 22:24:27 call from world
+2022/01/09 22:24:27 send bytes: 81 a7 6d 65 73 73 61 67 65 ac 48 65 6c 6c 6f 20 77 6f 72 6c 64 2e
+</code></pre></div><p>また、Marshal/Unmarshalしているときのバイナリを確認してみると
+当たり前なんですがmsgpackのデータ構造になっていますね。(81はfixmap)</p>
+<p>protobuf-goを管理するのはつらいので、やるならmsgpackをjsonタグでも動くようにする&hellip;みたいなのがよいのかも&hellip;
+と思いましたが、無理してやる必要はないと思いましたｗ</p>
 <p>以上です〜👋</p>
 
       </div>
@@ -254,7 +312,7 @@
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
 
-        <span class="tag"><a href="https://shamaton.dev/categories/ruby/">ruby</a></span>
+        <span class="tag"><a href="https://shamaton.dev/categories/go/">go</a></span>
         
     </p>
 
@@ -267,7 +325,7 @@
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        530 Words
+        1343 Words
       </p>
 
       <p>
@@ -278,7 +336,7 @@
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
         
-          2021-11-25 15:23
+          2022-01-09 20:20
         
 
          
@@ -370,18 +428,11 @@
 
         <div class="pagination__buttons">
           
-            <span class="button previous">
-              <a href="https://shamaton.dev/posts/2022010901/">
-                <span class="button__icon">←</span>
-                <span class="button__text">gRPCのCodecをmsgpackに変更する</span>
-              </a>
-            </span>
-          
 
           
             <span class="button next">
-              <a href="https://shamaton.dev/posts/678/">
-                <span class="button__text">[Go] unsafe.Pointerを使うのをやめた</span>
+              <a href="https://shamaton.dev/posts/679/">
+                <span class="button__text">[Ruby] msgpackの公式サイトを修正しました</span>
                 <span class="button__icon">→</span>
               </a>
             </span>

@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 25 Nov 2021 06:23:09 +0000</lastBuildDate><atom:link href="https://shamaton.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Jan 2022 11:20:09 +0000</lastBuildDate><atom:link href="https://shamaton.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gRPCのCodecをmsgpackに変更する</title>
+      <link>https://shamaton.dev/posts/2022010901/</link>
+      <pubDate>Sun, 09 Jan 2022 11:20:09 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/2022010901/</guid>
+      <description>お世話になっております。 しゃまとんです😊 gPRCのシリアライザにProtocol Buffersが使われています。 以前から、JSONに置き換え</description>
+    </item>
+    
     <item>
       <title>[Ruby] msgpackの公式サイトを修正しました</title>
       <link>https://shamaton.dev/posts/679/</link>
@@ -92,15 +101,6 @@ App    Kotodamap Using: Unity / Go / GCP       Kotodamap is messaging app using 
       
       <guid>https://shamaton.dev/posts/583/</guid>
       <description>お世話になっております。 しゃまとんです。 年末なのでことしも一応（ちゃちゃっと）振り返ってみようかと思います。 wordpressのバージョンが</description>
-    </item>
-    
-    <item>
-      <title>[Unity/Golang]データ圧縮にdeflateが使えなかった</title>
-      <link>https://shamaton.dev/posts/548/</link>
-      <pubDate>Tue, 18 Dec 2018 15:03:44 +0900</pubDate>
-      
-      <guid>https://shamaton.dev/posts/548/</guid>
-      <description>お世話になっております。 しゃまとんです。 以前にデータ圧縮の記事を書いたのですが、 どうやら、Androidで利用しようとするとエラーになってし</description>
     </item>
     
   </channel>

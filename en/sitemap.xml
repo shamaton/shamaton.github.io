@@ -3,13 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://shamaton.dev/posts/679/</loc>
-    <lastmod>2021-11-25T06:23:09+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://shamaton.dev/categories/</loc>
-    <lastmod>2021-11-25T06:23:09+00:00</lastmod>
+    <lastmod>2022-01-09T11:20:09+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -23,18 +18,23 @@
   </url>
   
   <url>
-    <loc>https://shamaton.dev/posts/</loc>
-    <lastmod>2021-11-25T06:23:09+00:00</lastmod>
+    <loc>https://shamaton.dev/categories/go/</loc>
+    <lastmod>2022-01-09T11:20:09+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://shamaton.dev/categories/ruby/</loc>
-    <lastmod>2021-11-25T06:23:09+00:00</lastmod>
+    <loc>https://shamaton.dev/posts/2022010901/</loc>
+    <lastmod>2022-01-09T11:20:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shamaton.dev/posts/</loc>
+    <lastmod>2022-01-09T11:20:09+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://shamaton.dev/</loc>
-    <lastmod>2021-11-25T06:23:09+00:00</lastmod>
+    <lastmod>2022-01-09T11:20:09+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -48,12 +48,17 @@
   </url>
   
   <url>
-    <loc>https://shamaton.dev/posts/678/</loc>
-    <lastmod>2021-08-31T13:50:09+00:00</lastmod>
+    <loc>https://shamaton.dev/posts/679/</loc>
+    <lastmod>2021-11-25T06:23:09+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://shamaton.dev/categories/go/</loc>
+    <loc>https://shamaton.dev/categories/ruby/</loc>
+    <lastmod>2021-11-25T06:23:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shamaton.dev/posts/678/</loc>
     <lastmod>2021-08-31T13:50:09+00:00</lastmod>
   </url>
   

@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 31 Aug 2021 13:50:09 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Jan 2022 11:20:09 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gRPCのCodecをmsgpackに変更する</title>
+      <link>https://shamaton.dev/posts/2022010901/</link>
+      <pubDate>Sun, 09 Jan 2022 11:20:09 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/2022010901/</guid>
+      <description>お世話になっております。 しゃまとんです😊 gPRCのシリアライザにProtocol Buffersが使われています。 以前から、JSONに置き換え</description>
+    </item>
+    
     <item>
       <title>[Go] unsafe.Pointerを使うのをやめた</title>
       <link>https://shamaton.dev/posts/678/</link>
@@ -87,15 +96,6 @@
       
       <guid>https://shamaton.dev/posts/461/</guid>
       <description>お世話になっております。 しゃまとんです。 今回はredisをクラスタリングしてGoから接続してみるやつです。 個人ではなかなか使う機会がないです</description>
-    </item>
-    
-    <item>
-      <title>[Server] nginx &#43; golangな環境で502 Bad Gatewayになった時のこと</title>
-      <link>https://shamaton.dev/posts/497/</link>
-      <pubDate>Sat, 17 Feb 2018 11:52:29 +0000</pubDate>
-      
-      <guid>https://shamaton.dev/posts/497/</guid>
-      <description>お世話になっております。 しゃまとんです。 Goを使って、Webアプリケーションを作る際に80ポートを直接設定できない（しづらい）ので 何か公開す</description>
     </item>
     
   </channel>
