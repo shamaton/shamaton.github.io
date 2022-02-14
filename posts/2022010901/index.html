@@ -238,34 +238,34 @@
 }
 
 <span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">msgpackCodec</span>) <span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">v</span> <span style="color:#66d9ef">interface</span>{}) ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>) {
-	<span style="color:#75715e">// protoからgenerateされていればproto.Messageを満たすはず
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">msg</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">v</span>.(<span style="color:#a6e22e">proto</span>.<span style="color:#a6e22e">Message</span>)
-	<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">ok</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>, <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;not a proto message but %T: %v&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">v</span>)
-	}
+    <span style="color:#75715e">// protoからgenerateされていればproto.Messageを満たすはず
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">msg</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">v</span>.(<span style="color:#a6e22e">proto</span>.<span style="color:#a6e22e">Message</span>)
+    <span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">ok</span> {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>, <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;not a proto message but %T: %v&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">v</span>)
+    }
 
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">msgpack</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">msg</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">msgpack</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">msg</span>)
 }
 
 <span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">msgpackCodec</span>) <span style="color:#a6e22e">Unmarshal</span>(<span style="color:#a6e22e">data</span> []<span style="color:#66d9ef">byte</span>, <span style="color:#a6e22e">v</span> <span style="color:#66d9ef">interface</span>{}) <span style="color:#66d9ef">error</span> {
-	<span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">v</span>.(<span style="color:#a6e22e">proto</span>.<span style="color:#a6e22e">Message</span>)
-	<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">ok</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;not a proto message but %T: %v&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">v</span>)
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">msgpack</span>.<span style="color:#a6e22e">Unmarshal</span>(<span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">v</span>)
+    <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">v</span>.(<span style="color:#a6e22e">proto</span>.<span style="color:#a6e22e">Message</span>)
+    <span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">ok</span> {
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;not a proto message but %T: %v&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">v</span>)
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">msgpack</span>.<span style="color:#a6e22e">Unmarshal</span>(<span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">v</span>)
 }
 
 <span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">msgpackCodec</span>) <span style="color:#a6e22e">Name</span>() <span style="color:#66d9ef">string</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">MsgpackCodecName</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">MsgpackCodecName</span>
 }
 </code></pre></div><p>あとはCodecをサーバ起動時に登録し、クライアントでは使うように設定すればよいです。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// server
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">encoding</span>.<span style="color:#a6e22e">RegisterCodec</span>()
+    <span style="color:#a6e22e">encoding</span>.<span style="color:#a6e22e">RegisterCodec</span>()
 }
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// client
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">opts</span> <span style="color:#f92672">:=</span> []<span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">DialOption</span>{
-	<span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">WithDefaultCallOptions</span>(<span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">CallContentSubtype</span>(<span style="color:#a6e22e">encoding</span>.<span style="color:#a6e22e">MsgpackCodecName</span>)),
+    <span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">WithDefaultCallOptions</span>(<span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">CallContentSubtype</span>(<span style="color:#a6e22e">encoding</span>.<span style="color:#a6e22e">MsgpackCodecName</span>)),
 }
 </code></pre></div><p>ここで、HelloRequestのコードを見てみましょう。JSONはタグが使われていますね。
 msgpackはタグがありません。つけなくても動くのは動くんですが、JSONと同じようについてないのでなんとかしてつけたくなりました。（データとして使うメンバ以外はprivateになっているため）
@@ -273,11 +273,11 @@ msgpackはタグがありません。つけなくても動くのは動くんで�
 うまいこと注入できる感じだと良かったんだけどなーという印象。</p>
 <p><a href="https://github.com/grpc/grpc-go/blob/master/examples/helloworld/helloworld/helloworld.pb.go#L48">https://github.com/grpc/grpc-go/blob/master/examples/helloworld/helloworld/helloworld.pb.go#L48</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">HelloRequest</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">state</span>         <span style="color:#a6e22e">protoimpl</span>.<span style="color:#a6e22e">MessageState</span>
-	<span style="color:#a6e22e">sizeCache</span>     <span style="color:#a6e22e">protoimpl</span>.<span style="color:#a6e22e">SizeCache</span>
-	<span style="color:#a6e22e">unknownFields</span> <span style="color:#a6e22e">protoimpl</span>.<span style="color:#a6e22e">UnknownFields</span>
+    <span style="color:#a6e22e">state</span>         <span style="color:#a6e22e">protoimpl</span>.<span style="color:#a6e22e">MessageState</span>
+    <span style="color:#a6e22e">sizeCache</span>     <span style="color:#a6e22e">protoimpl</span>.<span style="color:#a6e22e">SizeCache</span>
+    <span style="color:#a6e22e">unknownFields</span> <span style="color:#a6e22e">protoimpl</span>.<span style="color:#a6e22e">UnknownFields</span>
 
-	<span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`protobuf:&#34;bytes,1,opt,name=name,proto3&#34; json:&#34;name,omitempty&#34;`</span>
+    <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`protobuf:&#34;bytes,1,opt,name=name,proto3&#34; json:&#34;name,omitempty&#34;`</span>
 }
 </code></pre></div><p><a href="https://github.com/protocolbuffers/protobuf-go/blob/fb30439f551a7e79e413e7b4f5f4dfb58e117d73/cmd/protoc-gen-go/internal_gengo/main.go#L700">https://github.com/protocolbuffers/protobuf-go/blob/fb30439f551a7e79e413e7b4f5f4dfb58e117d73/cmd/protoc-gen-go/internal_gengo/main.go#L700</a></p>
 <p>仕方がなかったので、protobuf-goをforkして、tagを設定している箇所でmsgpackも同じように設定してあげるようにしました。</p>
@@ -427,6 +427,13 @@ replyが返ってきます。</p>
         </div>
 
         <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="https://shamaton.dev/posts/2022021401/">
+                <span class="button__icon">←</span>
+                <span class="button__text">mkcertを使ってlocal httpsを試す</span>
+              </a>
+            </span>
           
 
           

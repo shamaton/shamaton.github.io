@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 09 Jan 2022 11:20:09 +0000</lastBuildDate><atom:link href="https://shamaton.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Feb 2022 13:10:09 +0000</lastBuildDate><atom:link href="https://shamaton.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mkcertを使ってlocal httpsを試す</title>
+      <link>https://shamaton.dev/posts/2022021401/</link>
+      <pubDate>Mon, 14 Feb 2022 13:10:09 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/2022021401/</guid>
+      <description>お世話になっております。 しゃまとんです😊 https って、Web上に置かないと出来ないものかと思っていたんですが、昨今はローカル環境もできるのですね。</description>
+    </item>
+    
     <item>
       <title>gRPCのCodecをmsgpackに変更する</title>
       <link>https://shamaton.dev/posts/2022010901/</link>
@@ -92,15 +101,6 @@ App    Kotodamap Using: Unity / Go / GCP       Kotodamap is messaging app using 
       
       <guid>https://shamaton.dev/posts/664/</guid>
       <description>お世話になっております。 しゃまとんです。 Unityで開発をしているとビルド作業が煩わしくなって自動化したい…なんて話になると思います。 それで</description>
-    </item>
-    
-    <item>
-      <title>[メモ] 2018年の振り返り</title>
-      <link>https://shamaton.dev/posts/583/</link>
-      <pubDate>Sun, 30 Dec 2018 13:18:52 +0900</pubDate>
-      
-      <guid>https://shamaton.dev/posts/583/</guid>
-      <description>お世話になっております。 しゃまとんです。 年末なのでことしも一応（ちゃちゃっと）振り返ってみようかと思います。 wordpressのバージョンが</description>
     </item>
     
   </channel>

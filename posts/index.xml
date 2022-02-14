@@ -6,8 +6,213 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>ja-jp</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sun, 09 Jan 2022 11:20:09 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 14 Feb 2022 13:10:09 +0000</lastBuildDate>
         <atom:link href="https://shamaton.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>mkcertを使ってlocal httpsを試す</title>
+            <link>https://shamaton.dev/posts/2022021401/</link>
+            <pubDate>Mon, 14 Feb 2022 13:10:09 +0000</pubDate>
+            
+            <guid>https://shamaton.dev/posts/2022021401/</guid>
+            <description>お世話になっております。 しゃまとんです😊 https って、Web上に置かないと出来ないものかと思っていたんですが、昨今はローカル環境もできるのですね。</description>
+            <content type="html"><![CDATA[<p>お世話になっております。<br>
+しゃまとんです😊</p>
+<p>https って、Web上に置かないと出来ないものかと思っていたんですが、昨今はローカル環境もできるのですね。
+ということでやってみました。</p>
+<p>httpsとなると、オレオレ証明書とか作りたくないな〜&hellip;</p>
+
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fozuma.hatenablog.jp%2fentry%2f20130511%2f1368284304" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+
+<p>みたいなこと思うのですが Github には素晴らしい OSS があるのです。<br>
+それが mkcert です。</p>
+
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fgithub.com%2fFiloSottile%2fmkcert" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+
+<p>使い方がめちゃくちゃ簡単で</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkcert -install
+mkcert localhost
+</code></pre></div><p>で証明書を作成してくれるのです。素晴らしいですね。<br>
+これで証明書をゲットしつつ、Docker + Go でちゃちゃっと https なサーバを公開していきましょう。
+https はデフォルトポートが 443 なので、コードから直接 443 を設定しようとすると権限の都合で辛い場面に遭遇するので、publishする形でやっていこうと思います。</p>
+<p>まず最初に Dockerfile を用意します。mkcertのバージョンは<a href="https://github.com/FiloSottile/mkcert/tags">こちら</a>で確認してくださいね。<br>
+(go.sumは今回ありませんでした）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:1.17-buster</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt-get update <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    <span style="color:#f92672">&amp;&amp;</span> apt-get install -y libnss3-tools<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> curl -LO https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v1.4.3-linux-amd64 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    <span style="color:#f92672">&amp;&amp;</span> chmod +x mkcert-v1.4.3-linux-amd64 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    <span style="color:#f92672">&amp;&amp;</span> mv mkcert-v1.4.3-linux-amd64 /usr/local/bin/mkcert<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /work</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> mkcert -install <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    <span style="color:#f92672">&amp;&amp;</span> mkcert localhost 127.0.0.1 192.168.0.1<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> go.mod .<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">#COPY go.sum .</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> cmd cmd/<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> CGO_ENABLED<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> GOOS<span style="color:#f92672">=</span>linux go build -v -o ./server ./cmd<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;./server&#34;</span>, <span style="color:#e6db74">&#34;./localhost+2.pem&#34;</span>, <span style="color:#e6db74">&#34;./localhost+2-key.pem&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p><a href="https://github.com/FiloSottile/mkcert#linux">Linux</a> では <code>libnss3-tool</code> が必要なので install しつつ、 mkcert を使えるようにしていきます。
+そして証明書を作業場で発行し、サーバをビルドして実行します。</p>
+<p>サーバ（cmd/main.go） はこちら。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+    <span style="color:#e6db74">&#34;io/ioutil&#34;</span>
+    <span style="color:#e6db74">&#34;log&#34;</span>
+    <span style="color:#e6db74">&#34;net/http&#34;</span>
+    <span style="color:#e6db74">&#34;os&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">handler</span>(<span style="color:#a6e22e">w</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ResponseWriter</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Request</span>) {
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Fprintf</span>(<span style="color:#a6e22e">w</span>, <span style="color:#e6db74">&#34;Hello, World&#34;</span>)
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+
+    <span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Args</span>) &lt; <span style="color:#ae81ff">2</span> {
+        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#e6db74">&#34;crt and key must be set&#34;</span>)
+    }
+
+    <span style="color:#a6e22e">crt</span>, <span style="color:#a6e22e">key</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Args</span>[<span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Args</span>[<span style="color:#ae81ff">2</span>]
+
+    <span style="color:#a6e22e">cat</span>(<span style="color:#a6e22e">crt</span>)
+    <span style="color:#a6e22e">cat</span>(<span style="color:#a6e22e">key</span>)
+
+    <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandleFunc</span>(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#a6e22e">handler</span>)
+    <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ListenAndServeTLS</span>(<span style="color:#e6db74">&#34;:8080&#34;</span>, <span style="color:#a6e22e">crt</span>, <span style="color:#a6e22e">key</span>, <span style="color:#66d9ef">nil</span>)
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#e6db74">&#34;ListenAndServe: &#34;</span>, <span style="color:#a6e22e">err</span>)
+    }
+}
+
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">cat</span>(<span style="color:#a6e22e">filename</span> <span style="color:#66d9ef">string</span>)  {
+    <span style="color:#a6e22e">file</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Open</span>(<span style="color:#a6e22e">filename</span>)
+    <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">Close</span>()
+
+    <span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">ioutil</span>.<span style="color:#a6e22e">ReadAll</span>(<span style="color:#a6e22e">file</span>)
+
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Panicln</span>(<span style="color:#a6e22e">err</span>)
+    }
+
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;==&#34;</span>, <span style="color:#a6e22e">filename</span>, <span style="color:#e6db74">&#34;==&#34;</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(string(<span style="color:#a6e22e">data</span>))
+}
+</code></pre></div><p>これをおもむろにガッっと実行していきます！確認で pem の内容が出力されると思います。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># build</span>
+docker build -t gomkcert .
+
+<span style="color:#75715e"># run</span>
+docker run --publish 443:8080 --name gomkcertest --rm gomkcert 
+
+<span style="color:#75715e"># 以下は出力</span>
+<span style="color:#f92672">==</span> ./localhost+2.pem <span style="color:#f92672">==</span>
+-----BEGIN CERTIFICATE-----
+...
+-----END CERTIFICATE-----
+
+<span style="color:#f92672">==</span> ./localhost+2-key.pem <span style="color:#f92672">==</span>
+-----BEGIN PRIVATE KEY-----
+...
+-----END CERTIFICATE-----
+</code></pre></div><p><code>curl</code> してみます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -k https://localhost
+Hello, World⏎
+</code></pre></div><p>ブラウザでも、こんな感じですね〜（危険を承知で〜みたいなのは出るのね）
+<img src="https://user-images.githubusercontent.com/4637556/153790166-e5f26501-2ca6-4323-b353-db2483877095.png" alt="image"></p>
+<p>今回のソースは <a href="https://github.com/shamaton/go-mkcert-sample">shamaton/go-mkcert-sample</a> にまとめております〜。<br>
+以上です〜👋</p>
+<p>■ 参考</p>
+
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fyurufuwa-tech.hatenablog.com%2fentry%2f2018%2f08%2f22%2f234044" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+
+
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fqiita.com%2fProjectEuropa%2fitems%2f37b0cfbe0d2347d8e16a" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+
+
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fmatope.hatenablog.com%2fentry%2f2014%2f09%2f28%2f031155" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+
+
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fmiff.blog.ss-blog.jp%2f2018-12-14-2" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+
+]]></content>
+        </item>
         
         <item>
             <title>gRPCのCodecをmsgpackに変更する</title>
@@ -88,34 +293,34 @@
 }
 
 <span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">msgpackCodec</span>) <span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">v</span> <span style="color:#66d9ef">interface</span>{}) ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>) {
-	<span style="color:#75715e">// protoからgenerateされていればproto.Messageを満たすはず
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">msg</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">v</span>.(<span style="color:#a6e22e">proto</span>.<span style="color:#a6e22e">Message</span>)
-	<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">ok</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>, <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;not a proto message but %T: %v&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">v</span>)
-	}
+    <span style="color:#75715e">// protoからgenerateされていればproto.Messageを満たすはず
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">msg</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">v</span>.(<span style="color:#a6e22e">proto</span>.<span style="color:#a6e22e">Message</span>)
+    <span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">ok</span> {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>, <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;not a proto message but %T: %v&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">v</span>)
+    }
 
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">msgpack</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">msg</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">msgpack</span>.<span style="color:#a6e22e">Marshal</span>(<span style="color:#a6e22e">msg</span>)
 }
 
 <span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">msgpackCodec</span>) <span style="color:#a6e22e">Unmarshal</span>(<span style="color:#a6e22e">data</span> []<span style="color:#66d9ef">byte</span>, <span style="color:#a6e22e">v</span> <span style="color:#66d9ef">interface</span>{}) <span style="color:#66d9ef">error</span> {
-	<span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">v</span>.(<span style="color:#a6e22e">proto</span>.<span style="color:#a6e22e">Message</span>)
-	<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">ok</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;not a proto message but %T: %v&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">v</span>)
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">msgpack</span>.<span style="color:#a6e22e">Unmarshal</span>(<span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">v</span>)
+    <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">v</span>.(<span style="color:#a6e22e">proto</span>.<span style="color:#a6e22e">Message</span>)
+    <span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">ok</span> {
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;not a proto message but %T: %v&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">v</span>)
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">msgpack</span>.<span style="color:#a6e22e">Unmarshal</span>(<span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">v</span>)
 }
 
 <span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">msgpackCodec</span>) <span style="color:#a6e22e">Name</span>() <span style="color:#66d9ef">string</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">MsgpackCodecName</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">MsgpackCodecName</span>
 }
 </code></pre></div><p>あとはCodecをサーバ起動時に登録し、クライアントでは使うように設定すればよいです。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// server
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">encoding</span>.<span style="color:#a6e22e">RegisterCodec</span>()
+    <span style="color:#a6e22e">encoding</span>.<span style="color:#a6e22e">RegisterCodec</span>()
 }
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// client
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">opts</span> <span style="color:#f92672">:=</span> []<span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">DialOption</span>{
-	<span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">WithDefaultCallOptions</span>(<span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">CallContentSubtype</span>(<span style="color:#a6e22e">encoding</span>.<span style="color:#a6e22e">MsgpackCodecName</span>)),
+    <span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">WithDefaultCallOptions</span>(<span style="color:#a6e22e">grpc</span>.<span style="color:#a6e22e">CallContentSubtype</span>(<span style="color:#a6e22e">encoding</span>.<span style="color:#a6e22e">MsgpackCodecName</span>)),
 }
 </code></pre></div><p>ここで、HelloRequestのコードを見てみましょう。JSONはタグが使われていますね。
 msgpackはタグがありません。つけなくても動くのは動くんですが、JSONと同じようについてないのでなんとかしてつけたくなりました。（データとして使うメンバ以外はprivateになっているため）
@@ -123,11 +328,11 @@ msgpackはタグがありません。つけなくても動くのは動くんで�
 うまいこと注入できる感じだと良かったんだけどなーという印象。</p>
 <p><a href="https://github.com/grpc/grpc-go/blob/master/examples/helloworld/helloworld/helloworld.pb.go#L48">https://github.com/grpc/grpc-go/blob/master/examples/helloworld/helloworld/helloworld.pb.go#L48</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">HelloRequest</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">state</span>         <span style="color:#a6e22e">protoimpl</span>.<span style="color:#a6e22e">MessageState</span>
-	<span style="color:#a6e22e">sizeCache</span>     <span style="color:#a6e22e">protoimpl</span>.<span style="color:#a6e22e">SizeCache</span>
-	<span style="color:#a6e22e">unknownFields</span> <span style="color:#a6e22e">protoimpl</span>.<span style="color:#a6e22e">UnknownFields</span>
+    <span style="color:#a6e22e">state</span>         <span style="color:#a6e22e">protoimpl</span>.<span style="color:#a6e22e">MessageState</span>
+    <span style="color:#a6e22e">sizeCache</span>     <span style="color:#a6e22e">protoimpl</span>.<span style="color:#a6e22e">SizeCache</span>
+    <span style="color:#a6e22e">unknownFields</span> <span style="color:#a6e22e">protoimpl</span>.<span style="color:#a6e22e">UnknownFields</span>
 
-	<span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`protobuf:&#34;bytes,1,opt,name=name,proto3&#34; json:&#34;name,omitempty&#34;`</span>
+    <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`protobuf:&#34;bytes,1,opt,name=name,proto3&#34; json:&#34;name,omitempty&#34;`</span>
 }
 </code></pre></div><p><a href="https://github.com/protocolbuffers/protobuf-go/blob/fb30439f551a7e79e413e7b4f5f4dfb58e117d73/cmd/protoc-gen-go/internal_gengo/main.go#L700">https://github.com/protocolbuffers/protobuf-go/blob/fb30439f551a7e79e413e7b4f5f4dfb58e117d73/cmd/protoc-gen-go/internal_gengo/main.go#L700</a></p>
 <p>仕方がなかったので、protobuf-goをforkして、tagを設定している箇所でmsgpackも同じように設定してあげるようにしました。</p>
