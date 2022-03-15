@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>typescript on shamaton</title>
+    <link>https://shamaton.dev/categories/typescript/</link>
+    <description>Recent content in typescript on shamaton</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 14 Mar 2022 14:35:09 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>typescript/reactでgithubアカウントを使ったしりとりを作ってみた</title>
+      <link>https://shamaton.dev/posts/2022031401/</link>
+      <pubDate>Mon, 14 Mar 2022 14:35:09 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/2022031401/</guid>
+      <description>お世話になっております。 しゃまとんです😊 いやー、春の陽気になってきましたね〜🌸 そんなこんなで、ずっと敬遠していた Web Frontend の知識の習得やっとくかー</description>
+    </item>
+    
+  </channel>
+</rss>

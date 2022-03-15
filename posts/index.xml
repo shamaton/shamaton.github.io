@@ -6,8 +6,104 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>ja-jp</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Mon, 14 Feb 2022 13:10:09 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 14 Mar 2022 14:35:09 +0000</lastBuildDate>
         <atom:link href="https://shamaton.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>typescript/reactでgithubアカウントを使ったしりとりを作ってみた</title>
+            <link>https://shamaton.dev/posts/2022031401/</link>
+            <pubDate>Mon, 14 Mar 2022 14:35:09 +0000</pubDate>
+            
+            <guid>https://shamaton.dev/posts/2022031401/</guid>
+            <description>お世話になっております。 しゃまとんです😊 いやー、春の陽気になってきましたね〜🌸 そんなこんなで、ずっと敬遠していた Web Frontend の知識の習得やっとくかー</description>
+            <content type="html"><![CDATA[<p>お世話になっております。<br>
+しゃまとんです😊</p>
+<p>いやー、春の陽気になってきましたね〜🌸
+そんなこんなで、ずっと敬遠していた Web Frontend の知識の習得やっとくかーという感じで重い腰を上げました。
+私の心の中にも春がやってきました。ついに雪解けしました。❄️</p>
+<p>まぁ、まったく JavaScript とかに触ってこなかった訳ではないのですが隣の芝生をみると群雄割拠感があって、とりあえず触ってみるかーみたいな気持ちになれなかったんですよね。
+最近は React をよく耳にする（している）ような気がして、これまずはやったら良さそうかなという感じがしてきました。
+あと typescript が出てきて、型チェックだとか generics とか interface とか&hellip; 個人的に慣れ親しんだものを使って frontend の開発ができるようになっているというところもありました。</p>
+<p>とりあえず座学 x ハンズオン的なことをしたいなーと思うと、今はなんでもあるんですね。
+youtube で<a href="https://www.youtube.com/channel/UC-bOAxx-YOsviSmqh8COR0w">こちらのチャンネル</a>の react 入門を見ていきました。</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/XKSYF2aZnkQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>（ちなみにこれは react の入門なので、 javascript ですね）
+あと、 typescript 入門のコンテンツもあったので初手の部分と気になる箇所を抜粋して視聴しました。</p>
+
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fwww.youtube.com%2fplaylist%3flist%3dPLX8Rsrpnn3IW0REXnTWQp79mxCvHkIrad" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+
+<p>ざっと雰囲気を把握したところで、なんか作ってみないとなーという状態になったのでお題を考えることに。<br>
+なんとなく通信して、コンテンツの再レンダリングが走るみたいなのがいいかな〜と思ったので、 Github の API を使って（通信して）、繰り返し情報取るようなもの（再レンダリング）を作ってみるかということで「Githubでしりとりしてみる」を題材にしました。</p>
+<p>Github API を利用するライブラリもあるので手軽に通信処理を組み込めますね。</p>
+
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fzenn.dev%2ft723%2farticles%2fa76c583084f383" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+
+<p>で、なんやかんや試行錯誤して作ったのがコレです。<br>
+（最初は <code>npx create-react-app</code> してなくて途中でゴリッとやり直ししたりしました）</p>
+
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fshamaton.dev%2flabs%2fshiritori" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+
+<p>適当に username を設定して、検索数を設定、実行すると定期取得を行ってページが更新されます。
+最初の username は一致する Github アカウントがあれば、取得・表示されます。いなければ気にせず検索情報として利用されます。
+しりとりっぽい挙動をとりあえず作るために後ろ3文字を取って、ユーザー検索するようにしました。</p>
+<p><img src="https://user-images.githubusercontent.com/4637556/158290122-192538b6-f8cd-4e4c-9fd1-5ce976e17e83.gif" alt="shiritori"></p>
+<p>まだ、エラーハンドリングとか学び切れてないので、引き続きやっていければなーと思います😊<br>
+以上です〜👋</p>
+<p>■ 参考</p>
+<p>デザイン的なのは、こちらのリポジトリものを利用させていただきました。</p>
+
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fgithub.com%2fritaxcorreia%2freact-profile-card" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+
+]]></content>
+        </item>
         
         <item>
             <title>mkcertを使ってlocal httpsを試す</title>
