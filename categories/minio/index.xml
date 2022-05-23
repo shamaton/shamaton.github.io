@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>minio on shamaton</title>
+    <link>https://shamaton.dev/categories/minio/</link>
+    <description>Recent content in minio on shamaton</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 23 May 2022 13:15:09 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/minio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>litestream / minio を docker compose で試す</title>
+      <link>https://shamaton.dev/posts/2022052301/</link>
+      <pubDate>Mon, 23 May 2022 13:15:09 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/2022052301/</guid>
+      <description>お世話になっております。 しゃまとんです😊 最近 litestream というソフトウェアが話題（？）ですね。 Go 周辺の界隈の方々だと、そんな流れがきていたのを目にされ</description>
+    </item>
+    
+  </channel>
+</rss>

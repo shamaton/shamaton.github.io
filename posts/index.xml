@@ -6,8 +6,227 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>ja-jp</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Mon, 14 Mar 2022 14:35:09 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 23 May 2022 13:15:09 +0000</lastBuildDate>
         <atom:link href="https://shamaton.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>litestream / minio を docker compose で試す</title>
+            <link>https://shamaton.dev/posts/2022052301/</link>
+            <pubDate>Mon, 23 May 2022 13:15:09 +0000</pubDate>
+            
+            <guid>https://shamaton.dev/posts/2022052301/</guid>
+            <description>お世話になっております。 しゃまとんです😊 最近 litestream というソフトウェアが話題（？）ですね。 Go 周辺の界隈の方々だと、そんな流れがきていたのを目にされ</description>
+            <content type="html"><![CDATA[<p>お世話になっております。<br>
+しゃまとんです😊</p>
+<p>最近 <a href="https://litestream.io/">litestream</a> というソフトウェアが話題（？）ですね。<br>
+Go 周辺の界隈の方々だと、そんな流れがきていたのを目にされていたのではないでしょうか。</p>
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">LiteStream、go-sqlite3 が使われていた。</p>&mdash; mattn (@mattn_jp) <a href="https://twitter.com/mattn_jp/status/1522590085472198657?ref_src=twsrc%5Etfw">May 6, 2022</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">I&#39;m All-In on Server-Side SQLite · Fly <a href="https://t.co/xgpo9aEul6">https://t.co/xgpo9aEul6</a> &quot;今は<a href="https://t.co/Wvex0NIBim">https://t.co/Wvex0NIBim</a>でLitestreamの開発をしています&quot; Litestream の作者 Fly\.io で Litestream 開発するのが仕事になってるのか。素敵すぎるな。</p>&mdash; V (@voluntas) <a href="https://twitter.com/voluntas/status/1523827741111451648?ref_src=twsrc%5Etfw">May 10, 2022</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</p>
+<p>ということで、なぜか私も琴線に触れたので N 番煎じとなりそうではありますが litestream を試してみました。私もケチケチ星人なので手元で <a href="https://min.io/">minio</a> を使ってやって行きたいと思います。</p>
+<p>litestream + minio の初手については公式とかこの辺が参考になります。</p>
+<p>
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2flitestream.io%2fgetting-started%2f" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+
+
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fblog.freedom-man.com%2flitestream" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+</p>
+<p>今回の検証リポジトリは <a href="https://github.com/shamaton/litestream-sample">shamaton/litestream-sample</a> にありますので、適宜持ってきてくださいませ。</p>
+<h2 id="事前準備">事前準備</h2>
+<p>local で litestream から minio に連携するには、 https でのアクセスが必要です。
+そのため、証明書まわりを適当に作成しておきます。証明書の細かい入力は空 Enter でOKです。(OpenSSL でないとうまくいかないかも)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># make setup</span>
+openssl req -x509 -nodes -days <span style="color:#ae81ff">365</span> -newkey rsa:2048 -keyout ./tmp/certs/private.key -out ./tmp/certs/public.crt
+</code></pre></div><h2 id="docker-composeyml">docker-compose.yml</h2>
+<p>docker-compose.yml はこのようにしました。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
+<span style="color:#f92672">services</span>:
+
+  <span style="color:#75715e"># s3</span>
+  <span style="color:#f92672">minio</span>:
+    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">minio/minio:RELEASE.2022-05-08T23-50-31Z</span>
+    <span style="color:#f92672">environment</span>:
+      <span style="color:#f92672">MINIO_ROOT_USER</span>: <span style="color:#e6db74">&#34;user&#34;</span>
+      <span style="color:#f92672">MINIO_ROOT_PASSWORD</span>: <span style="color:#e6db74">&#34;password&#34;</span>
+    <span style="color:#f92672">command</span>: <span style="color:#ae81ff">server /data --console-address :9001</span>
+    <span style="color:#f92672">volumes</span>:
+      - <span style="color:#ae81ff">./tmp/minio:/data:cached</span>
+      - <span style="color:#ae81ff">./tmp/certs:/root/.minio/certs</span>
+    <span style="color:#f92672">ports</span>:
+      - <span style="color:#e6db74">&#34;9000:9000&#34;</span>
+      - <span style="color:#e6db74">&#34;9001:9001&#34;</span>
+
+  <span style="color:#75715e"># bucket creator</span>
+  <span style="color:#f92672">minio-client</span>:
+    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">minio/mc:RELEASE.2022-05-09T04-08-26Z</span>
+    <span style="color:#f92672">depends_on</span>:
+      - <span style="color:#ae81ff">minio</span>
+    <span style="color:#f92672">entrypoint</span>: &gt;<span style="color:#e6db74">
+</span><span style="color:#e6db74">      </span>      <span style="color:#ae81ff">/bin/sh -c &#34; until (/usr/bin/mc config host add --insecure myminio https://minio:9000 user password) do echo &#39;...waiting...&#39; &amp;&amp; sleep 1; done; /usr/bin/mc mb --insecure myminio/mybucket; exit 0; &#34;</span>
+
+  <span style="color:#75715e"># try to restore database</span>
+  <span style="color:#f92672">litestream-restore</span>:
+    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">litestream/litestream:sha-10e25d7c9eb2524254ad533d9bf55a50ec5ac4d7</span>
+    <span style="color:#f92672">entrypoint</span>: <span style="color:#ae81ff">/bin/sh</span>
+    <span style="color:#f92672">command</span>: -<span style="color:#ae81ff">c &#34;rm -rf /data/*; litestream restore /data/db.sqlite; exit 0;&#34;</span>
+    <span style="color:#f92672">volumes</span>:
+      - <span style="color:#ae81ff">./tmp/sqlite:/data</span>
+      - <span style="color:#ae81ff">./litestream.yml:/etc/litestream.yml:ro</span>
+    <span style="color:#f92672">depends_on</span>:
+      <span style="color:#f92672">minio-client</span>:
+        <span style="color:#f92672">condition</span>: <span style="color:#ae81ff">service_completed_successfully</span>
+
+  <span style="color:#75715e"># my application</span>
+  <span style="color:#f92672">app</span>:
+    <span style="color:#f92672">build</span>:
+      <span style="color:#f92672">context</span>: <span style="color:#ae81ff">.</span>
+    <span style="color:#f92672">volumes</span>:
+      - <span style="color:#ae81ff">./tmp/sqlite:/data</span>
+    <span style="color:#f92672">ports</span>:
+      - <span style="color:#e6db74">&#34;3000:3000&#34;</span>
+    <span style="color:#f92672">healthcheck</span>:
+      <span style="color:#f92672">test</span>: <span style="color:#ae81ff">curl -s http://localhost:3000/health</span>
+    <span style="color:#f92672">depends_on</span>:
+      <span style="color:#f92672">litestream-restore</span>:
+        <span style="color:#f92672">condition</span>: <span style="color:#ae81ff">service_completed_successfully</span>
+
+  <span style="color:#75715e"># replicate database</span>
+  <span style="color:#f92672">litestream-replicate</span>:
+    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">litestream/litestream:sha-10e25d7c9eb2524254ad533d9bf55a50ec5ac4d7</span>
+    <span style="color:#f92672">command</span>: <span style="color:#ae81ff">replicate</span>
+    <span style="color:#f92672">volumes</span>:
+      - <span style="color:#ae81ff">./tmp/sqlite:/data</span>
+      - <span style="color:#ae81ff">./litestream.yml:/etc/litestream.yml:ro</span>
+    <span style="color:#f92672">depends_on</span>:
+      <span style="color:#f92672">app</span>:
+        <span style="color:#f92672">condition</span>: <span style="color:#ae81ff">service_healthy</span>
+</code></pre></div><p>minio には証明書を設定するようにしておきます。こうすることで HTTPS で受け付けるようになります。litestream では https でしか接続できないようになっているための対応です。minio とやり取りするコンテナで証明書のエラーがでます。 minio-client のコンテナの挙動にも影響するため、 <code>--insecure</code> の option を設定しています。</p>
+<p>litestream.yml には <code>skip-verify</code> を設定しておきます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">dbs</span>:
+  - <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/data/db.sqlite</span>
+    <span style="color:#f92672">replicas</span>:
+      - <span style="color:#f92672">type</span>: <span style="color:#ae81ff">s3</span>
+        <span style="color:#f92672">bucket</span>: <span style="color:#ae81ff">mybucket</span>
+        <span style="color:#f92672">endpoint</span>: <span style="color:#ae81ff">minio:9000</span>
+        <span style="color:#f92672">force-path-style</span>: <span style="color:#66d9ef">true</span>
+        <span style="color:#f92672">skip-verify</span>: <span style="color:#66d9ef">true</span>
+        <span style="color:#f92672">sync-interval</span>: <span style="color:#ae81ff">1s</span>
+        <span style="color:#f92672">access-key-id</span>: <span style="color:#ae81ff">user</span>
+        <span style="color:#f92672">secret-access-key</span>: <span style="color:#ae81ff">password</span>
+</code></pre></div><p>services に定義してある順にコンテナが動くようになっています。
+ざっくり動作を説明すると、</p>
+<ol>
+<li>minio (S3相当) を起動</li>
+<li>minio-client で bucket がなければ作成</li>
+<li>litestream で minio にデータがあれば restore を行う</li>
+<li>sqlite に操作を行う application を起動する</li>
+<li>litestream で minio に replication を行う</li>
+</ol>
+<p>のようになります。起動時に細かな設定をする必要ありません。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># make up</span>
+docker compose up --build
+</code></pre></div><p>初回の起動を行うと、minio/mybucket には restore するものがないため local でデータベース及びテーブルの作成を行います。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">litesteam-sample-minio-client-1          | Bucket created successfully `myminio/mybucket`.
+litesteam-sample-app-1                   | driver.Tx(3da7f36c-8b51-4eaf-92be-788b4f3d3874): started
+litesteam-sample-app-1                   | Tx(3da7f36c-8b51-4eaf-92be-788b4f3d3874).Query: query=PRAGMA foreign_keys args=[]
+litesteam-sample-app-1                   | Tx(3da7f36c-8b51-4eaf-92be-788b4f3d3874).Query: query=SELECT COUNT(*) FROM `sqlite_master` WHERE `type` = ? AND `name` = ? args=[table users]
+litesteam-sample-app-1                   | Tx(3da7f36c-8b51-4eaf-92be-788b4f3d3874).Exec: query=CREATE TABLE `users`(`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL, `name` varchar(255) NULL, `age` integer NULL) args=[]
+litesteam-sample-app-1                   | Tx(3da7f36c-8b51-4eaf-92be-788b4f3d3874): committed
+litesteam-sample-app-1                   | created tables.
+</code></pre></div><p>シェルをもう一つ用意して確認とユーザーを追加してみます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl http://localhost:3000/select
+<span style="color:#f92672">[]</span>
+curl http://localhost:3000/insert
+<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;id&#34;</span>:1,<span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;at1653305812&#34;</span>,<span style="color:#e6db74">&#34;age&#34;</span>:11<span style="color:#f92672">}</span>
+curl http://localhost:3000/insert
+<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;id&#34;</span>:2,<span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;at1653305815&#34;</span>,<span style="color:#e6db74">&#34;age&#34;</span>:47<span style="color:#f92672">}</span>
+curl http://localhost:3000/select
+<span style="color:#f92672">[{</span><span style="color:#e6db74">&#34;id&#34;</span>:1,<span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;at1653305812&#34;</span>,<span style="color:#e6db74">&#34;age&#34;</span>:11<span style="color:#f92672">}</span>,<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;id&#34;</span>:2,<span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;at1653305815&#34;</span>,<span style="color:#e6db74">&#34;age&#34;</span>:47<span style="color:#f92672">}]</span>
+</code></pre></div><p>docker compose の output では litestream が replication を行っていることが確認できます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">litesteam-sample-litestream-replicate-1  | litestream 10e25d7c9eb2524254ad533d9bf55a50ec5ac4d7
+litesteam-sample-litestream-replicate-1  | initialized db: /data/db.sqlite
+litesteam-sample-litestream-replicate-1  | replicating to: name=&#34;s3&#34; type=&#34;s3&#34; bucket=&#34;mybucket&#34; path=&#34;&#34; region=&#34;&#34; endpoint=&#34;minio:9000&#34; sync-interval=1s
+litesteam-sample-litestream-replicate-1  | litestream initialization complete
+litesteam-sample-litestream-replicate-1  | /data/db.sqlite: init: no wal files available, clearing generation
+litesteam-sample-litestream-replicate-1  | /data/db.sqlite: init: no wal files available, clearing generation
+litesteam-sample-litestream-replicate-1  | /data/db.sqlite: sync: new generation &#34;a5f4ded6f6104872&#34;, no generation exists
+litesteam-sample-litestream-replicate-1  | /data/db.sqlite(s3): snapshot written a5f4ded6f6104872/0000000000000000
+litesteam-sample-litestream-replicate-1  | /data/db.sqlite(s3): wal segment written: a5f4ded6f6104872/0000000000000000:0000000000000000 sz=16512
+</code></pre></div><p>次に restore を検証したいので local のデータを消します(<code>rm  -rf tmp/sqlite</code>)。そして、再度 <code>docker compose up</code> してみます。
+すると、 restore を行うコンテナでログが出力されていることがわかります。(litestream-restoreのコンテナでもローカルのデータを削除しますが敢えて)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">litesteam-sample-litestream-restore-1    | restoring snapshot 322c6769aca882c0/0000000000000000 to /data/db.sqlite.tmp
+litesteam-sample-litestream-restore-1    | applied wal 322c6769aca882c0/0000000000000000 elapsed=63.853833ms
+litesteam-sample-litestream-restore-1    | renaming database from temporary location
+litesteam-sample-litestream-restore-1 exited with code 0
+</code></pre></div><p>restore されデータが存在しているはずなので、確認してみます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl http://localhost:3000/select
+<span style="color:#f92672">[{</span><span style="color:#e6db74">&#34;id&#34;</span>:1,<span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;at1653305812&#34;</span>,<span style="color:#e6db74">&#34;age&#34;</span>:11<span style="color:#f92672">}</span>,<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;id&#34;</span>:2,<span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;at1653305815&#34;</span>,<span style="color:#e6db74">&#34;age&#34;</span>:47<span style="color:#f92672">}]</span>
+</code></pre></div><p>確かに restore されていることが確認できました。
+サクッとできる感じがなんかよいですね！</p>
+<p>今回、試すにあたってなんかうまくいかんな〜、みたいな感じで無駄に時間をかけていたのですが <a href="https://twitter.com/mattn_jp">@mattn</a> さんが最近公開された記事がとても参考になりました。</p>
+
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fzenn.dev%2fmattn%2farticles%2ffef682a8b204ac" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+
+<p>mattn さんに感謝しつつ、終わりとしたいと思います〜<br>
+以上です〜👋</p>
+<h2 id="余談">余談</h2>
+<p>どうやら http で扱えるようになったようです。</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://t.co/DqqBTp60Hz">https://t.co/DqqBTp60Hz</a><br>がマージされました。<br>環境変数 LITESTREAM_ENDPOINT と LITESTREAM_REGION に加えて<br>LITESTREAM_SCHEME と LITESTREAM_FORCE_PATH_STYLE が使えるようになりました。<br>これを使えば docker compose などで localhost ではない minio に http でレプリケートできます。</p>&mdash; Hiroaki Nakamura (@hnakamur2) <a href="https://twitter.com/hnakamur2/status/1526386093343379456?ref_src=twsrc%5Etfw">May 17, 2022</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h2 id="参考">参考</h2>
+
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fqiita.com%2fterukizm%2fitems%2f6850aa316de425e3e3b4" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+
+]]></content>
+        </item>
         
         <item>
             <title>typescript/reactでgithubアカウントを使ったしりとりを作ってみた</title>
