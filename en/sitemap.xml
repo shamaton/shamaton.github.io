@@ -3,8 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://shamaton.dev/categories/aws/</loc>
+    <lastmod>2023-06-11T12:42:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shamaton.dev/posts/2023061101/</loc>
+    <lastmod>2023-06-11T12:42:19+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://shamaton.dev/categories/</loc>
-    <lastmod>2022-05-23T13:15:09+00:00</lastmod>
+    <lastmod>2023-06-11T12:42:19+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -18,8 +28,38 @@
   </url>
   
   <url>
+    <loc>https://shamaton.dev/categories/dax/</loc>
+    <lastmod>2023-06-11T12:42:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shamaton.dev/categories/dynamodb/</loc>
+    <lastmod>2023-06-11T12:42:19+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://shamaton.dev/categories/go/</loc>
-    <lastmod>2022-05-23T13:15:09+00:00</lastmod>
+    <lastmod>2023-06-11T12:42:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shamaton.dev/posts/</loc>
+    <lastmod>2023-06-11T12:42:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shamaton.dev/</loc>
+    <lastmod>2023-06-11T12:42:19+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://shamaton.dev/fr/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://shamaton.dev/"
+                />
   </url>
   
   <url>
@@ -35,26 +75,6 @@
   <url>
     <loc>https://shamaton.dev/categories/minio/</loc>
     <lastmod>2022-05-23T13:15:09+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://shamaton.dev/posts/</loc>
-    <lastmod>2022-05-23T13:15:09+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://shamaton.dev/</loc>
-    <lastmod>2022-05-23T13:15:09+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://shamaton.dev/fr/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://shamaton.dev/"
-                />
   </url>
   
   <url>

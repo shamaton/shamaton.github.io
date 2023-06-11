@@ -6,8 +6,139 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>ja-jp</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Mon, 23 May 2022 13:15:09 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 11 Jun 2023 12:42:19 +0000</lastBuildDate>
         <atom:link href="https://shamaton.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>aws-dax-go を aws-sdk-go-v2 化してみた</title>
+            <link>https://shamaton.dev/posts/2023061101/</link>
+            <pubDate>Sun, 11 Jun 2023 12:42:19 +0000</pubDate>
+            
+            <guid>https://shamaton.dev/posts/2023061101/</guid>
+            <description>お世話になっております。 しゃまとんです😊 DAXのGoライブラリがSDK V2を使っていなかったので、うわあああーとやってPR（クソデカ）出して</description>
+            <content type="html"><![CDATA[<p>お世話になっております。<br>
+しゃまとんです😊</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">DAXのGoライブラリがSDK V2を使っていなかったので、うわあああーとやってPR（クソデカ）出してみた。<br>良いお返事が返ってくるといいな🙏<a href="https://t.co/uon5giqJuF">https://t.co/uon5giqJuF</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/1667539474149146624?ref_src=twsrc%5Etfw">June 10, 2023</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>約一年ぶりの投稿になりますが、今回はとある OSS に PR をしてみました。<br>
+aws-dax-go という OSS で aws が提供している DAX の Go 向けのライブラリです。</p>
+
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fgithub.com%2faws%2faws-dax-go" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+
+<p>そもそも DAX とは、、、ですが<br>
+DynamoDB に特化したフルマネージドサービスなインメモリキャッシュのことです。
+DAX は既存の DynamoDB API コールと互換性があり、アプリのロジックを変更する必要がないということで便利そうですよね。</p>
+
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2faws.amazon.com%2fjp%2fdynamodb%2fdax%2f" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+
+<p>シビアなレスポンスが要求される環境では役に立ちそうですね。
+そんな DAX ですが Go 製のアプリケーションの場合は aws-dax-go が公式から提供されているためこちらを使って利用することができます。特に何か変更しなければいけないということはありません。</p>
+<p>では、なぜ今回変更を試みたのか？ということですが<br>
+他の AWS のサービスを Go で利用する場合 <a href="https://github.com/aws/aws-sdk-go-v2">aws-sdk-go-v2</a> というものがあります。<a href="https://github.com/aws/aws-sdk-go">aws-sdk-go</a> もあるのですが、v2 で色々と改善されています。<a href="https://github.com/aws/aws-sdk-go-v2/tree/main/service/dynamodb">DynamoDB</a> は API が提供されており <a href="https://github.com/aws/aws-sdk-go-v2/tree/main/service/dax">DAX</a> も同じように利用できるのでは？と思うのですがなぜか aws-dax-go に含まれるような API の提供はされてないため使えないんですね。</p>
+
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2faws.amazon.com%2fjp%2fabout-aws%2fwhats-new%2f2021%2f01%2faws-sdk-for-go-version-2-now-generally-available%2f" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+
+<p>そして aws-dax-go は aws-sdk-go を使って機能を実装しているため、aws-sdk-go-v2 の dynamodb を開発で使い始めたのち DAX が必要になった場合に aws-sdk-go に強制的に移行させられてしまうのです&hellip;<br>
+これって辛くないですか？</p>
+<p>実は aws-dax-go も v2 を support してくれーという issue が結構昔から立っていたのですが、一向に対応される気配がないっぽいんですよね。（もうすぐ5年経ちそう&hellip;）</p>
+
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fgithub.com%2faws%2faws-dax-go%2fissues%2f2" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+
+<p>言ってても仕方なさそうだよな〜、という感じと<br>
+置き換えていけば意外とできるのでは〜？みたいな勢いでやってみたらコード変更量がなかなかのボリュームになりました。
+まぁ、動かないものを PR しても仕方ないですしね。
+ということでこの PR を出してみました。</p>
+
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fgithub.com%2faws%2faws-dax-go%2fpull%2f43" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+
+<p>summary of changes にも記載していますが、概要は下記の通りです。</p>
+<ul>
+<li><code>aws-sdk-go</code> を <code>aws-sdk-go-v2</code> にすべて置き換え</li>
+<li>V2 の DynamoDB API の interface に合わせる形で API を更新</li>
+<li>代替できない API は一旦廃止 (<code>PutItemRequest</code> の <code>aws/request</code> とか使うやつ)</li>
+<li>シリアライズ処理は基本的に変更しない</li>
+<li>既存のテストを pass させる</li>
+</ul>
+<p>また実際に変更後のコードを使った動作確認もレポジトリを作って行いました。
+検証コードでは期待通りの動作が確認できています。DynamoDB と DAX で同じ interface を扱うことができています。</p>
+
+
+
+
+
+
+
+<iframe style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"
+    src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fgithub.com%2fshamaton%2faws-dax-go-v2-test" title="" scrolling="no" frameborder="0">
+    <span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"
+        class="mce_SELRES_start">
+    </span>
+</iframe>
+
+<p>動かすとこういう感じの結果が得られます。（ちょっと雑なんですが）<br>
+ということで DynamoDB と同じ interface なら普通にこれまで通りつかえるはず。</p>
+<p><img src="https://github.com/shamaton/aws-dax-go-v2-test/assets/4637556/19b86504-91d2-4a01-8c5c-474c23f44477" alt="image"></p>
+<p>PR がどのようになるか行方を見守りたいと思います〜<br>
+以上です〜👋</p>
+<p><a href="https://twitter.com/AWS">@AWS</a> に伝われ〜！！！</p>
+]]></content>
+        </item>
         
         <item>
             <title>litestream / minio を docker compose で試す</title>
@@ -799,7 +930,7 @@ replyが返ってきます。</p>
 </p>
 <p>（個人的に）内部に割と大きめの変更点を入れました。これまでstringのdecodeを行うときにunsafe.Pointerによるキャストを利用していたのですが
 それをやめて通常のキャストを行うようにしました。</p>
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">たしかに世の中ではどんな使われ方するかわからないし、少し速度落ちても安全に使えるほうが大事かなーと<a href="https://t.co/f0ROpA32Qr">https://t.co/f0ROpA32Qr</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/1423281892053291010?ref_src=twsrc%5Etfw">August 5, 2021</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">たしかに世の中ではどんな使われ方するかわからないし、少し速度落ちても安全に使えるほうが大事かなーと<a href="https://t.co/f0ROpA32Qr">https://t.co/f0ROpA32Qr</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/1423281892053291010?ref_src=twsrc%5Etfw">August 5, 2021</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <p>ことの発端はmsgpackに立ったissueによるものです。</p>
@@ -2510,7 +2641,7 @@ ok      github.com/shamaton/msgpack_bench   16.946s
 <p>あと余談ですが、タグでシリアライズ対象の設定ができたりとか、拡張エンコード・デコードにも対応させたりもしてます。（この辺はREADMEとかExampleに書く予定です）</p>
 <p>よかったら使ってみてください！<br>
 以上です。</p>
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I&#39;ve just published MessagePack Serializer(v1.0.0) for golang. Its performance is faster than the others. You can use simply. Please see and try it!! 🎉🎉🎉<a href="https://t.co/X4P5qNWOzH">https://t.co/X4P5qNWOzH</a><a href="https://twitter.com/hashtag/Golang?src=hash&amp;ref_src=twsrc%5Etfw">#Golang</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/1045659310737346561?ref_src=twsrc%5Etfw">September 28, 2018</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I&#39;ve just published MessagePack Serializer(v1.0.0) for golang. Its performance is faster than the others. You can use simply. Please see and try it!! 🎉🎉🎉<a href="https://t.co/X4P5qNWOzH">https://t.co/X4P5qNWOzH</a><a href="https://twitter.com/hashtag/Golang?src=hash&amp;ref_src=twsrc%5Etfw">#Golang</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/1045659310737346561?ref_src=twsrc%5Etfw">September 28, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ]]></content>
@@ -5716,7 +5847,7 @@ GoMapを使って形にできそうだなーということで開発を始め、
 サーバーサイドのノウハウもためていきたいので引き続きアップデートを続けていいければと思っています。</p>
 <p>ちなみにことだまっぷの開発前に作っていたものですが、
 開発をやめたつもりはなくそちらで叶えたいこともあるのでどこかのタイミングでまた制作復帰するつもりではいます。</p>
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] call dragon and fly to the sky.<br>呼び出して、空に飛び立つまでの流れ的なやつ。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/I4f9dnLXlI">pic.twitter.com/I4f9dnLXlI</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/814835823057072128?ref_src=twsrc%5Etfw">December 30, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] call dragon and fly to the sky.<br>呼び出して、空に飛び立つまでの流れ的なやつ。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/I4f9dnLXlI">pic.twitter.com/I4f9dnLXlI</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/814835823057072128?ref_src=twsrc%5Etfw">December 30, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <p>個人開発でちゃんとしたゲームを作っている方々は本当に素晴らしい。</p>
@@ -8363,18 +8494,18 @@ delay deserializeという英語が正しいのか謎です。</p>
             <pubDate>Tue, 03 Jan 2017 13:00:48 +0000</pubDate>
             
             <guid>https://shamaton.dev/posts/342/</guid>
-            <description>2016年12月の進捗報告まとめです。 [WIP] call dragon and fly to the sky. 呼び出して、空に飛び立つまでの流れ的なやつ。#indiedev #gamedev pic.twitter.com/I4f9dnLXlI &amp;mdash; しゃまとん (@shamaton) December 30, 2016</description>
+            <description>2016年12月の進捗報告まとめです。 [WIP] call dragon and fly to the sky. 呼び出して、空に飛び立つまでの流れ的なやつ。#indiedev #gamedev pic.twitter.com/I4f9dnLXlI &amp;mdash; shamaton != nil (@shamaton) December 30, 2016 [WIP] talking</description>
             <content type="html"><![CDATA[<p>2016年12月の進捗報告まとめです。</p>
-<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] call dragon and fly to the sky.<br>呼び出して、空に飛び立つまでの流れ的なやつ。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/I4f9dnLXlI">pic.twitter.com/I4f9dnLXlI</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/814835823057072128?ref_src=twsrc%5Etfw">December 30, 2016</a></blockquote>
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] call dragon and fly to the sky.<br>呼び出して、空に飛び立つまでの流れ的なやつ。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/I4f9dnLXlI">pic.twitter.com/I4f9dnLXlI</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/814835823057072128?ref_src=twsrc%5Etfw">December 30, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] talking test.<br>しゃべらせてみました。<a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://t.co/38PgxBsHL3">pic.twitter.com/38PgxBsHL3</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/812327500776775680?ref_src=twsrc%5Etfw">December 23, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] talking test.<br>しゃべらせてみました。<a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://t.co/38PgxBsHL3">pic.twitter.com/38PgxBsHL3</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/812327500776775680?ref_src=twsrc%5Etfw">December 23, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] area change using simple fade. he goes into cave, but leaves at once. : )<br>エリア切り替え。シンプルなフェードで。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/j8IC5Tfkd3">pic.twitter.com/j8IC5Tfkd3</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/807965005349986305?ref_src=twsrc%5Etfw">December 11, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] area change using simple fade. he goes into cave, but leaves at once. : )<br>エリア切り替え。シンプルなフェードで。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/j8IC5Tfkd3">pic.twitter.com/j8IC5Tfkd3</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/807965005349986305?ref_src=twsrc%5Etfw">December 11, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] player is in snow world. this map is created last week.<br>先週作ってみたマップ内に配置してみました。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/4C7ahHET0U">pic.twitter.com/4C7ahHET0U</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/805046540410597376?ref_src=twsrc%5Etfw">December 3, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] player is in snow world. this map is created last week.<br>先週作ってみたマップ内に配置してみました。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/4C7ahHET0U">pic.twitter.com/4C7ahHET0U</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/805046540410597376?ref_src=twsrc%5Etfw">December 3, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </p>
 <p>■ 11月分はこちらです</p>
@@ -8678,18 +8809,18 @@ mysqld_safe Starting mysqld daemon with databases from /var/lib/mysql
             <pubDate>Thu, 01 Dec 2016 13:16:10 +0000</pubDate>
             
             <guid>https://shamaton.dev/posts/332/</guid>
-            <description>2016年11月の進捗報告まとめです。 [WIP] I created prototype map using by Nostalgia2. Nostalgia2を使って、マップを作成してみました。#indiedev #gamedev pic.twitter.com/cQuhmWmZhr &amp;mdash; しゃま</description>
+            <description>2016年11月の進捗報告まとめです。 [WIP] I created prototype map using by Nostalgia2. Nostalgia2を使って、マップを作成してみました。#indiedev #gamedev pic.twitter.com/cQuhmWmZhr &amp;mdash; shamaton != nil</description>
             <content type="html"><![CDATA[<p>2016年11月の進捗報告まとめです。</p>
-<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] I created prototype map using by Nostalgia2.<br>Nostalgia2を使って、マップを作成してみました。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/cQuhmWmZhr">pic.twitter.com/cQuhmWmZhr</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/802862806982791168?ref_src=twsrc%5Etfw">November 27, 2016</a></blockquote>
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] I created prototype map using by Nostalgia2.<br>Nostalgia2を使って、マップを作成してみました。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/cQuhmWmZhr">pic.twitter.com/cQuhmWmZhr</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/802862806982791168?ref_src=twsrc%5Etfw">November 27, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] Taking off effect and Landing effect. Images are temporary.<br>離陸と着地時の演出的なもの。もろもろ仮です。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a>  <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/bMjah7vAb6">pic.twitter.com/bMjah7vAb6</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/800350039176409088?ref_src=twsrc%5Etfw">November 20, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] Taking off effect and Landing effect. Images are temporary.<br>離陸と着地時の演出的なもの。もろもろ仮です。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a>  <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/bMjah7vAb6">pic.twitter.com/bMjah7vAb6</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/800350039176409088?ref_src=twsrc%5Etfw">November 20, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] Switch between vertical and horizontal cameras.<br>2パターンのカメラを切り替え表示してみました。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/AFR5EOk3bU">pic.twitter.com/AFR5EOk3bU</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/797777832617201664?ref_src=twsrc%5Etfw">November 13, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] Switch between vertical and horizontal cameras.<br>2パターンのカメラを切り替え表示してみました。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/AFR5EOk3bU">pic.twitter.com/AFR5EOk3bU</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/797777832617201664?ref_src=twsrc%5Etfw">November 13, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] Flying in the sky!! Map image is temporary.<br>空を飛んでいる感じ。マップは仮です。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/LbOlfA0ue1">pic.twitter.com/LbOlfA0ue1</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/794897088668528640?ref_src=twsrc%5Etfw">November 5, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] Flying in the sky!! Map image is temporary.<br>空を飛んでいる感じ。マップは仮です。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/LbOlfA0ue1">pic.twitter.com/LbOlfA0ue1</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/794897088668528640?ref_src=twsrc%5Etfw">November 5, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </p>
 <p>■ 10月分はこちら</p>
@@ -9034,18 +9165,18 @@ rm Docker.qcow2.original
             <pubDate>Mon, 31 Oct 2016 15:09:04 +0000</pubDate>
             
             <guid>https://shamaton.dev/posts/317/</guid>
-            <description>2016年10月の進捗報告まとめです。 [WIP] NPC characters appeared. But they can&amp;#39;t talk... NPCを追加しました。まだ喋れません。#indiedev #gamedev pic.twitter.com/gVTKBESeeA &amp;mdash; しゃまとん (@shamaton) October 22, 2016 [WIP] manage item.</description>
+            <description>2016年10月の進捗報告まとめです。 [WIP] NPC characters appeared. But they can&amp;#39;t talk... NPCを追加しました。まだ喋れません。#indiedev #gamedev pic.twitter.com/gVTKBESeeA &amp;mdash; shamaton != nil (@shamaton) October 22, 2016 [WIP] manage item. add and</description>
             <content type="html"><![CDATA[<p>2016年10月の進捗報告まとめです。</p>
-<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] NPC characters appeared. But they can&#39;t talk...<br>NPCを追加しました。まだ喋れません。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/gVTKBESeeA">pic.twitter.com/gVTKBESeeA</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/789840341067182080?ref_src=twsrc%5Etfw">October 22, 2016</a></blockquote>
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] NPC characters appeared. But they can&#39;t talk...<br>NPCを追加しました。まだ喋れません。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/gVTKBESeeA">pic.twitter.com/gVTKBESeeA</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/789840341067182080?ref_src=twsrc%5Etfw">October 22, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] manage item. add and remove.<br>アイテムの管理始めました。追加したりなくしたり。地味な進捗。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/L3NdqmdOUx">pic.twitter.com/L3NdqmdOUx</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/787298970619949057?ref_src=twsrc%5Etfw">October 15, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] manage item. add and remove.<br>アイテムの管理始めました。追加したりなくしたり。地味な進捗。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/L3NdqmdOUx">pic.twitter.com/L3NdqmdOUx</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/787298970619949057?ref_src=twsrc%5Etfw">October 15, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] Enemy drop a treasure. What&#39;s in the box?<br>宝箱を落とすようになりました。箱の中身はなんだろな。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/uWgIRGlUJ8">pic.twitter.com/uWgIRGlUJ8</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/785106991140044800?ref_src=twsrc%5Etfw">October 9, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] Enemy drop a treasure. What&#39;s in the box?<br>宝箱を落とすようになりました。箱の中身はなんだろな。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/uWgIRGlUJ8">pic.twitter.com/uWgIRGlUJ8</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/785106991140044800?ref_src=twsrc%5Etfw">October 9, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] Enemy was able to use magic. very hot...<br>敵が魔法を詠唱できるようにしました。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/NP2AkQyxcg">pic.twitter.com/NP2AkQyxcg</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/782553192336719872?ref_src=twsrc%5Etfw">October 2, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] Enemy was able to use magic. very hot...<br>敵が魔法を詠唱できるようにしました。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/NP2AkQyxcg">pic.twitter.com/NP2AkQyxcg</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/782553192336719872?ref_src=twsrc%5Etfw">October 2, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </p>
 <p>■ 9月分はこちら</p>
@@ -9277,18 +9408,18 @@ dockerというユーザーを作成し、GOPATHを設定しています。</p>
             <pubDate>Sat, 01 Oct 2016 14:24:50 +0000</pubDate>
             
             <guid>https://shamaton.dev/posts/291/</guid>
-            <description>2016年9月の進捗報告まとめです。 [WIP] create animation of critical damage. 大打撃をくらったときのアニメーション。#indiedev #gamedev pic.twitter.com/4gfOrVEpHJ &amp;mdash; しゃまとん (@shamaton) September 24, 2016 [WIP] ouch!! Enemy learned how to</description>
+            <description>2016年9月の進捗報告まとめです。 [WIP] create animation of critical damage. 大打撃をくらったときのアニメーション。#indiedev #gamedev pic.twitter.com/4gfOrVEpHJ &amp;mdash; shamaton != nil (@shamaton) September 24, 2016 [WIP] ouch!! Enemy learned how to attack. 敵</description>
             <content type="html"><![CDATA[<p>2016年9月の進捗報告まとめです。</p>
-<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] create animation of critical damage.<br>大打撃をくらったときのアニメーション。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/4gfOrVEpHJ">pic.twitter.com/4gfOrVEpHJ</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/779686574325850113?ref_src=twsrc%5Etfw">September 24, 2016</a></blockquote>
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] create animation of critical damage.<br>大打撃をくらったときのアニメーション。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/4gfOrVEpHJ">pic.twitter.com/4gfOrVEpHJ</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/779686574325850113?ref_src=twsrc%5Etfw">September 24, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] ouch!! Enemy learned how to attack.<br>敵が攻撃するようになりました。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://twitter.com/hashtag/screenshotsaturday?src=hash&amp;ref_src=twsrc%5Etfw">#screenshotsaturday</a> <a href="https://t.co/E6MNy17BEQ">pic.twitter.com/E6MNy17BEQ</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/777152327824224256?ref_src=twsrc%5Etfw">September 17, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] ouch!! Enemy learned how to attack.<br>敵が攻撃するようになりました。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://twitter.com/hashtag/screenshotsaturday?src=hash&amp;ref_src=twsrc%5Etfw">#screenshotsaturday</a> <a href="https://t.co/E6MNy17BEQ">pic.twitter.com/E6MNy17BEQ</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/777152327824224256?ref_src=twsrc%5Etfw">September 17, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] Are chased by enemies. But... they look cute for some reason.<br>敵が追いかけてくるように。なんかかわいい。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/n9XYICOaXN">pic.twitter.com/n9XYICOaXN</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/774801423355695105?ref_src=twsrc%5Etfw">September 11, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] Are chased by enemies. But... they look cute for some reason.<br>敵が追いかけてくるように。なんかかわいい。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/n9XYICOaXN">pic.twitter.com/n9XYICOaXN</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/774801423355695105?ref_src=twsrc%5Etfw">September 11, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] magic attack to all target. DOOOOON!!<br>魔法を全対象にかけてみました。どーーーん！<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/cPmr1ano8e">pic.twitter.com/cPmr1ano8e</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/772411718836166656?ref_src=twsrc%5Etfw">September 4, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] magic attack to all target. DOOOOON!!<br>魔法を全対象にかけてみました。どーーーん！<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/cPmr1ano8e">pic.twitter.com/cPmr1ano8e</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/772411718836166656?ref_src=twsrc%5Etfw">September 4, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </p>
 <p>■ 8月分はこちら</p>
@@ -9533,18 +9664,18 @@ Macではsedの挙動が少し違うらしく-iのあとに””を記載しな
             <pubDate>Thu, 01 Sep 2016 13:31:36 +0000</pubDate>
             
             <guid>https://shamaton.dev/posts/261/</guid>
-            <description>2016年8月の進捗報告まとめです。 [WIP] combo attack!! (slash and thrust） 連撃できるように組み合わせてみました。#indiedev #gamedev pic.twitter.com/eclrCQfBsn &amp;mdash; しゃまとん (@shamaton) August 28, 2016</description>
+            <description>2016年8月の進捗報告まとめです。 [WIP] combo attack!! (slash and thrust） 連撃できるように組み合わせてみました。#indiedev #gamedev pic.twitter.com/eclrCQfBsn &amp;mdash; shamaton != nil (@shamaton) August 28, 2016 [WIP] attack</description>
             <content type="html"><![CDATA[<p>2016年8月の進捗報告まとめです。</p>
-<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] combo attack!! (slash and thrust）<br>連撃できるように組み合わせてみました。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/eclrCQfBsn">pic.twitter.com/eclrCQfBsn</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/769882923361116160?ref_src=twsrc%5Etfw">August 28, 2016</a></blockquote>
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] combo attack!! (slash and thrust）<br>連撃できるように組み合わせてみました。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/eclrCQfBsn">pic.twitter.com/eclrCQfBsn</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/769882923361116160?ref_src=twsrc%5Etfw">August 28, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] attack animation of lunge.<br>突き攻撃のアニメーション。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/vqLNmjEUeh">pic.twitter.com/vqLNmjEUeh</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/767370522803843072?ref_src=twsrc%5Etfw">August 21, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] attack animation of lunge.<br>突き攻撃のアニメーション。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/vqLNmjEUeh">pic.twitter.com/vqLNmjEUeh</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/767370522803843072?ref_src=twsrc%5Etfw">August 21, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] make a magic test.<br>魔法の詠唱をさせてみるテスト<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/am8QOxNumm">pic.twitter.com/am8QOxNumm</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/764832610665111552?ref_src=twsrc%5Etfw">August 14, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] make a magic test.<br>魔法の詠唱をさせてみるテスト<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/am8QOxNumm">pic.twitter.com/am8QOxNumm</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/764832610665111552?ref_src=twsrc%5Etfw">August 14, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] I implemented icon animations of ring command.<br>リングコマンドにアニメーションをつけました。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/iIzsV9q8f9">pic.twitter.com/iIzsV9q8f9</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/761941829096919041?ref_src=twsrc%5Etfw">August 6, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] I implemented icon animations of ring command.<br>リングコマンドにアニメーションをつけました。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/iIzsV9q8f9">pic.twitter.com/iIzsV9q8f9</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/761941829096919041?ref_src=twsrc%5Etfw">August 6, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </p>
 <p>■ 7月分はこちら</p>
@@ -10027,16 +10158,16 @@ CSVからScriptableObjectを生成するものが見当たらなかったので�
             <guid>https://shamaton.dev/posts/247/</guid>
             <description>2016年7月の進捗報告まとめです。 [WIP] I implemented process which player uses item. アイテムを使った一連の流れを実装してみました。ちょっと詰まり気味。#indiedev #gamedev pic.twitter.com/BrFVqF7yU3</description>
             <content type="html"><![CDATA[<p>2016年7月の進捗報告まとめです。</p>
-<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] I implemented process which player uses item.<br>アイテムを使った一連の流れを実装してみました。ちょっと詰まり気味。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/BrFVqF7yU3">pic.twitter.com/BrFVqF7yU3</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/757595276127285248?ref_src=twsrc%5Etfw">July 25, 2016</a></blockquote>
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] I implemented process which player uses item.<br>アイテムを使った一連の流れを実装してみました。ちょっと詰まり気味。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/BrFVqF7yU3">pic.twitter.com/BrFVqF7yU3</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/757595276127285248?ref_src=twsrc%5Etfw">July 25, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] made effects. These are written by shader. Shader is difficult!!<br>エフェクト作ってみました。シェーダ難しい！<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/fhAraCJAsi">pic.twitter.com/fhAraCJAsi</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/755025480147808257?ref_src=twsrc%5Etfw">July 18, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] made effects. These are written by shader. Shader is difficult!!<br>エフェクト作ってみました。シェーダ難しい！<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/fhAraCJAsi">pic.twitter.com/fhAraCJAsi</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/755025480147808257?ref_src=twsrc%5Etfw">July 18, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] Enemies started to move in my game. still only move...<br>敵っぽいものを配置してみました。まだ動くだけですが。。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/DJffncwwuc">pic.twitter.com/DJffncwwuc</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/752877843890044928?ref_src=twsrc%5Etfw">July 12, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] Enemies started to move in my game. still only move...<br>敵っぽいものを配置してみました。まだ動くだけですが。。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/DJffncwwuc">pic.twitter.com/DJffncwwuc</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/752877843890044928?ref_src=twsrc%5Etfw">July 12, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] I added animations of attack. Player can attack enemies. <br>プレーヤーが攻撃できるようになりました。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a>  <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/HYux17gJbX">pic.twitter.com/HYux17gJbX</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/751069748515876868?ref_src=twsrc%5Etfw">July 7, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] I added animations of attack. Player can attack enemies. <br>プレーヤーが攻撃できるようになりました。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a>  <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/HYux17gJbX">pic.twitter.com/HYux17gJbX</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/751069748515876868?ref_src=twsrc%5Etfw">July 7, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </p>
 <p>■ 6月分はこちら</p>
@@ -10356,18 +10487,18 @@ helloと表示されました。ちゃんと参照できていますね。</p>
             <pubDate>Sun, 03 Jul 2016 01:07:15 +0000</pubDate>
             
             <guid>https://shamaton.dev/posts/193/</guid>
-            <description>2016年6月の進捗報告まとめです。 [WIP] make scene transition tests. エフェクト入れてフィールドの切り替えテストしてみた。#indiedev #gamedev pic.twitter.com/DJbXvf35nm &amp;mdash; しゃまとん (@shamaton) June 30, 2016</description>
+            <description>2016年6月の進捗報告まとめです。 [WIP] make scene transition tests. エフェクト入れてフィールドの切り替えテストしてみた。#indiedev #gamedev pic.twitter.com/DJbXvf35nm &amp;mdash; shamaton != nil (@shamaton) June 30, 2016 [WIP] camera</description>
             <content type="html"><![CDATA[<p>2016年6月の進捗報告まとめです。</p>
-<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] make scene transition tests. <br>エフェクト入れてフィールドの切り替えテストしてみた。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a>  <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/DJbXvf35nm">pic.twitter.com/DJbXvf35nm</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/748530763813908480?ref_src=twsrc%5Etfw">June 30, 2016</a></blockquote>
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] make scene transition tests. <br>エフェクト入れてフィールドの切り替えテストしてみた。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a>  <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/DJbXvf35nm">pic.twitter.com/DJbXvf35nm</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/748530763813908480?ref_src=twsrc%5Etfw">June 30, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] camera chases target if target goes out render space.<br>[進捗]キャラがはみ出そうになるとカメラ追いかけるようにしてみた。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/G3fHzQ7xNq">pic.twitter.com/G3fHzQ7xNq</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/744496094479060992?ref_src=twsrc%5Etfw">June 19, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] camera chases target if target goes out render space.<br>[進捗]キャラがはみ出そうになるとカメラ追いかけるようにしてみた。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/G3fHzQ7xNq">pic.twitter.com/G3fHzQ7xNq</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/744496094479060992?ref_src=twsrc%5Etfw">June 19, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] Some objects move from enemy to player.<br>倒すと何かでてきて、対象に向かっていく的なやつ。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://t.co/d9HfPbFQrP">pic.twitter.com/d9HfPbFQrP</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/742011569735794688?ref_src=twsrc%5Etfw">June 12, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] Some objects move from enemy to player.<br>倒すと何かでてきて、対象に向かっていく的なやつ。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://t.co/d9HfPbFQrP">pic.twitter.com/d9HfPbFQrP</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/742011569735794688?ref_src=twsrc%5Etfw">June 12, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] It is difficult for me to draw pixelart...<br>とりあえずキャラを用意して歩かせた。ドット絵はやっぱむずいな〜 <a href="https://t.co/W2SOEggWyT">pic.twitter.com/W2SOEggWyT</a></p>&mdash; しゃまとん (@shamaton) <a href="https://twitter.com/shamaton/status/738744102032801793?ref_src=twsrc%5Etfw">June 3, 2016</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">[WIP] It is difficult for me to draw pixelart...<br>とりあえずキャラを用意して歩かせた。ドット絵はやっぱむずいな〜 <a href="https://t.co/W2SOEggWyT">pic.twitter.com/W2SOEggWyT</a></p>&mdash; shamaton != nil (@shamaton) <a href="https://twitter.com/shamaton/status/738744102032801793?ref_src=twsrc%5Etfw">June 3, 2016</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </p>
 ]]></content>

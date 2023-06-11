@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>aws on shamaton</title>
+    <link>https://shamaton.dev/categories/aws/</link>
+    <description>Recent content in aws on shamaton</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 11 Jun 2023 12:42:19 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>aws-dax-go を aws-sdk-go-v2 化してみた</title>
+      <link>https://shamaton.dev/posts/2023061101/</link>
+      <pubDate>Sun, 11 Jun 2023 12:42:19 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/posts/2023061101/</guid>
+      <description>お世話になっております。 しゃまとんです😊 DAXのGoライブラリがSDK V2を使っていなかったので、うわあああーとやってPR（クソデカ）出して</description>
+    </item>
+    
+  </channel>
+</rss>

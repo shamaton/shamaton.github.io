@@ -7,11 +7,38 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 23 May 2022 13:15:09 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Jun 2023 12:42:19 +0000</lastBuildDate><atom:link href="https://shamaton.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>aws</title>
+      <link>https://shamaton.dev/categories/aws/</link>
+      <pubDate>Sun, 11 Jun 2023 12:42:19 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/categories/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dax</title>
+      <link>https://shamaton.dev/categories/dax/</link>
+      <pubDate>Sun, 11 Jun 2023 12:42:19 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/categories/dax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dynamodb</title>
+      <link>https://shamaton.dev/categories/dynamodb/</link>
+      <pubDate>Sun, 11 Jun 2023 12:42:19 +0000</pubDate>
+      
+      <guid>https://shamaton.dev/categories/dynamodb/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>go</title>
       <link>https://shamaton.dev/categories/go/</link>
-      <pubDate>Mon, 23 May 2022 13:15:09 +0000</pubDate>
+      <pubDate>Sun, 11 Jun 2023 12:42:19 +0000</pubDate>
       
       <guid>https://shamaton.dev/categories/go/</guid>
       <description></description>
@@ -68,33 +95,6 @@
       <pubDate>Wed, 18 Aug 2021 10:23:09 +0000</pubDate>
       
       <guid>https://shamaton.dev/categories/gcp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://shamaton.dev/categories/hugo/</link>
-      <pubDate>Wed, 18 Aug 2021 10:23:09 +0000</pubDate>
-      
-      <guid>https://shamaton.dev/categories/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://shamaton.dev/categories/docker/</link>
-      <pubDate>Sun, 14 Jul 2019 10:23:09 +0000</pubDate>
-      
-      <guid>https://shamaton.dev/categories/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Concourse</title>
-      <link>https://shamaton.dev/categories/concourse/</link>
-      <pubDate>Sun, 07 Jul 2019 12:22:19 +0000</pubDate>
-      
-      <guid>https://shamaton.dev/categories/concourse/</guid>
       <description></description>
     </item>
     
