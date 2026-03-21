@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>unity | shamaton</title>
+<meta name="keywords" content="">
+<meta name="description" content="Various posts by a software engineer">
+<meta name="author" content="">
+<link rel="canonical" href="https://shamaton.dev/tags/unity/">
+<link crossorigin="anonymous" href="https://shamaton.dev/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://shamaton.dev/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://shamaton.dev/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://shamaton.dev/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://shamaton.dev/apple-touch-icon.png">
+<link rel="mask-icon" href="https://shamaton.dev/safari-pinned-tab.svg">
+<meta name="theme-color" content="#1b1c1d">
+<meta name="msapplication-TileColor" content="#1b1c1d">
+<link rel="alternate" type="application/rss+xml" href="https://shamaton.dev/tags/unity/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="https://shamaton.dev/tags/unity/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7096410827554575"
+    crossorigin="anonymous"></script><link rel="stylesheet" href="https://shamaton.dev/lightbox/css/lightbox.min.css">
+<link rel="stylesheet" href="https://shamaton.dev/design/button.css">
+<link rel="stylesheet" href="https://shamaton.dev/design/appbanner.css">
+<meta property="og:url" content="https://shamaton.dev/tags/unity/">
+  <meta property="og:site_name" content="shamaton">
+  <meta property="og:title" content="unity">
+  <meta property="og:description" content="Various posts by a software engineer">
+  <meta property="og:locale" content="ja_jp">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="unity">
+  <meta name="twitter:description" content="Various posts by a software engineer">
+
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://shamaton.dev/" accesskey="h" title="shamaton.dev (Alt + H)">shamaton.dev</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://shamaton.dev/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://shamaton.dev/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="https://shamaton.dev/">Home</a>&nbsp;»&nbsp;<a href="https://shamaton.dev/tags/">Tags</a></div>
+  <h1>
+    unity
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Unity] あるクラスに指定のInterfaceがあるか確認する
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+c#でジェネリックを使う場合、whereを利用して指定の条件のものしか使用できないようにしますよね。下記みたいな。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2017-09-15 15:29:18 +0000 +0000'>September 15, 2017</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Unity] あるクラスに指定のInterfaceがあるか確認する" href="https://shamaton.dev/posts/396/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Unity] TextMeshProを使ってマイ絵文字をテキストに入れる
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+少し前にTextMeshProが無料化されたということで知っておいたほうがいいアセットの1つみたいです。
+どうやらUnity標準であるuGUIのTextよりもテキスト表現がリッチにできるみたいです。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2017-08-21 14:21:10 +0000 +0000'>August 21, 2017</span>&nbsp;·&nbsp;<span>3 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Unity] TextMeshProを使ってマイ絵文字をテキストに入れる" href="https://shamaton.dev/posts/436/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Unity] GitHub for Unityを触ってみたかった…
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+2017年3月頃にアナウンスされていて「GitHub for Unity」がついに公開されたようです！
+ということで、早速触ってみよーとした記事です。
+内容的には残念な結果に終わっています。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2017-07-02 06:40:20 +0000 +0000'>July 2, 2017</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Unity] GitHub for Unityを触ってみたかった…" href="https://shamaton.dev/posts/419/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Unity] UnityでGit LFSを使う時の設定
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+なかなか個人制作レベルだとgitを使うぐらいになりますが、例えばエクセルデータだったり、 大きなサイズのファイルもgitで管理したい！ってなることが（多分）あります（よね）。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2017-07-01 16:13:52 +0000 +0000'>July 1, 2017</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Unity] UnityでGit LFSを使う時の設定" href="https://shamaton.dev/posts/418/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Unity] GUILayoutのちょっとしたサンプルコード
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+少し前にエディタ拡張に入門しまして、あれこれと触っているのですが
+「これどうやって実装するんだっけ〜〜〜」となることが多々あり、 とりあえず確認できるコードがほしいとなったので、一覧で確認するサンプルを作りました。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2017-06-11 07:42:51 +0000 +0000'>June 11, 2017</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Unity] GUILayoutのちょっとしたサンプルコード" href="https://shamaton.dev/posts/374/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Unity] UniRxを使ったマルチシーンの利用方法を考えたけど微妙だった
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+今回は、UniRxを使ったマルチシーンの利用方法について考えていてやってみたけど微妙になってしまった話です。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2017-05-28 09:27:10 +0000 +0000'>May 28, 2017</span>&nbsp;·&nbsp;<span>3 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Unity] UniRxを使ったマルチシーンの利用方法を考えたけど微妙だった" href="https://shamaton.dev/posts/387/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Unity] Zenjectを触り始めてみた
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+Unity界隈で話題になっているZenjectについてご存知でしょうか。
+かく言う私もつい最近しったのですが、使えるととても便利そうなので覚えたほうがいいなぁというやつみたいです。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2017-04-24 16:15:40 +0000 +0000'>April 24, 2017</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Unity] Zenjectを触り始めてみた" href="https://shamaton.dev/posts/402/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Unity/C#] List&lt;T&gt;.ConvertAllの実行速度について
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+開発のしているとListをよく使うのですが、色々と実装している中でリストをまとめて別の型に置き換えて使いたいなー という事がありました（親クラスのリストを小クラスで利用したいとか？）
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2017-02-07 13:56:54 +0000 +0000'>February 7, 2017</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Unity/C#] List.ConvertAllの実行速度について" href="https://shamaton.dev/posts/255/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Unity5.5] プロジェクトビューにアセットのファイルサイズを表示する
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+（久しぶりのUnityに関する記事だ(*´∀｀)）
+こちらの記事ですが、kyusyukeigoさんが2013からブログにて公開されている、 「プロジェクトビューにファイルサイズを表示する」という拡張エディタをUnity5.5用に書き換えたものになります。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2017-01-12 15:01:12 +0000 +0000'>January 12, 2017</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Unity5.5] プロジェクトビューにアセットのファイルサイズを表示する" href="https://shamaton.dev/posts/362/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Unity] Nostalgia2 – 2Dマップエディタを触ってみた
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+（本記事はケットシーウェアさんのキャンペーンに関連した記事になります）
+今回はUnityのアセットを紹介したいと思います。
+Nostalgia2という2Dマップを作ることができるエディタ拡張のアセットです。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2016-11-19 13:49:27 +0000 +0000'>November 19, 2016</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Unity] Nostalgia2 – 2Dマップエディタを触ってみた" href="https://shamaton.dev/posts/336/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://shamaton.dev/tags/unity/">
+      «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="https://shamaton.dev/tags/unity/page/3/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a><script defer src="https://shamaton.dev/lightbox/js/lightbox-plus-jquery.min.js"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

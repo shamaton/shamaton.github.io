@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>gRPC on shamaton</title>
+    <link>https://shamaton.dev/tags/grpc/</link>
+    <description>Recent content in gRPC on shamaton</description>
+    <generator>Hugo</generator>
+    <language>ja-jp</language>
+    <copyright>CC BY-NC 4.0</copyright>
+    <lastBuildDate>Thu, 09 Aug 2018 23:36:14 +0000</lastBuildDate>
+    <atom:link href="https://shamaton.dev/tags/grpc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[gRPC] UnityとgolangでgRPCを使ってみる（iOSも）</title>
+      <link>https://shamaton.dev/posts/563/</link>
+      <pubDate>Thu, 09 Aug 2018 23:36:14 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/563/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;前回の記事でiOSで実行できなかったので、追加記事を作成しました。&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=https%3a%2f%2fshamaton.dev%2fposts%2f553&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;こちらで一応iOSでもビルドが通るようになりました。&lt;br&gt;
+簡単ですが以下、手順です。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[gRPC] UnityとgolangでgRPCを使ってみる（androidまで）</title>
+      <link>https://shamaton.dev/posts/553/</link>
+      <pubDate>Thu, 09 Aug 2018 13:57:14 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/553/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;前の記事でまずはgolangでgRPCを使って動作させてみました。&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=https%3a%2f%2fshamaton.dev%2fposts%2f542&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;今回はclient側にUnityを使ってみたいと思います。&lt;br&gt;
+実行環境はこんな感じでした。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[gRPC] golangでgRPCを使ってみる</title>
+      <link>https://shamaton.dev/posts/542/</link>
+      <pubDate>Wed, 08 Aug 2018 13:45:46 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/542/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;gRPC触ってみたいぞ！ってことで、Unity x golang x gRPC を試してみましょう。&lt;br&gt;
+今回はよくある方のgolangです。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

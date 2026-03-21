@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>GCP on shamaton</title>
+    <link>https://shamaton.dev/tags/gcp/</link>
+    <description>Recent content in GCP on shamaton</description>
+    <generator>Hugo</generator>
+    <language>ja-jp</language>
+    <copyright>CC BY-NC 4.0</copyright>
+    <lastBuildDate>Wed, 18 Aug 2021 10:23:09 +0000</lastBuildDate>
+    <atom:link href="https://shamaton.dev/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Go/GCP] Hugo&#43;GCSでwordpressからお引越し</title>
+      <link>https://shamaton.dev/posts/677/</link>
+      <pubDate>Wed, 18 Aug 2021 10:23:09 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/677/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;これまで運用していたドメイン&lt;a href=&#34;https://shamaton.orz.hm&#34;&gt;shamaton.orz.hm&lt;/a&gt;からブログの引っ越しを行いました。&lt;br&gt;
+(しばらくはまだ生きているんですが)&lt;/p&gt;
+&lt;p&gt;新しいドメインは &lt;a href=&#34;https://shamaton.dev&#34;&gt;shamaton.dev&lt;/a&gt; です🎉&lt;/p&gt;
+&lt;p&gt;経緯としては、Wordpressの更新をするのを忘れていて、久しぶりに更新かけようかと思ったらできなくなったんですねｗ&lt;br&gt;
+あー、これはだるいやつや。。触りたくなさがMAXだったので引っ越してしまうことにしました。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[GCP] CloudSQLのデータをCSV出力するには</title>
+      <link>https://shamaton.dev/posts/517/</link>
+      <pubDate>Sun, 29 Jul 2018 14:06:10 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/517/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;GCPのマネージドデータベースであるCloudSQLにて、DBからCSV化を行いたいと思いもろもろを調べていたのですが、
+ちょっと手こずったのでメモしておきたいと思います。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[GKE] kube-legoを使ってドメインからアクセスできるようにする</title>
+      <link>https://shamaton.dev/posts/477/</link>
+      <pubDate>Tue, 15 May 2018 22:41:44 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/477/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;GKEでサービスをある程度作って公開しようとなったとき、HTTPSで通信させたくなります。&lt;br&gt;
+というものアプリだとHTTPSを推奨していたり、Webサービスなら検索に影響したりするからです。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[GCP] kubernetesでノードを新しく用意してPodを移動させてみる</title>
+      <link>https://shamaton.dev/posts/496/</link>
+      <pubDate>Sun, 29 Apr 2018 14:26:22 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/496/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;kubernetesでサーバー運営をする際、ノード上の配置される様々なPodでサービス運営を行うわけですが、
+今回試しに移動させてみました。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[GCP] GKEでredis-clusterを自力で作ってみた（ボツ）</title>
+      <link>https://shamaton.dev/posts/462/</link>
+      <pubDate>Mon, 09 Apr 2018 15:06:13 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/462/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;前に&lt;a href=&#34;https://shamaton.dev/posts/461&#34;&gt;redis-clusterを試してみた記事&lt;/a&gt;を作成したのですが、今回はGKEでクラスタを作ってみることにしました。
+というのもWebDB PRESSで特集されていてやってみようと思ったのがきっかけです。&lt;/p&gt;
+
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=http%3a%2f%2fgihyo.jp%2fmagazine%2fwdpress%2farchive%2f2017%2fvol99&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;という記事なんですが、結局、ボツに至ったものになります。
+作業ログとして残しておきたいと思います。本自体はとても勉強になりました。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Kubernetes] Skaffoldをとりあえず試してみた</title>
+      <link>https://shamaton.dev/posts/530/</link>
+      <pubDate>Thu, 29 Mar 2018 15:05:12 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/530/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;Skaffoldというツールがリリースされたので試してみました。&lt;br&gt;
+（確認したバージョンはv0.2.0です。最新版では挙動が異なる場合あるので注意してください）&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[GCP] GoのコンテナをContainerRegistryに登録して使う</title>
+      <link>https://shamaton.dev/posts/494/</link>
+      <pubDate>Mon, 26 Mar 2018 14:52:36 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/494/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;KubernetesでGoを使いたいのですが、そのままコードを配置みたいな感じではなく、
+Dockerの様にコンテナイメージを作成してPodとして配置するような形式をとります。&lt;br&gt;
+（勿論、やり方はコレ以外にもありそう？）&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Docker] gcloudとkubectlが使えるコンテナを用意してみる</title>
+      <link>https://shamaton.dev/posts/464/</link>
+      <pubDate>Sun, 14 Jan 2018 04:41:26 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/464/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;gcloudとkubectlを自分のPCにinstallして使えるようにしているのですが、&lt;br&gt;
+ふとコンテナでも使えるんかなーと思いやってみました。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[GCP] Compute Engine(CentOS7)でdocker/gitを使えるようにする</title>
+      <link>https://shamaton.dev/posts/432/</link>
+      <pubDate>Thu, 21 Dec 2017 15:33:45 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/432/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;GCPが無料で試せるということで、Compute Engineを使ってみることにしました。&lt;br&gt;
+個人的にdockerとgitが使えればいいかなということでやっていたのですが、
+普段割りと使っているCentOS6でdockerがイケてない感じだったので、CentOS7を使うことに。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>go on shamaton</title>
+    <link>https://shamaton.dev/tags/go/</link>
+    <description>Recent content in go on shamaton</description>
+    <generator>Hugo</generator>
+    <language>ja-jp</language>
+    <copyright>CC BY-NC 4.0</copyright>
+    <lastBuildDate>Sat, 21 Mar 2026 01:23:45 +0000</lastBuildDate>
+    <atom:link href="https://shamaton.dev/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>テーマを変更 PaperMod に変更した</title>
+      <link>https://shamaton.dev/posts/20260321/</link>
+      <pubDate>Sat, 21 Mar 2026 01:23:45 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/20260321/</guid>
+      <description>&lt;p&gt;こんにちは。
+ずっとブログの更新をしていなかったのですが、ちょっとやるかーということで &lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt; の更新をして build してみたところ、失敗してしまいました。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ERROR error copying static files: html/template:_partials/head.html:40:12: no such template &lt;span class=&#34;s2&#34;&gt;&amp;#34;_internal/google_news.html&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;まぁ、さすがに放置していてその間に何か変わってしまったか&amp;hellip; と思い、使っているテーマも最新にしてみたのですが、それもで失敗してしまいました。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>aws-dax-go を aws-sdk-go-v2 化してみた</title>
+      <link>https://shamaton.dev/posts/2023061101/</link>
+      <pubDate>Sun, 11 Jun 2023 12:42:19 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/2023061101/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです😊&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34; align=&#34;center&#34; data-dnt=&#34;true&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;DAXのGoライブラリがSDK V2を使っていなかったので、うわあああーとやってPR（クソデカ）出してみた。&lt;br&gt;良いお返事が返ってくるといいな🙏&lt;a href=&#34;https://t.co/uon5giqJuF&#34;&gt;https://t.co/uon5giqJuF&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>litestream / minio を docker compose で試す</title>
+      <link>https://shamaton.dev/posts/2022052301/</link>
+      <pubDate>Mon, 23 May 2022 13:15:09 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/2022052301/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです😊&lt;/p&gt;
+&lt;p&gt;最近 &lt;a href=&#34;https://litestream.io/&#34;&gt;litestream&lt;/a&gt; というソフトウェアが話題（？）ですね。&lt;br&gt;
+Go 周辺の界隈の方々だと、そんな流れがきていたのを目にされていたのではないでしょうか。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mkcertを使ってlocal httpsを試す</title>
+      <link>https://shamaton.dev/posts/2022021401/</link>
+      <pubDate>Mon, 14 Feb 2022 13:10:09 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/2022021401/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです😊&lt;/p&gt;
+&lt;p&gt;https って、Web上に置かないと出来ないものかと思っていたんですが、昨今はローカル環境もできるのですね。
+ということでやってみました。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>gRPCのCodecをmsgpackに変更する</title>
+      <link>https://shamaton.dev/posts/2022010901/</link>
+      <pubDate>Sun, 09 Jan 2022 11:20:09 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/2022010901/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです😊&lt;/p&gt;
+&lt;p&gt;gPRCのデフォルトシリアライザにはProtocol Buffersが使われています。&lt;br&gt;
+以前から、JSONに置き換えることはこちらの記事で知っていたのですが、JSONに置き換えられるのならMessagePackにも出来るのかな？と思ったのでやってみました。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Go] unsafe.Pointerを使うのをやめた</title>
+      <link>https://shamaton.dev/posts/678/</link>
+      <pubDate>Tue, 31 Aug 2021 13:50:09 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/678/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです😊&lt;/p&gt;
+&lt;p&gt;少し前にmsgpackとmsgpackgenを更新しました。&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=https%3a%2f%2fgithub.com%2fshamaton%2fmsgpack&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+
+
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=https%3a%2f%2fgithub.com%2fshamaton%2fmsgpackgen&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Go] MessagePackのコードを生成するパッケージ(msgpackgen)を作りました</title>
+      <link>https://shamaton.dev/posts/676/</link>
+      <pubDate>Wed, 17 Mar 2021 10:23:09 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/676/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;GoのMessagePackパッケージ、&lt;a href=&#34;https://github.com/shamaton/msgpackgen&#34;&gt;msgpackgen&lt;/a&gt;をリリースしました。
+
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=https%3a%2f%2fgithub.com%2fshamaton%2fmsgpackgen&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+&lt;/p&gt;
+&lt;p&gt;以下、作った背景と使い方を書いていきます。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Unity/Golang]データ圧縮にdeflateが使えなかった</title>
+      <link>https://shamaton.dev/posts/548/</link>
+      <pubDate>Tue, 18 Dec 2018 15:03:44 +0900</pubDate>
+      <guid>https://shamaton.dev/posts/548/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;以前にデータ圧縮の記事を書いたのですが、&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=https%3a%2f%2fshamaton.dev%2fposts%2f544&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;どうやら、Androidで利用しようとするとエラーになってしまうようです。&lt;br&gt;
+よって、モバイル向けに利用する際には注意が必要でした。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Unity/Golang] 環境間でデータを圧縮して解凍してみる</title>
+      <link>https://shamaton.dev/posts/544/</link>
+      <pubDate>Sun, 25 Nov 2018 13:48:58 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/544/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;今回は、通信時に圧縮したデータを相互に送り合って使えるようにしたいなと思って試してみました。データを小さくしたりリクエストの回数を減らしたほうがいいですよね。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Golang]構造体のバイナリ化ができなかった</title>
+      <link>https://shamaton.dev/posts/547/</link>
+      <pubDate>Thu, 25 Oct 2018 13:53:39 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/547/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;Goで構造体をバイナリ化したいなぁと思って、調べてやってみていたのですが中々うまくいかない・・・
+ということがあったのでメモ。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

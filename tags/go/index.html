@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>go | shamaton</title>
+<meta name="keywords" content="">
+<meta name="description" content="Various posts by a software engineer">
+<meta name="author" content="">
+<link rel="canonical" href="https://shamaton.dev/tags/go/">
+<link crossorigin="anonymous" href="https://shamaton.dev/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://shamaton.dev/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://shamaton.dev/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://shamaton.dev/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://shamaton.dev/apple-touch-icon.png">
+<link rel="mask-icon" href="https://shamaton.dev/safari-pinned-tab.svg">
+<meta name="theme-color" content="#1b1c1d">
+<meta name="msapplication-TileColor" content="#1b1c1d">
+<link rel="alternate" type="application/rss+xml" href="https://shamaton.dev/tags/go/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="https://shamaton.dev/tags/go/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7096410827554575"
+    crossorigin="anonymous"></script><link rel="stylesheet" href="https://shamaton.dev/lightbox/css/lightbox.min.css">
+<link rel="stylesheet" href="https://shamaton.dev/design/button.css">
+<link rel="stylesheet" href="https://shamaton.dev/design/appbanner.css">
+<meta property="og:url" content="https://shamaton.dev/tags/go/">
+  <meta property="og:site_name" content="shamaton">
+  <meta property="og:title" content="go">
+  <meta property="og:description" content="Various posts by a software engineer">
+  <meta property="og:locale" content="ja_jp">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="go">
+  <meta name="twitter:description" content="Various posts by a software engineer">
+
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://shamaton.dev/" accesskey="h" title="shamaton.dev (Alt + H)">shamaton.dev</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://shamaton.dev/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://shamaton.dev/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="https://shamaton.dev/">Home</a>&nbsp;»&nbsp;<a href="https://shamaton.dev/tags/">Tags</a></div>
+  <h1>
+    go
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">テーマを変更 PaperMod に変更した
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>こんにちは。 ずっとブログの更新をしていなかったのですが、ちょっとやるかーということで hugo の更新をして build してみたところ、失敗してしまいました。
+ERROR error copying static files: html/template:_partials/head.html:40:12: no such template &#34;_internal/google_news.html&#34; まぁ、さすがに放置していてその間に何か変わってしまったか… と思い、使っているテーマも最新にしてみたのですが、それもで失敗してしまいました。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-21 01:23:45 +0000 +0000'>March 21, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to テーマを変更 PaperMod に変更した" href="https://shamaton.dev/posts/20260321/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">aws-dax-go を aws-sdk-go-v2 化してみた
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです😊
+DAXのGoライブラリがSDK V2を使っていなかったので、うわあああーとやってPR（クソデカ）出してみた。
+良いお返事が返ってくるといいな🙏https://t.co/uon5giqJuF
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-06-11 12:42:19 +0000 +0000'>June 11, 2023</span>&nbsp;·&nbsp;<span>3 min</span></footer>
+  <a class="entry-link" aria-label="post link to aws-dax-go を aws-sdk-go-v2 化してみた" href="https://shamaton.dev/posts/2023061101/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">litestream / minio を docker compose で試す
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです😊
+最近 litestream というソフトウェアが話題（？）ですね。
+Go 周辺の界隈の方々だと、そんな流れがきていたのを目にされていたのではないでしょうか。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-05-23 13:15:09 +0000 +0000'>May 23, 2022</span>&nbsp;·&nbsp;<span>3 min</span></footer>
+  <a class="entry-link" aria-label="post link to litestream / minio を docker compose で試す" href="https://shamaton.dev/posts/2022052301/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">mkcertを使ってlocal httpsを試す
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです😊
+https って、Web上に置かないと出来ないものかと思っていたんですが、昨今はローカル環境もできるのですね。 ということでやってみました。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-02-14 13:10:09 +0000 +0000'>February 14, 2022</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to mkcertを使ってlocal httpsを試す" href="https://shamaton.dev/posts/2022021401/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">gRPCのCodecをmsgpackに変更する
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです😊
+gPRCのデフォルトシリアライザにはProtocol Buffersが使われています。
+以前から、JSONに置き換えることはこちらの記事で知っていたのですが、JSONに置き換えられるのならMessagePackにも出来るのかな？と思ったのでやってみました。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-01-09 11:20:09 +0000 +0000'>January 9, 2022</span>&nbsp;·&nbsp;<span>3 min</span></footer>
+  <a class="entry-link" aria-label="post link to gRPCのCodecをmsgpackに変更する" href="https://shamaton.dev/posts/2022010901/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Go] unsafe.Pointerを使うのをやめた
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです😊
+少し前にmsgpackとmsgpackgenを更新しました。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-08-31 13:50:09 +0000 +0000'>August 31, 2021</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Go] unsafe.Pointerを使うのをやめた" href="https://shamaton.dev/posts/678/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Go] MessagePackのコードを生成するパッケージ(msgpackgen)を作りました
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+GoのMessagePackパッケージ、msgpackgenをリリースしました。 以下、作った背景と使い方を書いていきます。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-03-17 10:23:09 +0000 +0000'>March 17, 2021</span>&nbsp;·&nbsp;<span>3 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Go] MessagePackのコードを生成するパッケージ(msgpackgen)を作りました" href="https://shamaton.dev/posts/676/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Unity/Golang]データ圧縮にdeflateが使えなかった
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+以前にデータ圧縮の記事を書いたのですが、
+どうやら、Androidで利用しようとするとエラーになってしまうようです。
+よって、モバイル向けに利用する際には注意が必要でした。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2018-12-18 15:03:44 +0900 JST'>December 18, 2018</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Unity/Golang]データ圧縮にdeflateが使えなかった" href="https://shamaton.dev/posts/548/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Unity/Golang] 環境間でデータを圧縮して解凍してみる
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+今回は、通信時に圧縮したデータを相互に送り合って使えるようにしたいなと思って試してみました。データを小さくしたりリクエストの回数を減らしたほうがいいですよね。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2018-11-25 13:48:58 +0000 +0000'>November 25, 2018</span>&nbsp;·&nbsp;<span>3 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Unity/Golang] 環境間でデータを圧縮して解凍してみる" href="https://shamaton.dev/posts/544/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Golang]構造体のバイナリ化ができなかった
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+Goで構造体をバイナリ化したいなぁと思って、調べてやってみていたのですが中々うまくいかない・・・ ということがあったのでメモ。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2018-10-25 13:53:39 +0000 +0000'>October 25, 2018</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Golang]構造体のバイナリ化ができなかった" href="https://shamaton.dev/posts/547/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="next" href="https://shamaton.dev/tags/go/page/2/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a><script defer src="https://shamaton.dev/lightbox/js/lightbox-plus-jquery.min.js"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>react on shamaton</title>
+    <link>https://shamaton.dev/tags/react/</link>
+    <description>Recent content in react on shamaton</description>
+    <generator>Hugo</generator>
+    <language>ja-jp</language>
+    <copyright>CC BY-NC 4.0</copyright>
+    <lastBuildDate>Mon, 14 Mar 2022 14:35:09 +0000</lastBuildDate>
+    <atom:link href="https://shamaton.dev/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>typescript/reactでgithubアカウントを使ったしりとりを作ってみた</title>
+      <link>https://shamaton.dev/posts/2022031401/</link>
+      <pubDate>Mon, 14 Mar 2022 14:35:09 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/2022031401/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです😊&lt;/p&gt;
+&lt;p&gt;いやー、春の陽気になってきましたね〜🌸
+そんなこんなで、ずっと敬遠していた Web Frontend の知識の習得やっとくかーという感じで重い腰を上げました。
+私の心の中にも春がやってきました。ついに雪解けしました。❄️&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

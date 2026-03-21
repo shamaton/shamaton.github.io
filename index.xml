@@ -1,107 +1,173 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>shamaton</title>
     <link>https://shamaton.dev/</link>
     <description>Recent content on shamaton</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja-jp</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 11 Jun 2023 12:42:19 +0000</lastBuildDate><atom:link href="https://shamaton.dev/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>CC BY-NC 4.0</copyright>
+    <lastBuildDate>Sat, 21 Mar 2026 01:23:45 +0000</lastBuildDate>
+    <atom:link href="https://shamaton.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>テーマを変更 PaperMod に変更した</title>
+      <link>https://shamaton.dev/posts/20260321/</link>
+      <pubDate>Sat, 21 Mar 2026 01:23:45 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/20260321/</guid>
+      <description>&lt;p&gt;こんにちは。
+ずっとブログの更新をしていなかったのですが、ちょっとやるかーということで &lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt; の更新をして build してみたところ、失敗してしまいました。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ERROR error copying static files: html/template:_partials/head.html:40:12: no such template &lt;span class=&#34;s2&#34;&gt;&amp;#34;_internal/google_news.html&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;まぁ、さすがに放置していてその間に何か変わってしまったか&amp;hellip; と思い、使っているテーマも最新にしてみたのですが、それもで失敗してしまいました。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>aws-dax-go を aws-sdk-go-v2 化してみた</title>
       <link>https://shamaton.dev/posts/2023061101/</link>
       <pubDate>Sun, 11 Jun 2023 12:42:19 +0000</pubDate>
-      
       <guid>https://shamaton.dev/posts/2023061101/</guid>
-      <description>お世話になっております。 しゃまとんです😊 DAXのGoライブラリがSDK V2を使っていなかったので、うわあああーとやってPR（クソデカ）出して</description>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです😊&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34; align=&#34;center&#34; data-dnt=&#34;true&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;DAXのGoライブラリがSDK V2を使っていなかったので、うわあああーとやってPR（クソデカ）出してみた。&lt;br&gt;良いお返事が返ってくるといいな🙏&lt;a href=&#34;https://t.co/uon5giqJuF&#34;&gt;https://t.co/uon5giqJuF&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>litestream / minio を docker compose で試す</title>
       <link>https://shamaton.dev/posts/2022052301/</link>
       <pubDate>Mon, 23 May 2022 13:15:09 +0000</pubDate>
-      
       <guid>https://shamaton.dev/posts/2022052301/</guid>
-      <description>お世話になっております。 しゃまとんです😊 最近 litestream というソフトウェアが話題（？）ですね。 Go 周辺の界隈の方々だと、そんな流れがきていたのを目にされ</description>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです😊&lt;/p&gt;
+&lt;p&gt;最近 &lt;a href=&#34;https://litestream.io/&#34;&gt;litestream&lt;/a&gt; というソフトウェアが話題（？）ですね。&lt;br&gt;
+Go 周辺の界隈の方々だと、そんな流れがきていたのを目にされていたのではないでしょうか。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>typescript/reactでgithubアカウントを使ったしりとりを作ってみた</title>
       <link>https://shamaton.dev/posts/2022031401/</link>
       <pubDate>Mon, 14 Mar 2022 14:35:09 +0000</pubDate>
-      
       <guid>https://shamaton.dev/posts/2022031401/</guid>
-      <description>お世話になっております。 しゃまとんです😊 いやー、春の陽気になってきましたね〜🌸 そんなこんなで、ずっと敬遠していた Web Frontend の知識の習得やっとくかー</description>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです😊&lt;/p&gt;
+&lt;p&gt;いやー、春の陽気になってきましたね〜🌸
+そんなこんなで、ずっと敬遠していた Web Frontend の知識の習得やっとくかーという感じで重い腰を上げました。
+私の心の中にも春がやってきました。ついに雪解けしました。❄️&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>mkcertを使ってlocal httpsを試す</title>
       <link>https://shamaton.dev/posts/2022021401/</link>
       <pubDate>Mon, 14 Feb 2022 13:10:09 +0000</pubDate>
-      
       <guid>https://shamaton.dev/posts/2022021401/</guid>
-      <description>お世話になっております。 しゃまとんです😊 https って、Web上に置かないと出来ないものかと思っていたんですが、昨今はローカル環境もできるのですね。</description>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです😊&lt;/p&gt;
+&lt;p&gt;https って、Web上に置かないと出来ないものかと思っていたんですが、昨今はローカル環境もできるのですね。
+ということでやってみました。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>gRPCのCodecをmsgpackに変更する</title>
       <link>https://shamaton.dev/posts/2022010901/</link>
       <pubDate>Sun, 09 Jan 2022 11:20:09 +0000</pubDate>
-      
       <guid>https://shamaton.dev/posts/2022010901/</guid>
-      <description>お世話になっております。 しゃまとんです😊 gPRCのデフォルトシリアライザにはProtocol Buffersが使われています。 以前から、JSO</description>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです😊&lt;/p&gt;
+&lt;p&gt;gPRCのデフォルトシリアライザにはProtocol Buffersが使われています。&lt;br&gt;
+以前から、JSONに置き換えることはこちらの記事で知っていたのですが、JSONに置き換えられるのならMessagePackにも出来るのかな？と思ったのでやってみました。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[Ruby] msgpackの公式サイトを修正しました</title>
       <link>https://shamaton.dev/posts/679/</link>
       <pubDate>Thu, 25 Nov 2021 06:23:09 +0000</pubDate>
-      
       <guid>https://shamaton.dev/posts/679/</guid>
-      <description>お世話になっております。 しゃまとんです😊 shamaton/msgpackを作ったところから、たまにmsgpack.orgを見に行っていたので</description>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです😊&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/shamaton/msgpack&#34;&gt;shamaton/msgpack&lt;/a&gt;を作ったところから、たまにmsgpack.orgを見に行っていたのですが、
+ある時から表示がおかしくなっていました。&lt;/p&gt;
+
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=https%3a%2f%2fmsgpack.org%2f&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;なにがおかしいかというと、この公式サイトではgithub.comで公開されているmessagepackに関するパッケージを紹介してくれているんですね。
+こんな感じで。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[Go] unsafe.Pointerを使うのをやめた</title>
       <link>https://shamaton.dev/posts/678/</link>
       <pubDate>Tue, 31 Aug 2021 13:50:09 +0000</pubDate>
-      
       <guid>https://shamaton.dev/posts/678/</guid>
-      <description>お世話になっております。 しゃまとんです😊 少し前にmsgpackとmsgpackgenを更新しました。 （個人的に）内部に割と大きめの変更点を入</description>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです😊&lt;/p&gt;
+&lt;p&gt;少し前にmsgpackとmsgpackgenを更新しました。&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=https%3a%2f%2fgithub.com%2fshamaton%2fmsgpack&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+
+
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=https%3a%2f%2fgithub.com%2fshamaton%2fmsgpackgen&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[Go/GCP] Hugo&#43;GCSでwordpressからお引越し</title>
       <link>https://shamaton.dev/posts/677/</link>
       <pubDate>Wed, 18 Aug 2021 10:23:09 +0000</pubDate>
-      
       <guid>https://shamaton.dev/posts/677/</guid>
-      <description>お世話になっております。 しゃまとんです。 これまで運用していたドメインshamaton.orz.hmからブログの引っ越しを行いました。 (しばら</description>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;これまで運用していたドメイン&lt;a href=&#34;https://shamaton.orz.hm&#34;&gt;shamaton.orz.hm&lt;/a&gt;からブログの引っ越しを行いました。&lt;br&gt;
+(しばらくはまだ生きているんですが)&lt;/p&gt;
+&lt;p&gt;新しいドメインは &lt;a href=&#34;https://shamaton.dev&#34;&gt;shamaton.dev&lt;/a&gt; です🎉&lt;/p&gt;
+&lt;p&gt;経緯としては、Wordpressの更新をするのを忘れていて、久しぶりに更新かけようかと思ったらできなくなったんですねｗ&lt;br&gt;
+あー、これはだるいやつや。。触りたくなさがMAXだったので引っ越してしまうことにしました。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[Go] MessagePackのコードを生成するパッケージ(msgpackgen)を作りました</title>
       <link>https://shamaton.dev/posts/676/</link>
       <pubDate>Wed, 17 Mar 2021 10:23:09 +0000</pubDate>
-      
       <guid>https://shamaton.dev/posts/676/</guid>
-      <description>お世話になっております。 しゃまとんです。 GoのMessagePackパッケージ、msgpackgenをリリースしました。 以下、作った背景と使</description>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;GoのMessagePackパッケージ、&lt;a href=&#34;https://github.com/shamaton/msgpackgen&#34;&gt;msgpackgen&lt;/a&gt;をリリースしました。
+
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=https%3a%2f%2fgithub.com%2fshamaton%2fmsgpackgen&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+&lt;/p&gt;
+&lt;p&gt;以下、作った背景と使い方を書いていきます。&lt;/p&gt;</description>
     </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://shamaton.dev/about/</link>
-      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://shamaton.dev/about/</guid>
-      <description>Thank you for your visit my website. I am a software engineer and usually work at an company. After work, I also create game, service and OSS.
-I have been posting articles about technology and so on. If you are interested my posts, visit here.(in Japanese)
-Works OSS 📌 github.com/shamaton/msgpackgen
-📌 github.com/shamaton/msgpack
-📌 github.com/shamaton/zeroformatter
-App    Kotodamap Using: Unity / Go / GCP       Kotodamap is messaging app using by geo information.</description>
-    </item>
-    
   </channel>
 </rss>

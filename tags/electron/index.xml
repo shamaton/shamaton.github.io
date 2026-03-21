@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Electron on shamaton</title>
+    <link>https://shamaton.dev/tags/electron/</link>
+    <description>Recent content in Electron on shamaton</description>
+    <generator>Hugo</generator>
+    <language>ja-jp</language>
+    <copyright>CC BY-NC 4.0</copyright>
+    <lastBuildDate>Tue, 03 Oct 2017 15:04:56 +0000</lastBuildDate>
+    <atom:link href="https://shamaton.dev/tags/electron/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Electron]Electronの開発環境を作ってビルドしてみる</title>
+      <link>https://shamaton.dev/posts/452/</link>
+      <pubDate>Tue, 03 Oct 2017 15:04:56 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/452/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;Electronご存知でしょうか。&lt;/p&gt;
+
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=https%3a%2f%2felectron.atom.io%2f&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;ElectronとはWebの技術でデスクトップアプリケーションを作ることができるものだそうです。&lt;br&gt;
+なにやら新しそう感ですね。&lt;br&gt;
+いいところは、クロスプラットフォームなところでOSを気にせずアプリケーションが作れるという優れもの。
+Slackもコレを使って作られているらしいです。&lt;br&gt;
+ということで、とりあえずMacで環境つくってビルドするところまでやってみました。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

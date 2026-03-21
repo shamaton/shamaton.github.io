@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>assimp on shamaton</title>
+    <link>https://shamaton.dev/tags/assimp/</link>
+    <description>Recent content in assimp on shamaton</description>
+    <generator>Hugo</generator>
+    <language>ja-jp</language>
+    <copyright>CC BY-NC 4.0</copyright>
+    <lastBuildDate>Wed, 06 Jan 2016 15:34:37 +0000</lastBuildDate>
+    <atom:link href="https://shamaton.dev/tags/assimp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>assimp2jsonを使えるようにするまで</title>
+      <link>https://shamaton.dev/posts/149/</link>
+      <pubDate>Wed, 06 Jan 2016 15:34:37 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/149/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;テストで実装してみたいことがあり、assimp2jsonというツールが必要になったので準備していたのですが、
+使えるようになるまでの備忘録です。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

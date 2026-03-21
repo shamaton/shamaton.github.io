@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>CI/CD on shamaton</title>
+    <link>https://shamaton.dev/tags/ci/cd/</link>
+    <description>Recent content in CI/CD on shamaton</description>
+    <generator>Hugo</generator>
+    <language>ja-jp</language>
+    <copyright>CC BY-NC 4.0</copyright>
+    <lastBuildDate>Sun, 07 Jul 2019 12:22:19 +0000</lastBuildDate>
+    <atom:link href="https://shamaton.dev/tags/ci/cd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[CI] concourseでUnityのビルドをCIしてみる – 動作編</title>
+      <link>https://shamaton.dev/posts/668/</link>
+      <pubDate>Sun, 07 Jul 2019 12:22:19 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/668/</guid>
+      <description>&lt;p&gt;前回の導入編につづいて、iOSのビルド作業ができるところまでやってみます！&lt;br&gt;
+（今回はArchiveまでを行ってみます。IPA出力は今回は割愛します。） また、この記事では事前にUnity側でTeam IDを設定していることを想定しています。 (&lt;a href=&#34;https://developer.apple.com/jp/programs/&#34;&gt;Developer Program&lt;/a&gt;に入っている必要があります)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[CI] concourseでUnityのビルドをCIしてみる – 導入編</title>
+      <link>https://shamaton.dev/posts/664/</link>
+      <pubDate>Tue, 02 Jul 2019 13:49:22 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/664/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;Unityで開発をしているとビルド作業が煩わしくなって自動化したい…なんて話になると思います。&lt;br&gt;
+それで導入となるとどのCI導入するのかという話になり、Jenkinsで環境構築をするのが主流なのかなと感じています。&lt;br&gt;
+（&lt;a href=&#34;https://travis-ci.org/&#34;&gt;Travis CI&lt;/a&gt;や&lt;a href=&#34;https://circleci.com/&#34;&gt;Circle CI&lt;/a&gt;とかあるけど、ローカルな環境で〜という話）&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

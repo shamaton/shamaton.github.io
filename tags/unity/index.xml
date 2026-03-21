@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>unity on shamaton</title>
+    <link>https://shamaton.dev/tags/unity/</link>
+    <description>Recent content in unity on shamaton</description>
+    <generator>Hugo</generator>
+    <language>ja-jp</language>
+    <copyright>CC BY-NC 4.0</copyright>
+    <lastBuildDate>Tue, 18 Dec 2018 15:03:44 +0900</lastBuildDate>
+    <atom:link href="https://shamaton.dev/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Unity/Golang]データ圧縮にdeflateが使えなかった</title>
+      <link>https://shamaton.dev/posts/548/</link>
+      <pubDate>Tue, 18 Dec 2018 15:03:44 +0900</pubDate>
+      <guid>https://shamaton.dev/posts/548/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;以前にデータ圧縮の記事を書いたのですが、&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=https%3a%2f%2fshamaton.dev%2fposts%2f544&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;どうやら、Androidで利用しようとするとエラーになってしまうようです。&lt;br&gt;
+よって、モバイル向けに利用する際には注意が必要でした。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Unity/Golang] 環境間でデータを圧縮して解凍してみる</title>
+      <link>https://shamaton.dev/posts/544/</link>
+      <pubDate>Sun, 25 Nov 2018 13:48:58 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/544/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;今回は、通信時に圧縮したデータを相互に送り合って使えるようにしたいなと思って試してみました。データを小さくしたりリクエストの回数を減らしたほうがいいですよね。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[gRPC] UnityとgolangでgRPCを使ってみる（iOSも）</title>
+      <link>https://shamaton.dev/posts/563/</link>
+      <pubDate>Thu, 09 Aug 2018 23:36:14 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/563/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;前回の記事でiOSで実行できなかったので、追加記事を作成しました。&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=https%3a%2f%2fshamaton.dev%2fposts%2f553&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;こちらで一応iOSでもビルドが通るようになりました。&lt;br&gt;
+簡単ですが以下、手順です。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[gRPC] UnityとgolangでgRPCを使ってみる（androidまで）</title>
+      <link>https://shamaton.dev/posts/553/</link>
+      <pubDate>Thu, 09 Aug 2018 13:57:14 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/553/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;前の記事でまずはgolangでgRPCを使って動作させてみました。&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+&lt;iframe style=&#34;display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;&#34;
+    src=&#34;https://hatenablog-parts.com/embed?url=https%3a%2f%2fshamaton.dev%2fposts%2f542&#34; title=&#34;&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34;&gt;
+    &lt;span data-mce-type=&#34;bookmark&#34; style=&#34;display: inline-block; width: 0px; overflow: hidden; line-height: 0;&#34;
+        class=&#34;mce_SELRES_start&#34;&gt;
+    &lt;/span&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;今回はclient側にUnityを使ってみたいと思います。&lt;br&gt;
+実行環境はこんな感じでした。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Unity] 申請用のスクリーンショットをエディタで作る</title>
+      <link>https://shamaton.dev/posts/478/</link>
+      <pubDate>Sat, 14 Jul 2018 02:52:06 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/478/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;iOS/Androidのアプリ申請時に何かしらのスクリーンショットが必要なわけで、
+ことだまっぷのときにも色々な解像度の素材を用意しないといけないのか&amp;hellip;と嫌な感じになっていました。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Unity] 常に使えるグローバルなコルーチンを用意する</title>
+      <link>https://shamaton.dev/posts/448/</link>
+      <pubDate>Sun, 24 Jun 2018 22:27:15 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/448/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;Unityにはコルーチンという機能がありますが、GameObjectがInActiveな場合使うことができません。&lt;br&gt;
+自分自身がアクティブでも親がInActiveであれば、同様の状態になります。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Unity] クラスをKeyにしたDictionaryを作るには</title>
+      <link>https://shamaton.dev/posts/389/</link>
+      <pubDate>Mon, 11 Jun 2018 13:46:11 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/389/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;以前からclassをkeyにしたDictionaryって出来ないのかなーと思っていて、
+仕方なくnewなんかしてイケてないなーと思いながら実装していたのですが、
+こっちの方が良さげなのでメモしておきたいと思います。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Unity] TextMeshProで日本語と使いたい文字を使えるようにする</title>
+      <link>https://shamaton.dev/posts/465/</link>
+      <pubDate>Thu, 08 Feb 2018 15:36:52 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/465/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;TextMeshProでは扱いたい文字をフォントアセットとしてUnity上で作成し、使えるようにする必要があります。
+TextMeshProで日本語を扱う場合も、使いたい日本語を作成時に指定するしないといけません。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Unity] iOS申請時のMissing Push Notificationを対処する</title>
+      <link>https://shamaton.dev/posts/485/</link>
+      <pubDate>Thu, 07 Dec 2017 15:21:29 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/485/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;UnityでiOS向けにPush通知を利用していない状態でbuildして何も気にせずアプリ申請
+（ここではXcode等からArchiveしてUploadすること）を行うとAppleからアップロードしたファイルに関しての通知が来ます。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Unity] テキストボックスで何行表示されているかを知る</title>
+      <link>https://shamaton.dev/posts/380/</link>
+      <pubDate>Tue, 14 Nov 2017 14:55:17 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/380/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;決められた範囲でテキストを入力させたいなーと思って、色々と試行錯誤してました。
+InputFieldでOnChangedValueを監視して、入力内容をReplaceしたり、指定文字列をCountしたり&amp;hellip;とやっていたのですが、
+なかなかうまくいかず悩んでました。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

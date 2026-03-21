@@ -1,336 +1,402 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="shamaton ">
-<meta name="description" content="" />
-<meta name="keywords" content="shamaton" />
-<meta name="robots" content="noodp" />
-<meta name="theme-color" content="" />
-<link rel="canonical" href="https://shamaton.dev/posts/" />
+<meta name="robots" content="index, follow">
+<title>Posts | shamaton</title>
+<meta name="keywords" content="">
+<meta name="description" content="Posts - shamaton">
+<meta name="author" content="">
+<link rel="canonical" href="https://shamaton.dev/posts/">
+<link crossorigin="anonymous" href="https://shamaton.dev/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://shamaton.dev/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://shamaton.dev/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://shamaton.dev/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://shamaton.dev/apple-touch-icon.png">
+<link rel="mask-icon" href="https://shamaton.dev/safari-pinned-tab.svg">
+<meta name="theme-color" content="#1b1c1d">
+<meta name="msapplication-TileColor" content="#1b1c1d">
+<link rel="alternate" type="application/rss+xml" href="https://shamaton.dev/posts/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="https://shamaton.dev/posts/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
 
-    <title>
-        
-            Posts :: shamaton  — I ❤ engineering.
-        
-    </title>
+            .list {
+                background: var(--theme);
+            }
 
+            .toc {
+                background: var(--entry);
+            }
+        }
 
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
-    type="text/css">
-
-
-
-<link rel="stylesheet" href="https://shamaton.dev/main.d7bdd8ee18bfbf4c605488a7e5b1b92cd980dfeed2bdaeab4dd5e931a7a78bc0.css">
-
-
-    
-        <link rel="stylesheet" type="text/css" href="https://shamaton.dev/lightbox/css/lightbox.min.css">
-    
-
-    
-        <link rel="stylesheet" type="text/css" href="https://shamaton.dev/design/button.css">
-    
-
-    
-        <link rel="stylesheet" type="text/css" href="https://shamaton.dev/design/appbanner.css">
-    
-
-    
-        <link rel="stylesheet" type="text/css" href="https://shamaton.dev/design/sharing-buttons.css">
-    
-
-
-
-    <link rel="apple-touch-icon" sizes="180x180" href="https://shamaton.dev/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://shamaton.dev/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://shamaton.dev/favicon-16x16.png">
-    <link rel="manifest" href="https://shamaton.dev/site.webmanifest">
-    <link rel="mask-icon" href="https://shamaton.dev/safari-pinned-tab.svg" color="#1b1c1d">
-    <link rel="shortcut icon" href="https://shamaton.dev/favicon.ico">
-    <meta name="msapplication-TileColor" content="#1b1c1d">
-    <meta name="theme-color" content="#1b1c1d">
-
-
-
-<meta itemprop="name" content="Posts">
-<meta itemprop="description" content="Various posts by a software engineer">
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="Various posts by a software engineer"/>
-
-
-
-
-    <meta property="og:title" content="Posts" />
-<meta property="og:description" content="Various posts by a software engineer" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://shamaton.dev/posts/" />
-<meta property="og:updated_time" content="2023-06-11T12:42:19+00:00" />
-
-
-
-
-
-
-
-
-<link rel="alternate" type="application/rss+xml" href="https://shamaton.dev/posts/index.xml" title="shamaton" />
-
-
-
-
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7096410827554575"
-    crossorigin="anonymous"></script>
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VMDYM0S97K"></script>
+    </style>
+</noscript>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
 
-  gtag('config', 'G-VMDYM0S97K');
+</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7096410827554575"
+    crossorigin="anonymous"></script><link rel="stylesheet" href="https://shamaton.dev/lightbox/css/lightbox.min.css">
+<link rel="stylesheet" href="https://shamaton.dev/design/button.css">
+<link rel="stylesheet" href="https://shamaton.dev/design/appbanner.css">
+<meta property="og:url" content="https://shamaton.dev/posts/">
+  <meta property="og:site_name" content="shamaton">
+  <meta property="og:title" content="Posts">
+  <meta property="og:description" content="Various posts by a software engineer">
+  <meta property="og:locale" content="ja_jp">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Posts">
+  <meta name="twitter:description" content="Various posts by a software engineer">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://shamaton.dev/posts/"
+    }
+  ]
+}
 </script>
-
-    </head>
-
-    
-        <body>
-    
-    
-        <div class="container">
-            <header class="header">
-    <span class="header__inner">
-        <a href="https://shamaton.dev/" style="text-decoration: none;">
-    <div class="logo">
-        
-            <span class="logo__mark">~/shamaton.dev</span>
-            <span class="logo__text"> </span>
-            <span class="logo__cursor" style=
-                  "
-                   
-                   ">
-            </span>
-        
-    </div>
-</a>
-
-
-        <span class="header__right">
-            
-                <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://shamaton.dev/about/">About</a></li><li><a href="https://shamaton.dev/posts/">Posts</a></li>
-    </ul>
-</nav>
-
-                <span class="menu-trigger">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://shamaton.dev/" accesskey="h" title="shamaton.dev (Alt + H)">shamaton.dev</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                </span>
-            
-        </span>
-    </span>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://shamaton.dev/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://shamaton.dev/posts/" title="Posts">
+                    <span class="active">Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="https://shamaton.dev/">Home</a></div>
+  <h1>
+    Posts
+  </h1>
 </header>
 
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Docker] CentOS6でMySQLコンテナを作成してみる
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+前回はRedisと連携をやってみたので、今回はMySQLコンテナを作ってみようと思います。
+MySQLは試しにAWSのRDSでデフォルトっぽい5.6.27（2016/12/13時点）で作成してみます。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2016-12-13 02:30:28 +0000 +0000'>December 13, 2016</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Docker] CentOS6でMySQLコンテナを作成してみる" href="https://shamaton.dev/posts/318/"></a>
+</article>
 
-            <div class="content">
-                
-    
-    
-    <main class="posts">
-        <h1>Posts</h1>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[2016/11] 進捗報告
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>2016年11月の進捗報告まとめです。
+[WIP] I created prototype map using by Nostalgia2.
+Nostalgia2を使って、マップを作成してみました。#indiedev #gamedev pic.twitter.com/cQuhmWmZhr
+— しゃまとん🍉 (@shamaton) November 27, 2016 [WIP] Taking off effect and Landing effect. Images are temporary.
+離陸と着地時の演出的なもの。もろもろ仮です。#indiedev #gamedev pic.twitter.com/bMjah7vAb6
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2016-12-01 13:16:10 +0000 +0000'>December 1, 2016</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to [2016/11] 進捗報告" href="https://shamaton.dev/posts/332/"></a>
+</article>
 
-        
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Docker] golangとredisのコンテナを繋いでみた
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+先月のDocker触ってみた話に引き続いて、作ったgolang環境からredisに繋いでみるテストをしました。 今回は複数のコンテナでの連携的なやつです。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2016-11-22 16:22:28 +0000 +0000'>November 22, 2016</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Docker] golangとredisのコンテナを繋いでみた" href="https://shamaton.dev/posts/310/"></a>
+</article>
 
-        
-            <div class="posts-group">
-                <div class="post-year">2016</div>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Unity] Nostalgia2 – 2Dマップエディタを触ってみた
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+（本記事はケットシーウェアさんのキャンペーンに関連した記事になります）
+今回はUnityのアセットを紹介したいと思います。
+Nostalgia2という2Dマップを作ることができるエディタ拡張のアセットです。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2016-11-19 13:49:27 +0000 +0000'>November 19, 2016</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Unity] Nostalgia2 – 2Dマップエディタを触ってみた" href="https://shamaton.dev/posts/336/"></a>
+</article>
 
-                <ul class="posts-list">
-                    
-                        <li class="post-item">
-                            <a href="https://shamaton.dev/posts/332/">
-                                <span class="post-title">[2016/11] 進捗報告</span>
-                                <span class="post-day">
-                                    
-                                        Dec 1
-                                    
-                                </span>
-                            </a>
-                        </li>
-                    
-                        <li class="post-item">
-                            <a href="https://shamaton.dev/posts/310/">
-                                <span class="post-title">[Docker] golangとredisのコンテナを繋いでみた</span>
-                                <span class="post-day">
-                                    
-                                        Nov 22
-                                    
-                                </span>
-                            </a>
-                        </li>
-                    
-                        <li class="post-item">
-                            <a href="https://shamaton.dev/posts/336/">
-                                <span class="post-title">[Unity] Nostalgia2 – 2Dマップエディタを触ってみた</span>
-                                <span class="post-day">
-                                    
-                                        Nov 19
-                                    
-                                </span>
-                            </a>
-                        </li>
-                    
-                        <li class="post-item">
-                            <a href="https://shamaton.dev/posts/327/">
-                                <span class="post-title">[Unity] RaycastのlayerMaskの扱い方について</span>
-                                <span class="post-day">
-                                    
-                                        Nov 11
-                                    
-                                </span>
-                            </a>
-                        </li>
-                    
-                        <li class="post-item">
-                            <a href="https://shamaton.dev/posts/326/">
-                                <span class="post-title">[Docker] docker.qcow2のサイズを小さくする回避策</span>
-                                <span class="post-day">
-                                    
-                                        Nov 2
-                                    
-                                </span>
-                            </a>
-                        </li>
-                    
-                        <li class="post-item">
-                            <a href="https://shamaton.dev/posts/317/">
-                                <span class="post-title">[2016/10] 開発進捗</span>
-                                <span class="post-day">
-                                    
-                                        Oct 31
-                                    
-                                </span>
-                            </a>
-                        </li>
-                    
-                        <li class="post-item">
-                            <a href="https://shamaton.dev/posts/319/">
-                                <span class="post-title">sourced.techというところからメールがきた</span>
-                                <span class="post-day">
-                                    
-                                        Oct 26
-                                    
-                                </span>
-                            </a>
-                        </li>
-                    
-                        <li class="post-item">
-                            <a href="https://shamaton.dev/posts/257/">
-                                <span class="post-title">iTermでいい感じにテキストを選択したい</span>
-                                <span class="post-day">
-                                    
-                                        Oct 20
-                                    
-                                </span>
-                            </a>
-                        </li>
-                    
-                        <li class="post-item">
-                            <a href="https://shamaton.dev/posts/305/">
-                                <span class="post-title">[Docker] CentOS6でGo言語の開発環境を作ってみた</span>
-                                <span class="post-day">
-                                    
-                                        Oct 8
-                                    
-                                </span>
-                            </a>
-                        </li>
-                    
-                        <li class="post-item">
-                            <a href="https://shamaton.dev/posts/291/">
-                                <span class="post-title">[2016/09] 開発進捗</span>
-                                <span class="post-day">
-                                    
-                                        Oct 1
-                                    
-                                </span>
-                            </a>
-                        </li>
-                    
-                </ul>
-            </div>
-        
-    <div class="pagination">
-    <div class="pagination__buttons">
-        
-            <span class="button previous">
-                <a href="https://shamaton.dev/posts/page/7/">
-                    <span class="button__icon">←</span>
-                    <span class="button__text">Newer posts</span>
-                </a>
-            </span>
-        
-        
-            <span class="button next">
-                <a href="https://shamaton.dev/posts/page/9/">
-                    <span class="button__text">Older posts</span>
-                    <span class="button__icon">→</span>
-                </a>
-            </span>
-        
-    </div>
-</div>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Unity] RaycastのlayerMaskの扱い方について
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+UnityにはRaycastという機能があり、例えばあるオブジェクトの正面にrayを発射して
+別のオブジェクトが存在するかを取得することが出来ます。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2016-11-11 13:08:36 +0000 +0000'>November 11, 2016</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Unity] RaycastのlayerMaskの扱い方について" href="https://shamaton.dev/posts/327/"></a>
+</article>
 
-    </main>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Docker] docker.qcow2のサイズを小さくする回避策
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+Docker for Macに関するちょっとしたメモです。
+現状のDockerではどうやら使っていると容量がどんどん大きくなってしまうようです。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2016-11-02 15:08:52 +0000 +0000'>November 2, 2016</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Docker] docker.qcow2のサイズを小さくする回避策" href="https://shamaton.dev/posts/326/"></a>
+</article>
 
-            </div>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[2016/10] 開発進捗
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>2016年10月の進捗報告まとめです。
+[WIP] NPC characters appeared. But they can&#39;t talk...
+NPCを追加しました。まだ喋れません。#indiedev #gamedev pic.twitter.com/gVTKBESeeA
+— しゃまとん🍉 (@shamaton) October 22, 2016 [WIP] manage item. add and remove.
+アイテムの管理始めました。追加したりなくしたり。地味な進捗。#indiedev #gamedev pic.twitter.com/L3NdqmdOUx
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2016-10-31 15:09:04 +0000 +0000'>October 31, 2016</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to [2016/10] 開発進捗" href="https://shamaton.dev/posts/317/"></a>
+</article>
 
-            
-                <footer class="footer">
-    <div class="footer__inner">
-        <div class="footer__content">
-            <span>&copy; 2023</span>
-            <span><a href="https://shamaton.dev/">shamaton</a></span>
-            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span><span><a href="https://shamaton.dev/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
-        </div>
-    </div>
-    <div class="footer__inner">
-        <div class="footer__content">
-            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
-            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
-          </div>
-    </div>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">sourced.techというところからメールがきた
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+今回は開発メモではないのですが、ちょっとした出来事があったので書いておきたいと思います。 ちょっと前ですが、一通の英語で書かれたメールが来ました。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2016-10-26 23:00:18 +0000 +0000'>October 26, 2016</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to sourced.techというところからメールがきた" href="https://shamaton.dev/posts/319/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">iTermでいい感じにテキストを選択したい
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> お世話になっております。
+しゃまとんです。
+Macではデフォルトでターミナルが入っていますが、 自分はiTermというターミナルアプリケーションを使って普段CUI操作しています。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2016-10-20 14:26:11 +0000 +0000'>October 20, 2016</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to iTermでいい感じにテキストを選択したい" href="https://shamaton.dev/posts/257/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Docker] CentOS6でGo言語の開発環境を作ってみた
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+巷で話題のdockerに興味が湧いてしまいまして、試しに何かやってみようということでイメージを作ってみたメモです。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2016-10-08 03:08:44 +0000 +0000'>October 8, 2016</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Docker] CentOS6でGo言語の開発環境を作ってみた" href="https://shamaton.dev/posts/305/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://shamaton.dev/posts/page/7/">
+      «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="https://shamaton.dev/posts/page/9/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
 </footer>
+    </main>
+    
+<footer class="footer">
+        <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span> · 
 
-            
-        </div>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a><script defer src="https://shamaton.dev/lightbox/js/lightbox-plus-jquery.min.js"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
         
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
 
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
 
-<script type="text/javascript" src="https://shamaton.dev/bundle.min.af435e44374f1e99a669ea8cd5bb9a2fceed80588941a451bfddb66b86a67c9f40b0f417e9543a763f809aa7e9300d7b1d69bf99615810ba02ac70396d50fad5.js" integrity="sha512-r0NeRDdPHpmmaeqM1buaL87tgFiJQaRRv922a4amfJ9AsPQX6VQ6dj&#43;AmqfpMA17HWm/mWFYELoCrHA5bVD61Q=="></script>
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
 
+</script>
+</body>
 
-    
-        <script src="https://shamaton.dev/jq/3.5.1.min.js"></script>
-    
-
-    
-        <script src="https://shamaton.dev/lightbox/js/lightbox.min.js"></script>
-    
-
-
-    </body>
 </html>

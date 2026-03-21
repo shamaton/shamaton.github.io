@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>cocos2dx | shamaton</title>
+<meta name="keywords" content="">
+<meta name="description" content="Various posts by a software engineer">
+<meta name="author" content="">
+<link rel="canonical" href="https://shamaton.dev/tags/cocos2dx/">
+<link crossorigin="anonymous" href="https://shamaton.dev/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://shamaton.dev/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://shamaton.dev/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://shamaton.dev/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://shamaton.dev/apple-touch-icon.png">
+<link rel="mask-icon" href="https://shamaton.dev/safari-pinned-tab.svg">
+<meta name="theme-color" content="#1b1c1d">
+<meta name="msapplication-TileColor" content="#1b1c1d">
+<link rel="alternate" type="application/rss+xml" href="https://shamaton.dev/tags/cocos2dx/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="https://shamaton.dev/tags/cocos2dx/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7096410827554575"
+    crossorigin="anonymous"></script><link rel="stylesheet" href="https://shamaton.dev/lightbox/css/lightbox.min.css">
+<link rel="stylesheet" href="https://shamaton.dev/design/button.css">
+<link rel="stylesheet" href="https://shamaton.dev/design/appbanner.css">
+<meta property="og:url" content="https://shamaton.dev/tags/cocos2dx/">
+  <meta property="og:site_name" content="shamaton">
+  <meta property="og:title" content="cocos2dx">
+  <meta property="og:description" content="Various posts by a software engineer">
+  <meta property="og:locale" content="ja_jp">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="cocos2dx">
+  <meta name="twitter:description" content="Various posts by a software engineer">
+
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://shamaton.dev/" accesskey="h" title="shamaton.dev (Alt + H)">shamaton.dev</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://shamaton.dev/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://shamaton.dev/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="https://shamaton.dev/">Home</a>&nbsp;»&nbsp;<a href="https://shamaton.dev/tags/">Tags</a></div>
+  <h1>
+    cocos2dx
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">XcodeをVer5.1にしたらCocos2dxをビルドできない
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+先日、使っているmacを更新した時にXcodeが、updateされました。
+特に気にせず更新したら、cocos2dxのビルドができなくなりました。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2014-03-13 02:51:14 +0000 +0000'>March 13, 2014</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to XcodeをVer5.1にしたらCocos2dxをビルドできない" href="https://shamaton.dev/posts/44/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">cocos2dxでnendを実装するためのリンク集
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>どうもお世話になります。
+しゃまとんです。
+cocos2dxを使って、アプリを作成しているのですが、広告を実装してみたのでその時に参考になったリンク集です。
+まずはこれを見て、その通りに実装する。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2014-02-25 14:12:50 +0000 +0000'>February 25, 2014</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to cocos2dxでnendを実装するためのリンク集" href="https://shamaton.dev/posts/41/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Cocos2dx@WinでサンプルのJSゲームをビルドする#2
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になります。
+しゃまとんです。
+ビルドする#1の続きです。
+JSを読みに行くようにCppを修正し、実機転送できるように各所を修正していきます。
+以下手順です。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2013-08-29 05:02:41 +0000 +0000'>August 29, 2013</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to Cocos2dx@WinでサンプルのJSゲームをビルドする#2" href="https://shamaton.dev/posts/25/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Cocos2dx@WinでサンプルのJSゲームをビルドする#1
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になります。
+しゃまとんです。
+この前コチラにて開発環境を作成を備忘録として記載しました。
+とあるところで、JavaScript bindingな開発ができるようになったほうがいいよ！との意見をいただきました。
+その意見を踏まえ、やってみるか！となったら、create-project.batを実行してもCpp用のファイルしか生成できない…
+ということで、サンプルで入っているJSプロジェクトを使って何とか出来ないかと模索しました。
+いろいろと試行錯誤したので、その時の備忘録です。
+もしかしたら技術書にのっててサクッできることかも(´・ω・｀)
+以下、自分の作ったプロジェクトでJSゲーム制作環境を用意する手順です。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2013-08-23 16:56:33 +0000 +0000'>August 23, 2013</span>&nbsp;·&nbsp;<span>4 min</span></footer>
+  <a class="entry-link" aria-label="post link to Cocos2dx@WinでサンプルのJSゲームをビルドする#1" href="https://shamaton.dev/posts/24/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://shamaton.dev/tags/cocos2dx/">
+      «&nbsp;Prev&nbsp;
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a><script defer src="https://shamaton.dev/lightbox/js/lightbox-plus-jquery.min.js"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

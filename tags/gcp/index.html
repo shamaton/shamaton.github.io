@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>GCP | shamaton</title>
+<meta name="keywords" content="">
+<meta name="description" content="Various posts by a software engineer">
+<meta name="author" content="">
+<link rel="canonical" href="https://shamaton.dev/tags/gcp/">
+<link crossorigin="anonymous" href="https://shamaton.dev/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://shamaton.dev/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://shamaton.dev/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://shamaton.dev/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://shamaton.dev/apple-touch-icon.png">
+<link rel="mask-icon" href="https://shamaton.dev/safari-pinned-tab.svg">
+<meta name="theme-color" content="#1b1c1d">
+<meta name="msapplication-TileColor" content="#1b1c1d">
+<link rel="alternate" type="application/rss+xml" href="https://shamaton.dev/tags/gcp/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="https://shamaton.dev/tags/gcp/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7096410827554575"
+    crossorigin="anonymous"></script><link rel="stylesheet" href="https://shamaton.dev/lightbox/css/lightbox.min.css">
+<link rel="stylesheet" href="https://shamaton.dev/design/button.css">
+<link rel="stylesheet" href="https://shamaton.dev/design/appbanner.css">
+<meta property="og:url" content="https://shamaton.dev/tags/gcp/">
+  <meta property="og:site_name" content="shamaton">
+  <meta property="og:title" content="GCP">
+  <meta property="og:description" content="Various posts by a software engineer">
+  <meta property="og:locale" content="ja_jp">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="GCP">
+  <meta name="twitter:description" content="Various posts by a software engineer">
+
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://shamaton.dev/" accesskey="h" title="shamaton.dev (Alt + H)">shamaton.dev</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://shamaton.dev/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://shamaton.dev/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="https://shamaton.dev/">Home</a>&nbsp;»&nbsp;<a href="https://shamaton.dev/tags/">Tags</a></div>
+  <h1>
+    GCP
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Go/GCP] Hugo&#43;GCSでwordpressからお引越し
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+これまで運用していたドメインshamaton.orz.hmからブログの引っ越しを行いました。
+(しばらくはまだ生きているんですが)
+新しいドメインは shamaton.dev です🎉
+経緯としては、Wordpressの更新をするのを忘れていて、久しぶりに更新かけようかと思ったらできなくなったんですねｗ
+あー、これはだるいやつや。。触りたくなさがMAXだったので引っ越してしまうことにしました。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-08-18 10:23:09 +0000 +0000'>August 18, 2021</span>&nbsp;·&nbsp;<span>3 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Go/GCP] Hugo&#43;GCSでwordpressからお引越し" href="https://shamaton.dev/posts/677/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[GCP] CloudSQLのデータをCSV出力するには
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+GCPのマネージドデータベースであるCloudSQLにて、DBからCSV化を行いたいと思いもろもろを調べていたのですが、 ちょっと手こずったのでメモしておきたいと思います。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2018-07-29 14:06:10 +0000 +0000'>July 29, 2018</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to [GCP] CloudSQLのデータをCSV出力するには" href="https://shamaton.dev/posts/517/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[GKE] kube-legoを使ってドメインからアクセスできるようにする
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+GKEでサービスをある程度作って公開しようとなったとき、HTTPSで通信させたくなります。
+というものアプリだとHTTPSを推奨していたり、Webサービスなら検索に影響したりするからです。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2018-05-15 22:41:44 +0000 +0000'>May 15, 2018</span>&nbsp;·&nbsp;<span>4 min</span></footer>
+  <a class="entry-link" aria-label="post link to [GKE] kube-legoを使ってドメインからアクセスできるようにする" href="https://shamaton.dev/posts/477/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[GCP] kubernetesでノードを新しく用意してPodを移動させてみる
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+kubernetesでサーバー運営をする際、ノード上の配置される様々なPodでサービス運営を行うわけですが、 今回試しに移動させてみました。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2018-04-29 14:26:22 +0000 +0000'>April 29, 2018</span>&nbsp;·&nbsp;<span>3 min</span></footer>
+  <a class="entry-link" aria-label="post link to [GCP] kubernetesでノードを新しく用意してPodを移動させてみる" href="https://shamaton.dev/posts/496/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[GCP] GKEでredis-clusterを自力で作ってみた（ボツ）
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+前にredis-clusterを試してみた記事を作成したのですが、今回はGKEでクラスタを作ってみることにしました。 というのもWebDB PRESSで特集されていてやってみようと思ったのがきっかけです。
+という記事なんですが、結局、ボツに至ったものになります。 作業ログとして残しておきたいと思います。本自体はとても勉強になりました。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2018-04-09 15:06:13 +0000 +0000'>April 9, 2018</span>&nbsp;·&nbsp;<span>3 min</span></footer>
+  <a class="entry-link" aria-label="post link to [GCP] GKEでredis-clusterを自力で作ってみた（ボツ）" href="https://shamaton.dev/posts/462/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Kubernetes] Skaffoldをとりあえず試してみた
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+Skaffoldというツールがリリースされたので試してみました。
+（確認したバージョンはv0.2.0です。最新版では挙動が異なる場合あるので注意してください）
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2018-03-29 15:05:12 +0000 +0000'>March 29, 2018</span>&nbsp;·&nbsp;<span>4 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Kubernetes] Skaffoldをとりあえず試してみた" href="https://shamaton.dev/posts/530/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[GCP] GoのコンテナをContainerRegistryに登録して使う
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+KubernetesでGoを使いたいのですが、そのままコードを配置みたいな感じではなく、 Dockerの様にコンテナイメージを作成してPodとして配置するような形式をとります。
+（勿論、やり方はコレ以外にもありそう？）
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2018-03-26 14:52:36 +0000 +0000'>March 26, 2018</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to [GCP] GoのコンテナをContainerRegistryに登録して使う" href="https://shamaton.dev/posts/494/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Docker] gcloudとkubectlが使えるコンテナを用意してみる
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+gcloudとkubectlを自分のPCにinstallして使えるようにしているのですが、
+ふとコンテナでも使えるんかなーと思いやってみました。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2018-01-14 04:41:26 +0000 +0000'>January 14, 2018</span>&nbsp;·&nbsp;<span>3 min</span></footer>
+  <a class="entry-link" aria-label="post link to [Docker] gcloudとkubectlが使えるコンテナを用意してみる" href="https://shamaton.dev/posts/464/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[GCP] Compute Engine(CentOS7)でdocker/gitを使えるようにする
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>お世話になっております。
+しゃまとんです。
+GCPが無料で試せるということで、Compute Engineを使ってみることにしました。
+個人的にdockerとgitが使えればいいかなということでやっていたのですが、 普段割りと使っているCentOS6でdockerがイケてない感じだったので、CentOS7を使うことに。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2017-12-21 15:33:45 +0000 +0000'>December 21, 2017</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to [GCP] Compute Engine(CentOS7)でdocker/gitを使えるようにする" href="https://shamaton.dev/posts/432/"></a>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a><script defer src="https://shamaton.dev/lightbox/js/lightbox-plus-jquery.min.js"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

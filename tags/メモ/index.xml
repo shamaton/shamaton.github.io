@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>メモ on shamaton</title>
+    <link>https://shamaton.dev/tags/%E3%83%A1%E3%83%A2/</link>
+    <description>Recent content in メモ on shamaton</description>
+    <generator>Hugo</generator>
+    <language>ja-jp</language>
+    <copyright>CC BY-NC 4.0</copyright>
+    <lastBuildDate>Sun, 30 Dec 2018 13:18:52 +0900</lastBuildDate>
+    <atom:link href="https://shamaton.dev/tags/%E3%83%A1%E3%83%A2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[メモ] 2018年の振り返り</title>
+      <link>https://shamaton.dev/posts/583/</link>
+      <pubDate>Sun, 30 Dec 2018 13:18:52 +0900</pubDate>
+      <guid>https://shamaton.dev/posts/583/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;年末なのでことしも一応（ちゃちゃっと）振り返ってみようかと思います。
+wordpressのバージョンが上がって、編集方法が思いっきり変わっている・・・ ちなみに昨年の振り返り。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Unity] 利用規約をつくったときのこと</title>
+      <link>https://shamaton.dev/posts/490/</link>
+      <pubDate>Sat, 13 Oct 2018 13:47:33 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/490/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;ユーザー入力ができるアプリを作ったときのお話です。&lt;/p&gt;
+&lt;p&gt;最初のバージョンを申請したところリジェクトになりました。&lt;br&gt;
+理由としてUser Generated Content(UGC)に関するものでした。原文はこのような感じです。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Unity] 申請用のスクリーンショットをエディタで作る</title>
+      <link>https://shamaton.dev/posts/478/</link>
+      <pubDate>Sat, 14 Jul 2018 02:52:06 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/478/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;iOS/Androidのアプリ申請時に何かしらのスクリーンショットが必要なわけで、
+ことだまっぷのときにも色々な解像度の素材を用意しないといけないのか&amp;hellip;と嫌な感じになっていました。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[メモ] 2017年の振り返り</title>
+      <link>https://shamaton.dev/posts/513/</link>
+      <pubDate>Sat, 30 Dec 2017 16:39:12 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/513/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;これまで、振り返り的な記事は書いてこなかったのですが、１年前なに考えていたがわかるようになるかなと思ったので、自分用メモとしてつらつらと書いておきたいと思います。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Macでcompletionするアレコレ</title>
+      <link>https://shamaton.dev/posts/333/</link>
+      <pubDate>Wed, 05 Apr 2017 15:10:31 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/333/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;皆さんcompletion使ってますでしょうか。&lt;br&gt;
+gitやdockerを使うときにcompletionを設定しているとコマンドを補完してくれて作業が捗りますよね。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Jenkins] Jenkinsからaws-cliを使えるようにするメモ</title>
+      <link>https://shamaton.dev/posts/314/</link>
+      <pubDate>Wed, 15 Mar 2017 15:05:05 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/314/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;macでJenkinsを使う際のちょっとしたメモです。Jenkinsでawsの操作を実行したいなぁと思い、
+macにaws-cliをインストールしました。そこでJenkinsにジョブを作成し、シェルの実行タスクからawsコマンドを利用してみると&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Mac] pkgでインストールしたjenkinsのportを変更する</title>
+      <link>https://shamaton.dev/posts/276/</link>
+      <pubDate>Thu, 23 Feb 2017 15:36:57 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/276/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;macのでjenkins導入方法は色々あるようですが、公式のサイトからpkgを取得してインストールした場合、
+ポートを設定しているファイルがバイナリっぽくなっていて編集が出来ないっぽいです（できるかもしれないけど怖い）&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>sourced.techというところからメールがきた</title>
+      <link>https://shamaton.dev/posts/319/</link>
+      <pubDate>Wed, 26 Oct 2016 23:00:18 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/319/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;今回は開発メモではないのですが、ちょっとした出来事があったので書いておきたいと思います。
+ちょっと前ですが、一通の英語で書かれたメールが来ました。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[iOS] アプリを申請するときの広告まわりの設定</title>
+      <link>https://shamaton.dev/posts/197/</link>
+      <pubDate>Sat, 11 Jun 2016 12:41:25 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/197/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;/p&gt;
+&lt;p&gt;しゃまとんです。&lt;/p&gt;
+&lt;p&gt;iOSのアプリをitunes connectで申請するときにいつも検索してどうだったけなーとなるので、
+その際の設定メモです。対象になるアプリは何かしらの広告が表示されるものになります。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>痛monodevelopで括弧が補間されるようにする</title>
+      <link>https://shamaton.dev/posts/126/</link>
+      <pubDate>Mon, 21 Sep 2015 14:32:30 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/126/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;unityのエディタで痛monodevelopを使っているのですが、
+デフォルトの設定で使っていると括弧を入力した時に、自動で閉じる側を補間してくれなくて、
+慣れている方には少し不便なことがあります。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

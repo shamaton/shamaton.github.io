@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>開発 on shamaton</title>
+    <link>https://shamaton.dev/tags/%E9%96%8B%E7%99%BA/</link>
+    <description>Recent content in 開発 on shamaton</description>
+    <generator>Hugo</generator>
+    <language>ja-jp</language>
+    <copyright>CC BY-NC 4.0</copyright>
+    <lastBuildDate>Sat, 13 Oct 2018 13:47:33 +0000</lastBuildDate>
+    <atom:link href="https://shamaton.dev/tags/%E9%96%8B%E7%99%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Unity] 利用規約をつくったときのこと</title>
+      <link>https://shamaton.dev/posts/490/</link>
+      <pubDate>Sat, 13 Oct 2018 13:47:33 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/490/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;ユーザー入力ができるアプリを作ったときのお話です。&lt;/p&gt;
+&lt;p&gt;最初のバージョンを申請したところリジェクトになりました。&lt;br&gt;
+理由としてUser Generated Content(UGC)に関するものでした。原文はこのような感じです。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[2016/12] 進捗報告</title>
+      <link>https://shamaton.dev/posts/342/</link>
+      <pubDate>Tue, 03 Jan 2017 13:00:48 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/342/</guid>
+      <description>&lt;p&gt;2016年12月の進捗報告まとめです。&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; align=&#34;center&#34; data-dnt=&#34;true&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;[WIP] call dragon and fly to the sky.&lt;br&gt;呼び出して、空に飛び立つまでの流れ的なやつ。&lt;a href=&#34;https://twitter.com/hashtag/indiedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#indiedev&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gamedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#gamedev&lt;/a&gt; &lt;a href=&#34;https://t.co/I4f9dnLXlI&#34;&gt;pic.twitter.com/I4f9dnLXlI&lt;/a&gt;&lt;/p&gt;&amp;mdash; しゃまとん🍉 (@shamaton) &lt;a href=&#34;https://twitter.com/shamaton/status/814835823057072128?ref_src=twsrc%5Etfw&#34;&gt;December 30, 2016&lt;/a&gt;&lt;/blockquote&gt;
+
+
+&lt;blockquote class=&#34;twitter-tweet&#34; align=&#34;center&#34; data-dnt=&#34;true&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;[WIP] talking test.&lt;br&gt;しゃべらせてみました。&lt;a href=&#34;https://twitter.com/hashtag/gamedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#gamedev&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/indiedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#indiedev&lt;/a&gt; &lt;a href=&#34;https://t.co/38PgxBsHL3&#34;&gt;pic.twitter.com/38PgxBsHL3&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[2016/11] 進捗報告</title>
+      <link>https://shamaton.dev/posts/332/</link>
+      <pubDate>Thu, 01 Dec 2016 13:16:10 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/332/</guid>
+      <description>&lt;p&gt;2016年11月の進捗報告まとめです。&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; align=&#34;center&#34; data-dnt=&#34;true&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;[WIP] I created prototype map using by Nostalgia2.&lt;br&gt;Nostalgia2を使って、マップを作成してみました。&lt;a href=&#34;https://twitter.com/hashtag/indiedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#indiedev&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gamedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#gamedev&lt;/a&gt; &lt;a href=&#34;https://t.co/cQuhmWmZhr&#34;&gt;pic.twitter.com/cQuhmWmZhr&lt;/a&gt;&lt;/p&gt;&amp;mdash; しゃまとん🍉 (@shamaton) &lt;a href=&#34;https://twitter.com/shamaton/status/802862806982791168?ref_src=twsrc%5Etfw&#34;&gt;November 27, 2016&lt;/a&gt;&lt;/blockquote&gt;
+
+
+&lt;blockquote class=&#34;twitter-tweet&#34; align=&#34;center&#34; data-dnt=&#34;true&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;[WIP] Taking off effect and Landing effect. Images are temporary.&lt;br&gt;離陸と着地時の演出的なもの。もろもろ仮です。&lt;a href=&#34;https://twitter.com/hashtag/indiedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#indiedev&lt;/a&gt;  &lt;a href=&#34;https://twitter.com/hashtag/gamedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#gamedev&lt;/a&gt; &lt;a href=&#34;https://t.co/bMjah7vAb6&#34;&gt;pic.twitter.com/bMjah7vAb6&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[2016/10] 開発進捗</title>
+      <link>https://shamaton.dev/posts/317/</link>
+      <pubDate>Mon, 31 Oct 2016 15:09:04 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/317/</guid>
+      <description>&lt;p&gt;2016年10月の進捗報告まとめです。&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; align=&#34;center&#34; data-dnt=&#34;true&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;[WIP] NPC characters appeared. But they can&amp;#39;t talk...&lt;br&gt;NPCを追加しました。まだ喋れません。&lt;a href=&#34;https://twitter.com/hashtag/indiedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#indiedev&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gamedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#gamedev&lt;/a&gt; &lt;a href=&#34;https://t.co/gVTKBESeeA&#34;&gt;pic.twitter.com/gVTKBESeeA&lt;/a&gt;&lt;/p&gt;&amp;mdash; しゃまとん🍉 (@shamaton) &lt;a href=&#34;https://twitter.com/shamaton/status/789840341067182080?ref_src=twsrc%5Etfw&#34;&gt;October 22, 2016&lt;/a&gt;&lt;/blockquote&gt;
+
+
+&lt;blockquote class=&#34;twitter-tweet&#34; align=&#34;center&#34; data-dnt=&#34;true&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;[WIP] manage item. add and remove.&lt;br&gt;アイテムの管理始めました。追加したりなくしたり。地味な進捗。&lt;a href=&#34;https://twitter.com/hashtag/indiedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#indiedev&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gamedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#gamedev&lt;/a&gt; &lt;a href=&#34;https://t.co/L3NdqmdOUx&#34;&gt;pic.twitter.com/L3NdqmdOUx&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[2016/09] 開発進捗</title>
+      <link>https://shamaton.dev/posts/291/</link>
+      <pubDate>Sat, 01 Oct 2016 14:24:50 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/291/</guid>
+      <description>&lt;p&gt;2016年9月の進捗報告まとめです。&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; align=&#34;center&#34; data-dnt=&#34;true&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;[WIP] create animation of critical damage.&lt;br&gt;大打撃をくらったときのアニメーション。&lt;a href=&#34;https://twitter.com/hashtag/indiedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#indiedev&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gamedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#gamedev&lt;/a&gt; &lt;a href=&#34;https://t.co/4gfOrVEpHJ&#34;&gt;pic.twitter.com/4gfOrVEpHJ&lt;/a&gt;&lt;/p&gt;&amp;mdash; しゃまとん🍉 (@shamaton) &lt;a href=&#34;https://twitter.com/shamaton/status/779686574325850113?ref_src=twsrc%5Etfw&#34;&gt;September 24, 2016&lt;/a&gt;&lt;/blockquote&gt;
+
+
+&lt;blockquote class=&#34;twitter-tweet&#34; align=&#34;center&#34; data-dnt=&#34;true&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;[WIP] ouch!! Enemy learned how to attack.&lt;br&gt;敵が攻撃するようになりました。&lt;a href=&#34;https://twitter.com/hashtag/indiedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#indiedev&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gamedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#gamedev&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/screenshotsaturday?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#screenshotsaturday&lt;/a&gt; &lt;a href=&#34;https://t.co/E6MNy17BEQ&#34;&gt;pic.twitter.com/E6MNy17BEQ&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[2016/08] 開発進捗</title>
+      <link>https://shamaton.dev/posts/261/</link>
+      <pubDate>Thu, 01 Sep 2016 13:31:36 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/261/</guid>
+      <description>&lt;p&gt;2016年8月の進捗報告まとめです。&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; align=&#34;center&#34; data-dnt=&#34;true&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;[WIP] combo attack!! (slash and thrust）&lt;br&gt;連撃できるように組み合わせてみました。&lt;a href=&#34;https://twitter.com/hashtag/indiedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#indiedev&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gamedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#gamedev&lt;/a&gt; &lt;a href=&#34;https://t.co/eclrCQfBsn&#34;&gt;pic.twitter.com/eclrCQfBsn&lt;/a&gt;&lt;/p&gt;&amp;mdash; しゃまとん🍉 (@shamaton) &lt;a href=&#34;https://twitter.com/shamaton/status/769882923361116160?ref_src=twsrc%5Etfw&#34;&gt;August 28, 2016&lt;/a&gt;&lt;/blockquote&gt;
+
+
+&lt;blockquote class=&#34;twitter-tweet&#34; align=&#34;center&#34; data-dnt=&#34;true&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;[WIP] attack animation of lunge.&lt;br&gt;突き攻撃のアニメーション。&lt;a href=&#34;https://twitter.com/hashtag/indiedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#indiedev&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gamedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#gamedev&lt;/a&gt; &lt;a href=&#34;https://t.co/vqLNmjEUeh&#34;&gt;pic.twitter.com/vqLNmjEUeh&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[2016/07] 開発進捗</title>
+      <link>https://shamaton.dev/posts/247/</link>
+      <pubDate>Mon, 01 Aug 2016 13:00:18 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/247/</guid>
+      <description>&lt;p&gt;2016年7月の進捗報告まとめです。&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; align=&#34;center&#34; data-dnt=&#34;true&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;[WIP] I implemented process which player uses item.&lt;br&gt;アイテムを使った一連の流れを実装してみました。ちょっと詰まり気味。&lt;a href=&#34;https://twitter.com/hashtag/indiedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#indiedev&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gamedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#gamedev&lt;/a&gt; &lt;a href=&#34;https://t.co/BrFVqF7yU3&#34;&gt;pic.twitter.com/BrFVqF7yU3&lt;/a&gt;&lt;/p&gt;&amp;mdash; しゃまとん🍉 (@shamaton) &lt;a href=&#34;https://twitter.com/shamaton/status/757595276127285248?ref_src=twsrc%5Etfw&#34;&gt;July 25, 2016&lt;/a&gt;&lt;/blockquote&gt;
+
+
+&lt;blockquote class=&#34;twitter-tweet&#34; align=&#34;center&#34; data-dnt=&#34;true&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;[WIP] made effects. These are written by shader. Shader is difficult!!&lt;br&gt;エフェクト作ってみました。シェーダ難しい！&lt;a href=&#34;https://twitter.com/hashtag/indiedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#indiedev&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gamedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#gamedev&lt;/a&gt; &lt;a href=&#34;https://t.co/fhAraCJAsi&#34;&gt;pic.twitter.com/fhAraCJAsi&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[2016/06] 開発進捗まとめ</title>
+      <link>https://shamaton.dev/posts/193/</link>
+      <pubDate>Sun, 03 Jul 2016 01:07:15 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/193/</guid>
+      <description>&lt;p&gt;2016年6月の進捗報告まとめです。&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; align=&#34;center&#34; data-dnt=&#34;true&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;[WIP] make scene transition tests. &lt;br&gt;エフェクト入れてフィールドの切り替えテストしてみた。&lt;a href=&#34;https://twitter.com/hashtag/indiedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#indiedev&lt;/a&gt;  &lt;a href=&#34;https://twitter.com/hashtag/gamedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#gamedev&lt;/a&gt; &lt;a href=&#34;https://t.co/DJbXvf35nm&#34;&gt;pic.twitter.com/DJbXvf35nm&lt;/a&gt;&lt;/p&gt;&amp;mdash; しゃまとん🍉 (@shamaton) &lt;a href=&#34;https://twitter.com/shamaton/status/748530763813908480?ref_src=twsrc%5Etfw&#34;&gt;June 30, 2016&lt;/a&gt;&lt;/blockquote&gt;
+
+
+&lt;blockquote class=&#34;twitter-tweet&#34; align=&#34;center&#34; data-dnt=&#34;true&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;[WIP] camera chases target if target goes out render space.&lt;br&gt;[進捗]キャラがはみ出そうになるとカメラ追いかけるようにしてみた。&lt;a href=&#34;https://twitter.com/hashtag/indiedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#indiedev&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/gamedev?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#gamedev&lt;/a&gt; &lt;a href=&#34;https://t.co/G3fHzQ7xNq&#34;&gt;pic.twitter.com/G3fHzQ7xNq&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>アプリ – Reflect Number – をリリースしました</title>
+      <link>https://shamaton.dev/posts/200/</link>
+      <pubDate>Sat, 11 Jun 2016 23:45:18 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/200/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです。&lt;/p&gt;
+&lt;p&gt;昨日ですが、初めてUnityで作ったアプリをリリースしました。&lt;br&gt;
+Reflect Numberというタイトルです。&lt;/p&gt;
+&lt;p&gt;Unityに使えるようになるためのきっかけとして作成しました。&lt;br&gt;
+簡単な脳トレ系ゲームになります。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>アプリ – つくてん – をリリースしました</title>
+      <link>https://shamaton.dev/posts/98/</link>
+      <pubDate>Sat, 23 May 2015 15:50:20 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/98/</guid>
+      <description>&lt;p&gt;お世話になります。&lt;/p&gt;
+&lt;p&gt;しゃまとんです。&lt;/p&gt;
+&lt;p&gt;また、大したものではないですが、アプリをリリースしました。&lt;br&gt;
+何か、本当にひまつぶしになるようなアプリってないかなーという短絡的発想から&lt;br&gt;
+ただただタッチするだけのアプリを作りました。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
