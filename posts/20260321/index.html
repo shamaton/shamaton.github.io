@@ -88,8 +88,9 @@ ERROR error copying static files: html/template:_partials/head.html:40:12: no su
     <meta property="article:published_time" content="2026-03-21T01:23:45+00:00">
     <meta property="article:modified_time" content="2026-03-21T01:23:45+00:00">
     <meta property="article:tag" content="Hugo">
-
-  <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="https://shamaton.dev/images/posts/2026/03/20260321_p01.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://shamaton.dev/images/posts/2026/03/20260321_p01.png">
   <meta name="twitter:title" content="ブログテーマを PaperMod に変更した">
   <meta name="twitter:description" content="こんにちは。 ずっとブログの更新をしていなかったのですが、ちょっとやるかーということで hugo の更新をして build してみたところ、失敗してしまいました。
 ERROR error copying static files: html/template:_partials/head.html:40:12: no such template &#34;_internal/google_news.html&#34; まぁ、さすがに放置していてその間に何か変わってしまったか… と思い、使っているテーマも最新にしてみたのですが、それもで失敗してしまいました。">
@@ -128,7 +129,7 @@ ERROR error copying static files: html/template:_partials/head.html:40:12: no su
   "articleBody": "こんにちは。 ずっとブログの更新をしていなかったのですが、ちょっとやるかーということで hugo の更新をして build してみたところ、失敗してしまいました。\nERROR error copying static files: html/template:_partials/head.html:40:12: no such template \"_internal/google_news.html\" まぁ、さすがに放置していてその間に何か変わってしまったか… と思い、使っているテーマも最新にしてみたのですが、それもで失敗してしまいました。\n原因は hugo の更新に hello-friend-ng が追従できてなさそうということで issue はつくられているのですが、未対応のようでした。 更新もあまり活発ではなさそう？なのでこれは変えるしかないかなぁということで、別のテーマを探して変更をすることにしました。\n調べたところ現在のページ構成に近いテーマとして PaperMod というものがあったので、これを採用することにしました。\nコミット履歴を見ても、メンテナンスされている感じがするのでよさそうです。 スター数も 13k を超えており申し分ありません。ただそのままテーマを以降するだけでは使えなかったので、テーマのデフォルト挙動になるべく沿う形で記事側の一括修正を行いました。\nということでこれまでのデザインはこちら。\nPosts はタイトルのみのリスト表示になっていて、こちらのほうが個人的には好み。\nこれからのデザインはこちら（もうすでにかわっているけど）\nこちらはこちらで見やすそう。ダークテーマの切り替えがシュッとできるのはいいですね。\nということでこれからよろしく PaperMod 🎉\n",
   "wordCount" : "575",
   "inLanguage": "en",
-  "datePublished": "2026-03-21T01:23:45Z",
+  "image":"https://shamaton.dev/images/posts/2026/03/20260321_p01.png","datePublished": "2026-03-21T01:23:45Z",
   "dateModified": "2026-03-21T01:23:45Z",
   "author":{
     "@type": "Person",
@@ -203,6 +204,10 @@ ERROR error copying static files: html/template:_partials/head.html:40:12: no su
 
 </div>
   </header> 
+<figure class="entry-cover">
+        <img loading="eager" src="https://shamaton.dev/images/posts/2026/03/20260321_p01.png" alt="">
+        
+</figure>
   <div class="post-content"><p>こんにちは。
 ずっとブログの更新をしていなかったのですが、ちょっとやるかーということで <a href="https://gohugo.io/">hugo</a> の更新をして build してみたところ、失敗してしまいました。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ERROR error copying static files: html/template:_partials/head.html:40:12: no such template <span class="s2">&#34;_internal/google_news.html&#34;</span>
