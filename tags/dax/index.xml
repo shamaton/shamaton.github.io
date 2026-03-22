@@ -7,18 +7,8 @@
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <copyright>CC BY-NC 4.0</copyright>
-    <lastBuildDate>Sat, 21 Mar 2026 01:23:45 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Jun 2023 12:42:19 +0000</lastBuildDate>
     <atom:link href="https://shamaton.dev/tags/dax/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>ブログテーマを PaperMod に変更した</title>
-      <link>https://shamaton.dev/posts/20260321/</link>
-      <pubDate>Sat, 21 Mar 2026 01:23:45 +0000</pubDate>
-      <guid>https://shamaton.dev/posts/20260321/</guid>
-      <description>&lt;p&gt;こんにちは。
-ずっとブログの更新をしていなかったのですが、ちょっとやるかーということで &lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt; の更新をして build してみたところ、失敗してしまいました。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ERROR error copying static files: html/template:_partials/head.html:40:12: no such template &lt;span class=&#34;s2&#34;&gt;&amp;#34;_internal/google_news.html&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;まぁ、さすがに放置していてその間に何か変わってしまったか&amp;hellip; と思い、使っているテーマも最新にしてみたのですが、それもで失敗してしまいました。&lt;/p&gt;</description>
-    </item>
     <item>
       <title>aws-dax-go を aws-sdk-go-v2 化してみた</title>
       <link>https://shamaton.dev/posts/2023061101/</link>

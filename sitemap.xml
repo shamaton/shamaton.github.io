@@ -2,16 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://shamaton.dev/tags/aws/</loc>
-    <lastmod>2026-03-21T01:23:45+00:00</lastmod>
-  </url><url>
-    <loc>https://shamaton.dev/tags/dax/</loc>
-    <lastmod>2026-03-21T01:23:45+00:00</lastmod>
-  </url><url>
-    <loc>https://shamaton.dev/tags/dynamodb/</loc>
-    <lastmod>2026-03-21T01:23:45+00:00</lastmod>
-  </url><url>
-    <loc>https://shamaton.dev/tags/go/</loc>
+    <loc>https://shamaton.dev/tags/hugo/</loc>
     <lastmod>2026-03-21T01:23:45+00:00</lastmod>
   </url><url>
     <loc>https://shamaton.dev/posts/</loc>
@@ -26,7 +17,19 @@
     <loc>https://shamaton.dev/posts/20260321/</loc>
     <lastmod>2026-03-21T01:23:45+00:00</lastmod>
   </url><url>
+    <loc>https://shamaton.dev/tags/aws/</loc>
+    <lastmod>2023-06-11T12:42:19+00:00</lastmod>
+  </url><url>
     <loc>https://shamaton.dev/posts/2023061101/</loc>
+    <lastmod>2023-06-11T12:42:19+00:00</lastmod>
+  </url><url>
+    <loc>https://shamaton.dev/tags/dax/</loc>
+    <lastmod>2023-06-11T12:42:19+00:00</lastmod>
+  </url><url>
+    <loc>https://shamaton.dev/tags/dynamodb/</loc>
+    <lastmod>2023-06-11T12:42:19+00:00</lastmod>
+  </url><url>
+    <loc>https://shamaton.dev/tags/go/</loc>
     <lastmod>2023-06-11T12:42:19+00:00</lastmod>
   </url><url>
     <loc>https://shamaton.dev/tags/litestream/</loc>
@@ -66,9 +69,6 @@
     <lastmod>2021-08-18T10:23:09+00:00</lastmod>
   </url><url>
     <loc>https://shamaton.dev/tags/gcp/</loc>
-    <lastmod>2021-08-18T10:23:09+00:00</lastmod>
-  </url><url>
-    <loc>https://shamaton.dev/tags/hugo/</loc>
     <lastmod>2021-08-18T10:23:09+00:00</lastmod>
   </url><url>
     <loc>https://shamaton.dev/posts/676/</loc>
