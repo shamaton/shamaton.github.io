@@ -7,8 +7,17 @@
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <copyright>CC BY-NC 4.0</copyright>
-    <lastBuildDate>Sat, 13 Oct 2018 13:47:33 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Mar 2026 01:23:45 +0000</lastBuildDate>
     <atom:link href="https://shamaton.dev/tags/%E9%96%8B%E7%99%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>スペースを共有するサービス「Cockpi」を作りました</title>
+      <link>https://shamaton.dev/posts/20260323/</link>
+      <pubDate>Mon, 23 Mar 2026 01:23:45 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/20260323/</guid>
+      <description>&lt;p&gt;こんにちは。
+めちゃくちゃ久しぶり(?)というか初めてなのですが、Webサービスを作ってリリースしました。&lt;br&gt;
+&lt;a href=&#34;https://cockpi.space&#34;&gt;Cockpi&lt;/a&gt; というスペースを共有するサービスです。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>[Unity] 利用規約をつくったときのこと</title>
       <link>https://shamaton.dev/posts/490/</link>
@@ -108,17 +117,6 @@
 Reflect Numberというタイトルです。&lt;/p&gt;
 &lt;p&gt;Unityに使えるようになるためのきっかけとして作成しました。&lt;br&gt;
 簡単な脳トレ系ゲームになります。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>アプリ – つくてん – をリリースしました</title>
-      <link>https://shamaton.dev/posts/98/</link>
-      <pubDate>Sat, 23 May 2015 15:50:20 +0000</pubDate>
-      <guid>https://shamaton.dev/posts/98/</guid>
-      <description>&lt;p&gt;お世話になります。&lt;/p&gt;
-&lt;p&gt;しゃまとんです。&lt;/p&gt;
-&lt;p&gt;また、大したものではないですが、アプリをリリースしました。&lt;br&gt;
-何か、本当にひまつぶしになるようなアプリってないかなーという短絡的発想から&lt;br&gt;
-ただただタッチするだけのアプリを作りました。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

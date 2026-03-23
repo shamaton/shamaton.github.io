@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Cockpi on shamaton</title>
+    <link>https://shamaton.dev/tags/cockpi/</link>
+    <description>Recent content in Cockpi on shamaton</description>
+    <generator>Hugo</generator>
+    <language>ja-jp</language>
+    <copyright>CC BY-NC 4.0</copyright>
+    <lastBuildDate>Mon, 23 Mar 2026 01:23:45 +0000</lastBuildDate>
+    <atom:link href="https://shamaton.dev/tags/cockpi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>スペースを共有するサービス「Cockpi」を作りました</title>
+      <link>https://shamaton.dev/posts/20260323/</link>
+      <pubDate>Mon, 23 Mar 2026 01:23:45 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/20260323/</guid>
+      <description>&lt;p&gt;こんにちは。
+めちゃくちゃ久しぶり(?)というか初めてなのですが、Webサービスを作ってリリースしました。&lt;br&gt;
+&lt;a href=&#34;https://cockpi.space&#34;&gt;Cockpi&lt;/a&gt; というスペースを共有するサービスです。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
