@@ -16,7 +16,15 @@
       <guid>https://shamaton.dev/posts/2023061101/</guid>
       <description>&lt;p&gt;お世話になっております。&lt;br&gt;
 しゃまとんです😊&lt;/p&gt;
-&lt;blockquote class=&#34;twitter-tweet&#34; align=&#34;center&#34; data-dnt=&#34;true&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;DAXのGoライブラリがSDK V2を使っていなかったので、うわあああーとやってPR（クソデカ）出してみた。&lt;br&gt;良いお返事が返ってくるといいな🙏&lt;a href=&#34;https://t.co/uon5giqJuF&#34;&gt;https://t.co/uon5giqJuF&lt;/a&gt;&lt;/p&gt;</description>
+&lt;span class=&#34;tweet-embed&#34; data-tweet-id=&#34;1667539474149146624&#34;&gt;
+  &lt;span class=&#34;tweet-embed__target&#34; aria-live=&#34;polite&#34;&gt;&lt;/span&gt;
+  &lt;span class=&#34;tweet-embed__fallback&#34;&gt;
+    &lt;a href=&#34;https://x.com/i/web/status/1667539474149146624&#34;&gt;X のポストを開く&lt;/a&gt;
+  &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;p&gt;約一年ぶりの投稿になりますが、今回はとある OSS に PR をしてみました。&lt;br&gt;
+aws-dax-go という OSS で aws が提供している DAX の Go 向けのライブラリです。&lt;/p&gt;</description>
     </item>
     <item>
       <title>litestream / minio を docker compose で試す</title>

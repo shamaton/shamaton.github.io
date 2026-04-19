@@ -77,6 +77,38 @@
 </script><link rel="stylesheet" href="https://shamaton.dev/lightbox/css/lightbox.min.css">
 <link rel="stylesheet" href="https://shamaton.dev/design/button.css">
 <link rel="stylesheet" href="https://shamaton.dev/design/appbanner.css">
+<style>
+  .tweet-embed {
+    display: block;
+    margin: 1.5rem 0;
+  }
+
+  .tweet-embed__target:empty {
+    display: none;
+  }
+
+  .tweet-embed__target {
+    display: block;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .tweet-embed__target iframe {
+    display: block;
+    border-radius: 12px;
+    background: var(--entry);
+  }
+
+  .tweet-embed__fallback {
+    display: block;
+    margin: 0;
+    text-align: center;
+  }
+
+  .tweet-embed[data-rendered="true"] .tweet-embed__fallback {
+    display: none;
+  }
+</style>
 <meta property="og:url" content="https://shamaton.dev/posts/570/">
   <meta property="og:site_name" content="shamaton">
   <meta property="og:title" content="[golang] MessagePackのシリアライザ(msgpack)を作りました">
@@ -131,8 +163,8 @@
   "keywords": [
     "go"
   ],
-  "articleBody": "お世話になっております。\nしゃまとんです。\nちょっとしたお知らせです。\nタイトルの通りなんですが、golangで使えるMessagePackのシリアライザを作りました。\n（🎉個人的にはパンパカパーン🎉）\nまず、MessagePackとはデータのシリアライズフォーマットの1つで効率の良い形式として知られています。よくJSONと比較・検証されて使われていることが多いですね。\n現在は多くの言語で使えるようになっており、言語間で何かデータのやり取りをするときに候補の1つになっています。\n公式にもある通り、JSONよりも軽量で速いのが特徴です。\nもちろんGo言語でもMessagePackが扱えるパッケージがすでにいくつか存在しており、使いたければ使える状況になっています。自分自身も使っていたのですが、とあるきっかけからpackageを覗いてみたところ、なんとなくもう少し速くできそうかなぁ…と思いました。\nで、簡単な検証用ベンチマークコードを書いてみたところ、速くなりそうかなぁ…ということで書き始めたのが最初でした。コードを書き換えてはベンチマークを確認して…実装して…を繰り返しすすめていき、現在（2018.09時点）v1.0としてリリースできました。\nエンドポイントの名称は迷ったんですが、いろいろ考えてEncode / Decodeにしました。\n呼び出しはこんな感じで。\npackage main import ( \"github.com/shamaton/msgpack\" ) func main() { type Struct struct { String string } v := Struct{String: \"msgpack\"} d, err := msgpack.Encode(v) if err != nil { panic(err) } r := Struct{} err = msgpack.Decode(d, \u0026r) if err != nil { panic(err) } } 単純に使うだけならEncode/Decodeを呼び出すだけです！\n引数は標準のパッケージencoding/jsonと同じ形にしてます。（置き換えが容易かも…！）\nで、肝心のパフォーマンスですが、まずはシリアライズ。\n自分が知っている範囲で他のMessagePackやJSON等の別フォーマットと比較してみます。ベンチマークはおそらくユーザーが呼び出すであろうエンドポイントでとってみました。\n$ go test -bench CompareEncode -benchmem goos: darwin goarch: amd64 pkg: github.com/shamaton/msgpack_bench BenchmarkCompareEncodeShamaton-4 1000000 1255 ns/op 320 B/op 3 allocs/op BenchmarkCompareEncodeVmihailenco-4 300000 4645 ns/op 968 B/op 14 allocs/op BenchmarkCompareEncodeArrayShamaton-4 1000000 1110 ns/op 256 B/op 3 allocs/op BenchmarkCompareEncodeArrayVmihailenco-4 300000 4387 ns/op 968 B/op 14 allocs/op BenchmarkCompareEncodeUgorji-4 1000000 1921 ns/op 986 B/op 11 allocs/op BenchmarkCompareEncodeZeroformatter-4 1000000 1890 ns/op 744 B/op 13 allocs/op BenchmarkCompareEncodeJson-4 500000 3428 ns/op 1224 B/op 16 allocs/op BenchmarkCompareEncodeGob-4 200000 11537 ns/op 2824 B/op 50 allocs/op BenchmarkCompareEncodeProtocolBuffer-4 500000 2338 ns/op 792 B/op 29 allocs/op PASS ok github.com/shamaton/msgpack_bench 14.481s Shamatonとついているものが今回リリースしたものになります。ArrayShamatonというのはMessagePackのフォーマット\bが軽量なパターンを採用しているものです（UnityではMessagePack-CSharpでおなじみですね？）。今回のケースでは通常のEncodeでも他のパッケージよりも性能よく動作させられたっぽいです。\n次にデシリアライズです。\n$ go test -bench CompareDecode -benchmem goos: darwin goarch: amd64 pkg: github.com/shamaton/msgpack_bench BenchmarkCompareDecodeShamaton-4 1000000 1393 ns/op 512 B/op 6 allocs/op BenchmarkCompareDecodeVmihailenco-4 300000 5393 ns/op 1056 B/op 33 allocs/op BenchmarkCompareDecodeArrayShamaton-4 2000000 990 ns/op 512 B/op 6 allocs/op BenchmarkCompareDecodeArrayVmihailenco-4 300000 4397 ns/op 992 B/op 22 allocs/op BenchmarkCompareDecodeUgorji-4 500000 2587 ns/op 845 B/op 12 allocs/op BenchmarkCompareDecodeZeroformatter-4 1000000 2350 ns/op 976 B/op 29 allocs/op BenchmarkCompareDecodeJson-4 200000 8904 ns/op 1216 B/op 43 allocs/op BenchmarkCompareDecodeGob-4 50000 34805 ns/op 10172 B/op 275 allocs/op BenchmarkCompareDecodeProtocolBuffer-4 1000000 1759 ns/op 656 B/op 19 allocs/op PASS ok github.com/shamaton/msgpack_bench 16.946s こちらも性能良く動作させられたっぽいです。ただProtocol Bufferはデータの形次第でパフォーマンス良くなることがありました（struct onlyな構成など）。まぁprotoファイルとかを準備しないといけないので、その点よいかなーと。\n結果を見る感じだとArray呼び出しがパフォーマンスがやはり良いので、使えるならAsArrayを使うのが良さそうかなと思います。ベンチマークですが、こちらにコードがあるので何かあれば教えてください。\nということで、単純な呼び出しでMessagePack系では割と速いシリアライザを作ることが出来ました。よかったよかった。それと今回の実装でzeroformatter側にも反映できそうなところもわかったので、対応できればなーと思っています。\nあと余談ですが、タグでシリアライズ対象の設定ができたりとか、拡張エンコード・デコードにも対応させたりもしてます。（この辺はREADMEとかExampleに書く予定です）\nよかったら使ってみてください！\n以上です。\nI've just published MessagePack Serializer(v1.0.0) for golang. Its performance is faster than the others. You can use simply. Please see and try it!! 🎉🎉🎉https://t.co/X4P5qNWOzH#Golang\n— しゃまとん🍉 (@shamaton) September 28, 2018 ",
-  "wordCount" : "1690",
+  "articleBody": "お世話になっております。\nしゃまとんです。\nちょっとしたお知らせです。\nタイトルの通りなんですが、golangで使えるMessagePackのシリアライザを作りました。\n（🎉個人的にはパンパカパーン🎉）\nまず、MessagePackとはデータのシリアライズフォーマットの1つで効率の良い形式として知られています。よくJSONと比較・検証されて使われていることが多いですね。\n現在は多くの言語で使えるようになっており、言語間で何かデータのやり取りをするときに候補の1つになっています。\n公式にもある通り、JSONよりも軽量で速いのが特徴です。\nもちろんGo言語でもMessagePackが扱えるパッケージがすでにいくつか存在しており、使いたければ使える状況になっています。自分自身も使っていたのですが、とあるきっかけからpackageを覗いてみたところ、なんとなくもう少し速くできそうかなぁ…と思いました。\nで、簡単な検証用ベンチマークコードを書いてみたところ、速くなりそうかなぁ…ということで書き始めたのが最初でした。コードを書き換えてはベンチマークを確認して…実装して…を繰り返しすすめていき、現在（2018.09時点）v1.0としてリリースできました。\nエンドポイントの名称は迷ったんですが、いろいろ考えてEncode / Decodeにしました。\n呼び出しはこんな感じで。\npackage main import ( \"github.com/shamaton/msgpack\" ) func main() { type Struct struct { String string } v := Struct{String: \"msgpack\"} d, err := msgpack.Encode(v) if err != nil { panic(err) } r := Struct{} err = msgpack.Decode(d, \u0026r) if err != nil { panic(err) } } 単純に使うだけならEncode/Decodeを呼び出すだけです！\n引数は標準のパッケージencoding/jsonと同じ形にしてます。（置き換えが容易かも…！）\nで、肝心のパフォーマンスですが、まずはシリアライズ。\n自分が知っている範囲で他のMessagePackやJSON等の別フォーマットと比較してみます。ベンチマークはおそらくユーザーが呼び出すであろうエンドポイントでとってみました。\n$ go test -bench CompareEncode -benchmem goos: darwin goarch: amd64 pkg: github.com/shamaton/msgpack_bench BenchmarkCompareEncodeShamaton-4 1000000 1255 ns/op 320 B/op 3 allocs/op BenchmarkCompareEncodeVmihailenco-4 300000 4645 ns/op 968 B/op 14 allocs/op BenchmarkCompareEncodeArrayShamaton-4 1000000 1110 ns/op 256 B/op 3 allocs/op BenchmarkCompareEncodeArrayVmihailenco-4 300000 4387 ns/op 968 B/op 14 allocs/op BenchmarkCompareEncodeUgorji-4 1000000 1921 ns/op 986 B/op 11 allocs/op BenchmarkCompareEncodeZeroformatter-4 1000000 1890 ns/op 744 B/op 13 allocs/op BenchmarkCompareEncodeJson-4 500000 3428 ns/op 1224 B/op 16 allocs/op BenchmarkCompareEncodeGob-4 200000 11537 ns/op 2824 B/op 50 allocs/op BenchmarkCompareEncodeProtocolBuffer-4 500000 2338 ns/op 792 B/op 29 allocs/op PASS ok github.com/shamaton/msgpack_bench 14.481s Shamatonとついているものが今回リリースしたものになります。ArrayShamatonというのはMessagePackのフォーマット\bが軽量なパターンを採用しているものです（UnityではMessagePack-CSharpでおなじみですね？）。今回のケースでは通常のEncodeでも他のパッケージよりも性能よく動作させられたっぽいです。\n次にデシリアライズです。\n$ go test -bench CompareDecode -benchmem goos: darwin goarch: amd64 pkg: github.com/shamaton/msgpack_bench BenchmarkCompareDecodeShamaton-4 1000000 1393 ns/op 512 B/op 6 allocs/op BenchmarkCompareDecodeVmihailenco-4 300000 5393 ns/op 1056 B/op 33 allocs/op BenchmarkCompareDecodeArrayShamaton-4 2000000 990 ns/op 512 B/op 6 allocs/op BenchmarkCompareDecodeArrayVmihailenco-4 300000 4397 ns/op 992 B/op 22 allocs/op BenchmarkCompareDecodeUgorji-4 500000 2587 ns/op 845 B/op 12 allocs/op BenchmarkCompareDecodeZeroformatter-4 1000000 2350 ns/op 976 B/op 29 allocs/op BenchmarkCompareDecodeJson-4 200000 8904 ns/op 1216 B/op 43 allocs/op BenchmarkCompareDecodeGob-4 50000 34805 ns/op 10172 B/op 275 allocs/op BenchmarkCompareDecodeProtocolBuffer-4 1000000 1759 ns/op 656 B/op 19 allocs/op PASS ok github.com/shamaton/msgpack_bench 16.946s こちらも性能良く動作させられたっぽいです。ただProtocol Bufferはデータの形次第でパフォーマンス良くなることがありました（struct onlyな構成など）。まぁprotoファイルとかを準備しないといけないので、その点よいかなーと。\n結果を見る感じだとArray呼び出しがパフォーマンスがやはり良いので、使えるならAsArrayを使うのが良さそうかなと思います。ベンチマークですが、こちらにコードがあるので何かあれば教えてください。\nということで、単純な呼び出しでMessagePack系では割と速いシリアライザを作ることが出来ました。よかったよかった。それと今回の実装でzeroformatter側にも反映できそうなところもわかったので、対応できればなーと思っています。\nあと余談ですが、タグでシリアライズ対象の設定ができたりとか、拡張エンコード・デコードにも対応させたりもしてます。（この辺はREADMEとかExampleに書く予定です）\nよかったら使ってみてください！\n以上です。\nX のポストを開く ",
+  "wordCount" : "1631",
   "inLanguage": "en",
   "datePublished": "2018-09-28T13:02:59Z",
   "dateModified": "2018-09-28T13:02:59Z",
@@ -299,8 +331,12 @@
 <p>あと余談ですが、タグでシリアライズ対象の設定ができたりとか、拡張エンコード・デコードにも対応させたりもしてます。（この辺はREADMEとかExampleに書く予定です）</p>
 <p>よかったら使ってみてください！<br>
 以上です。</p>
-<blockquote class="twitter-tweet" align="center" data-dnt="true"><p lang="en" dir="ltr">I&#39;ve just published MessagePack Serializer(v1.0.0) for golang. Its performance is faster than the others. You can use simply. Please see and try it!! 🎉🎉🎉<a href="https://t.co/X4P5qNWOzH">https://t.co/X4P5qNWOzH</a><a href="https://twitter.com/hashtag/Golang?src=hash&amp;ref_src=twsrc%5Etfw">#Golang</a></p>&mdash; しゃまとん🍉 (@shamaton) <a href="https://twitter.com/shamaton/status/1045659310737346561?ref_src=twsrc%5Etfw">September 28, 2018</a></blockquote>
-
+<span class="tweet-embed" data-tweet-id="1045659310737346561">
+  <span class="tweet-embed__target" aria-live="polite"></span>
+  <span class="tweet-embed__fallback">
+    <a href="https://x.com/i/web/status/1045659310737346561">X のポストを開く</a>
+  </span>
+</span>
 
 
 
@@ -423,6 +459,197 @@
     </svg>
 </a><script defer src="https://shamaton.dev/lightbox/js/lightbox-plus-jquery.min.js"></script>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script>
+  (() => {
+    const embedSelector = ".tweet-embed[data-tweet-id]";
+    const themeMetaName = "twitter:widgets:theme";
+    const borderMetaName = "twitter:widgets:border-color";
+    let widgetsPromise;
+    let renderedTheme = "";
+
+    const resolveTheme = () => {
+      const currentTheme = document.documentElement.dataset.theme;
+      if (currentTheme === "dark" || currentTheme === "light") {
+        return currentTheme;
+      }
+
+      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    };
+
+    const ensureMeta = (name, content) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement("meta");
+        meta.name = name;
+        document.head.appendChild(meta);
+      }
+
+      meta.content = content;
+    };
+
+    const resolveBorderColor = () => {
+      return getComputedStyle(document.documentElement).getPropertyValue("--border").trim() || "#333333";
+    };
+
+    const resolveEntryColor = () => {
+      return getComputedStyle(document.documentElement).getPropertyValue("--entry").trim() || "#2e2e33";
+    };
+
+    const ensureWidgetMeta = (theme) => {
+      ensureMeta(themeMetaName, theme);
+      ensureMeta(borderMetaName, resolveBorderColor());
+    };
+
+    const styleEmbeddedTweet = (target, element) => {
+      const entryColor = resolveEntryColor();
+      const applyStyles = (node) => {
+        if (!node || !node.style) {
+          return;
+        }
+
+        node.style.display = "block";
+        node.style.borderRadius = "12px";
+      };
+
+      applyStyles(element);
+      if (target && typeof target.querySelectorAll === "function") {
+        target.querySelectorAll("iframe").forEach((iframe) => {
+          applyStyles(iframe);
+          iframe.style.backgroundColor = entryColor;
+        });
+      }
+    };
+
+    const loadWidgets = () => {
+      if (widgetsPromise) {
+        return widgetsPromise;
+      }
+
+      widgetsPromise = new Promise((resolve, reject) => {
+        let attempts = 0;
+
+        const check = () => {
+          if (window.twttr && window.twttr.widgets && typeof window.twttr.ready === "function") {
+            window.twttr.ready(resolve);
+            return;
+          }
+
+          attempts += 1;
+          if (attempts > 100) {
+            reject(new Error("Twitter widgets.js did not load in time"));
+            return;
+          }
+
+          window.setTimeout(check, 100);
+        };
+
+        check();
+      });
+
+      return widgetsPromise;
+    };
+
+    const renderTweets = (force = false) => {
+      const embeds = document.querySelectorAll(embedSelector);
+      if (!embeds.length) {
+        return;
+      }
+
+      const theme = resolveTheme();
+      ensureWidgetMeta(theme);
+
+      loadWidgets()
+        .then((twttr) => {
+          embeds.forEach((embed) => {
+            const tweetId = embed.dataset.tweetId;
+            const target = embed.querySelector(".tweet-embed__target");
+            const fallback = embed.querySelector(".tweet-embed__fallback");
+
+            if (!tweetId || !target) {
+              return;
+            }
+
+            if (!force && embed.dataset.renderedTheme === theme && target.childElementCount > 0) {
+              return;
+            }
+
+            embed.removeAttribute("data-rendered");
+            target.innerHTML = "";
+            if (fallback) {
+              fallback.hidden = false;
+            }
+
+            twttr.widgets.createTweet(tweetId, target, {
+              align: "center",
+              dnt: true,
+              theme,
+            }).then((element) => {
+              if (!element) {
+                throw new Error(`Tweet ${tweetId} could not be rendered`);
+              }
+
+              styleEmbeddedTweet(target, element);
+              embed.dataset.rendered = "true";
+              embed.dataset.renderedTheme = theme;
+            }).catch(() => {
+              target.innerHTML = "";
+              embed.removeAttribute("data-rendered");
+              embed.removeAttribute("data-renderedTheme");
+              if (fallback) {
+                fallback.hidden = false;
+              }
+            });
+          });
+        })
+        .catch(() => {
+          document.querySelectorAll(`${embedSelector} .tweet-embed__fallback`).forEach((fallback) => {
+            fallback.hidden = false;
+          });
+        });
+    };
+
+    const rerenderTweetsIfThemeChanged = () => {
+      const nextTheme = resolveTheme();
+      if (nextTheme === renderedTheme) {
+        return;
+      }
+
+      renderedTheme = nextTheme;
+      renderTweets(true);
+    };
+
+    const initTweetEmbeds = () => {
+      renderedTheme = resolveTheme();
+      renderTweets();
+
+      const toggle = document.getElementById("theme-toggle");
+      if (toggle) {
+        toggle.addEventListener("click", () => {
+          window.setTimeout(rerenderTweetsIfThemeChanged, 0);
+        });
+      }
+
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      const handleMediaChange = () => {
+        if (!localStorage.getItem("pref-theme")) {
+          rerenderTweetsIfThemeChanged();
+        }
+      };
+
+      if (typeof mediaQuery.addEventListener === "function") {
+        mediaQuery.addEventListener("change", handleMediaChange);
+      } else if (typeof mediaQuery.addListener === "function") {
+        mediaQuery.addListener(handleMediaChange);
+      }
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initTweetEmbeds, { once: true });
+    } else {
+      initTweetEmbeds();
+    }
+  })();
+</script>
 
 
 <script>

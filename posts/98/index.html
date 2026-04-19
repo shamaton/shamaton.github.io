@@ -77,6 +77,38 @@
 </script><link rel="stylesheet" href="https://shamaton.dev/lightbox/css/lightbox.min.css">
 <link rel="stylesheet" href="https://shamaton.dev/design/button.css">
 <link rel="stylesheet" href="https://shamaton.dev/design/appbanner.css">
+<style>
+  .tweet-embed {
+    display: block;
+    margin: 1.5rem 0;
+  }
+
+  .tweet-embed__target:empty {
+    display: none;
+  }
+
+  .tweet-embed__target {
+    display: block;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .tweet-embed__target iframe {
+    display: block;
+    border-radius: 12px;
+    background: var(--entry);
+  }
+
+  .tweet-embed__fallback {
+    display: block;
+    margin: 0;
+    text-align: center;
+  }
+
+  .tweet-embed[data-rendered="true"] .tweet-embed__fallback {
+    display: none;
+  }
+</style>
 <meta property="og:url" content="https://shamaton.dev/posts/98/">
   <meta property="og:site_name" content="shamaton">
   <meta property="og:title" content="アプリ – つくてん – をリリースしました">
@@ -349,6 +381,197 @@
     </svg>
 </a><script defer src="https://shamaton.dev/lightbox/js/lightbox-plus-jquery.min.js"></script>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script>
+  (() => {
+    const embedSelector = ".tweet-embed[data-tweet-id]";
+    const themeMetaName = "twitter:widgets:theme";
+    const borderMetaName = "twitter:widgets:border-color";
+    let widgetsPromise;
+    let renderedTheme = "";
+
+    const resolveTheme = () => {
+      const currentTheme = document.documentElement.dataset.theme;
+      if (currentTheme === "dark" || currentTheme === "light") {
+        return currentTheme;
+      }
+
+      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    };
+
+    const ensureMeta = (name, content) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement("meta");
+        meta.name = name;
+        document.head.appendChild(meta);
+      }
+
+      meta.content = content;
+    };
+
+    const resolveBorderColor = () => {
+      return getComputedStyle(document.documentElement).getPropertyValue("--border").trim() || "#333333";
+    };
+
+    const resolveEntryColor = () => {
+      return getComputedStyle(document.documentElement).getPropertyValue("--entry").trim() || "#2e2e33";
+    };
+
+    const ensureWidgetMeta = (theme) => {
+      ensureMeta(themeMetaName, theme);
+      ensureMeta(borderMetaName, resolveBorderColor());
+    };
+
+    const styleEmbeddedTweet = (target, element) => {
+      const entryColor = resolveEntryColor();
+      const applyStyles = (node) => {
+        if (!node || !node.style) {
+          return;
+        }
+
+        node.style.display = "block";
+        node.style.borderRadius = "12px";
+      };
+
+      applyStyles(element);
+      if (target && typeof target.querySelectorAll === "function") {
+        target.querySelectorAll("iframe").forEach((iframe) => {
+          applyStyles(iframe);
+          iframe.style.backgroundColor = entryColor;
+        });
+      }
+    };
+
+    const loadWidgets = () => {
+      if (widgetsPromise) {
+        return widgetsPromise;
+      }
+
+      widgetsPromise = new Promise((resolve, reject) => {
+        let attempts = 0;
+
+        const check = () => {
+          if (window.twttr && window.twttr.widgets && typeof window.twttr.ready === "function") {
+            window.twttr.ready(resolve);
+            return;
+          }
+
+          attempts += 1;
+          if (attempts > 100) {
+            reject(new Error("Twitter widgets.js did not load in time"));
+            return;
+          }
+
+          window.setTimeout(check, 100);
+        };
+
+        check();
+      });
+
+      return widgetsPromise;
+    };
+
+    const renderTweets = (force = false) => {
+      const embeds = document.querySelectorAll(embedSelector);
+      if (!embeds.length) {
+        return;
+      }
+
+      const theme = resolveTheme();
+      ensureWidgetMeta(theme);
+
+      loadWidgets()
+        .then((twttr) => {
+          embeds.forEach((embed) => {
+            const tweetId = embed.dataset.tweetId;
+            const target = embed.querySelector(".tweet-embed__target");
+            const fallback = embed.querySelector(".tweet-embed__fallback");
+
+            if (!tweetId || !target) {
+              return;
+            }
+
+            if (!force && embed.dataset.renderedTheme === theme && target.childElementCount > 0) {
+              return;
+            }
+
+            embed.removeAttribute("data-rendered");
+            target.innerHTML = "";
+            if (fallback) {
+              fallback.hidden = false;
+            }
+
+            twttr.widgets.createTweet(tweetId, target, {
+              align: "center",
+              dnt: true,
+              theme,
+            }).then((element) => {
+              if (!element) {
+                throw new Error(`Tweet ${tweetId} could not be rendered`);
+              }
+
+              styleEmbeddedTweet(target, element);
+              embed.dataset.rendered = "true";
+              embed.dataset.renderedTheme = theme;
+            }).catch(() => {
+              target.innerHTML = "";
+              embed.removeAttribute("data-rendered");
+              embed.removeAttribute("data-renderedTheme");
+              if (fallback) {
+                fallback.hidden = false;
+              }
+            });
+          });
+        })
+        .catch(() => {
+          document.querySelectorAll(`${embedSelector} .tweet-embed__fallback`).forEach((fallback) => {
+            fallback.hidden = false;
+          });
+        });
+    };
+
+    const rerenderTweetsIfThemeChanged = () => {
+      const nextTheme = resolveTheme();
+      if (nextTheme === renderedTheme) {
+        return;
+      }
+
+      renderedTheme = nextTheme;
+      renderTweets(true);
+    };
+
+    const initTweetEmbeds = () => {
+      renderedTheme = resolveTheme();
+      renderTweets();
+
+      const toggle = document.getElementById("theme-toggle");
+      if (toggle) {
+        toggle.addEventListener("click", () => {
+          window.setTimeout(rerenderTweetsIfThemeChanged, 0);
+        });
+      }
+
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      const handleMediaChange = () => {
+        if (!localStorage.getItem("pref-theme")) {
+          rerenderTweetsIfThemeChanged();
+        }
+      };
+
+      if (typeof mediaQuery.addEventListener === "function") {
+        mediaQuery.addEventListener("change", handleMediaChange);
+      } else if (typeof mediaQuery.addListener === "function") {
+        mediaQuery.addListener(handleMediaChange);
+      }
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initTweetEmbeds, { once: true });
+    } else {
+      initTweetEmbeds();
+    }
+  })();
+</script>
 
 
 <script>

@@ -75,6 +75,38 @@
 </script><link rel="stylesheet" href="https://shamaton.dev/lightbox/css/lightbox.min.css">
 <link rel="stylesheet" href="https://shamaton.dev/design/button.css">
 <link rel="stylesheet" href="https://shamaton.dev/design/appbanner.css">
+<style>
+  .tweet-embed {
+    display: block;
+    margin: 1.5rem 0;
+  }
+
+  .tweet-embed__target:empty {
+    display: none;
+  }
+
+  .tweet-embed__target {
+    display: block;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .tweet-embed__target iframe {
+    display: block;
+    border-radius: 12px;
+    background: var(--entry);
+  }
+
+  .tweet-embed__fallback {
+    display: block;
+    margin: 0;
+    text-align: center;
+  }
+
+  .tweet-embed[data-rendered="true"] .tweet-embed__fallback {
+    display: none;
+  }
+</style>
 <meta property="og:url" content="https://shamaton.dev/posts/513/">
   <meta property="og:site_name" content="shamaton">
   <meta property="og:title" content="[メモ] 2017年の振り返り">
@@ -125,8 +157,8 @@
   "keywords": [
     "メモ"
   ],
-  "articleBody": "お世話になっております。\nしゃまとんです。\nこれまで、振り返り的な記事は書いてこなかったのですが、１年前なに考えていたがわかるようになるかなと思ったので、自分用メモとしてつらつらと書いておきたいと思います。\n書いてるとポエム的な感じになって消してしまいそうなんですが。。\n自分としては2016年から変わらず継続して頑張るという感じで2017年はスタートしたのですが、今になってみると想定した感じではない気がするもトータルとしてはよかったかなーという印象です。\n理由としては、すべてが今年リリースしたアプリ「ことだまっぷ」に集約してしまうのですが\nことだまっぷ 開発元:shamaton 無料 2016年にGoMapというアセットがたしか登場したわけなんですが、 その前から位置情報を使った何かサービスかアプリケーションを作れないかなーと思っており、 GoMapを使って形にできそうだなーということで開発を始め、なんとか年内にリリースすることができました。\n今のところ全然ダウンロードされていないのですが、 自分としては作りたいと思っていたものが作れたという喜びが大きいので今のところ気にしていません。\n個人開発で位置情報をつかっているものもそんなに無いでしょうし。\n開発は帰宅してから行い少しずつ進めていたのですが、 なかなか進みが良くなかったので他に割いていた時間を開発に当てることで速度を高めました。\n今までの開発（大したものではないですが）では個人のサービスでサーバー作るのはお金かかるししんどいよな〜 と思っていたので避けていたのですが、ことだまっぷを作るに当たってはサーバーが必須であることは明白であったので、 サーバーの開発も行いました。サーバーサイドの言語はGoを使っています。\nなので、UnityとGoを開発を並行で行っていました。\n位置情報な開発に関する情報って少ない感じだったのですが、 色々しらべて使うミドルウェアも決定してやってみて何となく仕上げることができてよかったです。\n一応、高トラフィックな状況とかを想定して組んではいます。\nサーバーにはGCPを使っていて初めて使いました。 今のところ大きなエラーもなく動作しているので、もう少し評判があがるといいな〜と思っています。\nその中で色々学ぶこともあったので、今後記事にしていく予定です。\nことだまっぷは自分としてはまだまだだと思っているし、 サーバーサイドのノウハウもためていきたいので引き続きアップデートを続けていいければと思っています。\nちなみにことだまっぷの開発前に作っていたものですが、 開発をやめたつもりはなくそちらで叶えたいこともあるのでどこかのタイミングでまた制作復帰するつもりではいます。\n[WIP] call dragon and fly to the sky.\n呼び出して、空に飛び立つまでの流れ的なやつ。#indiedev #gamedev pic.twitter.com/I4f9dnLXlI\n— しゃまとん🍉 (@shamaton) December 30, 2016 個人開発でちゃんとしたゲームを作っている方々は本当に素晴らしい。\nということで2017年も何か成功したわけではありませんが、 2018年の引き続き折れずに頑張っていけたらなと思います。なんとなくやるべき方向性も決まっているので、 しっかり進めていきたいなという所存です。\nフォローしてくださっている方、記事を読んでくださっている方、いつもありがとうございます。それでは良いお年を。\n以上です。\n",
-  "wordCount" : "1354",
+  "articleBody": "お世話になっております。\nしゃまとんです。\nこれまで、振り返り的な記事は書いてこなかったのですが、１年前なに考えていたがわかるようになるかなと思ったので、自分用メモとしてつらつらと書いておきたいと思います。\n書いてるとポエム的な感じになって消してしまいそうなんですが。。\n自分としては2016年から変わらず継続して頑張るという感じで2017年はスタートしたのですが、今になってみると想定した感じではない気がするもトータルとしてはよかったかなーという印象です。\n理由としては、すべてが今年リリースしたアプリ「ことだまっぷ」に集約してしまうのですが\nことだまっぷ 開発元:shamaton 無料 2016年にGoMapというアセットがたしか登場したわけなんですが、 その前から位置情報を使った何かサービスかアプリケーションを作れないかなーと思っており、 GoMapを使って形にできそうだなーということで開発を始め、なんとか年内にリリースすることができました。\n今のところ全然ダウンロードされていないのですが、 自分としては作りたいと思っていたものが作れたという喜びが大きいので今のところ気にしていません。\n個人開発で位置情報をつかっているものもそんなに無いでしょうし。\n開発は帰宅してから行い少しずつ進めていたのですが、 なかなか進みが良くなかったので他に割いていた時間を開発に当てることで速度を高めました。\n今までの開発（大したものではないですが）では個人のサービスでサーバー作るのはお金かかるししんどいよな〜 と思っていたので避けていたのですが、ことだまっぷを作るに当たってはサーバーが必須であることは明白であったので、 サーバーの開発も行いました。サーバーサイドの言語はGoを使っています。\nなので、UnityとGoを開発を並行で行っていました。\n位置情報な開発に関する情報って少ない感じだったのですが、 色々しらべて使うミドルウェアも決定してやってみて何となく仕上げることができてよかったです。\n一応、高トラフィックな状況とかを想定して組んではいます。\nサーバーにはGCPを使っていて初めて使いました。 今のところ大きなエラーもなく動作しているので、もう少し評判があがるといいな〜と思っています。\nその中で色々学ぶこともあったので、今後記事にしていく予定です。\nことだまっぷは自分としてはまだまだだと思っているし、 サーバーサイドのノウハウもためていきたいので引き続きアップデートを続けていいければと思っています。\nちなみにことだまっぷの開発前に作っていたものですが、 開発をやめたつもりはなくそちらで叶えたいこともあるのでどこかのタイミングでまた制作復帰するつもりではいます。\nX のポストを開く 個人開発でちゃんとしたゲームを作っている方々は本当に素晴らしい。\nということで2017年も何か成功したわけではありませんが、 2018年の引き続き折れずに頑張っていけたらなと思います。なんとなくやるべき方向性も決まっているので、 しっかり進めていきたいなという所存です。\nフォローしてくださっている方、記事を読んでくださっている方、いつもありがとうございます。それでは良いお年を。\n以上です。\n",
+  "wordCount" : "1310",
   "inLanguage": "en",
   "datePublished": "2017-12-30T16:39:12Z",
   "dateModified": "2017-12-30T16:39:12Z",
@@ -275,8 +307,12 @@ GoMapを使って形にできそうだなーということで開発を始め、
 サーバーサイドのノウハウもためていきたいので引き続きアップデートを続けていいければと思っています。</p>
 <p>ちなみにことだまっぷの開発前に作っていたものですが、
 開発をやめたつもりはなくそちらで叶えたいこともあるのでどこかのタイミングでまた制作復帰するつもりではいます。</p>
-<blockquote class="twitter-tweet" align="center" data-dnt="true"><p lang="ja" dir="ltr">[WIP] call dragon and fly to the sky.<br>呼び出して、空に飛び立つまでの流れ的なやつ。<a href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a href="https://t.co/I4f9dnLXlI">pic.twitter.com/I4f9dnLXlI</a></p>&mdash; しゃまとん🍉 (@shamaton) <a href="https://twitter.com/shamaton/status/814835823057072128?ref_src=twsrc%5Etfw">December 30, 2016</a></blockquote>
-
+<span class="tweet-embed" data-tweet-id="814835823057072128">
+  <span class="tweet-embed__target" aria-live="polite"></span>
+  <span class="tweet-embed__fallback">
+    <a href="https://x.com/i/web/status/814835823057072128">X のポストを開く</a>
+  </span>
+</span>
 
 <p>個人開発でちゃんとしたゲームを作っている方々は本当に素晴らしい。</p>
 <p>ということで2017年も何か成功したわけではありませんが、
@@ -405,6 +441,197 @@ GoMapを使って形にできそうだなーということで開発を始め、
     </svg>
 </a><script defer src="https://shamaton.dev/lightbox/js/lightbox-plus-jquery.min.js"></script>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script>
+  (() => {
+    const embedSelector = ".tweet-embed[data-tweet-id]";
+    const themeMetaName = "twitter:widgets:theme";
+    const borderMetaName = "twitter:widgets:border-color";
+    let widgetsPromise;
+    let renderedTheme = "";
+
+    const resolveTheme = () => {
+      const currentTheme = document.documentElement.dataset.theme;
+      if (currentTheme === "dark" || currentTheme === "light") {
+        return currentTheme;
+      }
+
+      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    };
+
+    const ensureMeta = (name, content) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement("meta");
+        meta.name = name;
+        document.head.appendChild(meta);
+      }
+
+      meta.content = content;
+    };
+
+    const resolveBorderColor = () => {
+      return getComputedStyle(document.documentElement).getPropertyValue("--border").trim() || "#333333";
+    };
+
+    const resolveEntryColor = () => {
+      return getComputedStyle(document.documentElement).getPropertyValue("--entry").trim() || "#2e2e33";
+    };
+
+    const ensureWidgetMeta = (theme) => {
+      ensureMeta(themeMetaName, theme);
+      ensureMeta(borderMetaName, resolveBorderColor());
+    };
+
+    const styleEmbeddedTweet = (target, element) => {
+      const entryColor = resolveEntryColor();
+      const applyStyles = (node) => {
+        if (!node || !node.style) {
+          return;
+        }
+
+        node.style.display = "block";
+        node.style.borderRadius = "12px";
+      };
+
+      applyStyles(element);
+      if (target && typeof target.querySelectorAll === "function") {
+        target.querySelectorAll("iframe").forEach((iframe) => {
+          applyStyles(iframe);
+          iframe.style.backgroundColor = entryColor;
+        });
+      }
+    };
+
+    const loadWidgets = () => {
+      if (widgetsPromise) {
+        return widgetsPromise;
+      }
+
+      widgetsPromise = new Promise((resolve, reject) => {
+        let attempts = 0;
+
+        const check = () => {
+          if (window.twttr && window.twttr.widgets && typeof window.twttr.ready === "function") {
+            window.twttr.ready(resolve);
+            return;
+          }
+
+          attempts += 1;
+          if (attempts > 100) {
+            reject(new Error("Twitter widgets.js did not load in time"));
+            return;
+          }
+
+          window.setTimeout(check, 100);
+        };
+
+        check();
+      });
+
+      return widgetsPromise;
+    };
+
+    const renderTweets = (force = false) => {
+      const embeds = document.querySelectorAll(embedSelector);
+      if (!embeds.length) {
+        return;
+      }
+
+      const theme = resolveTheme();
+      ensureWidgetMeta(theme);
+
+      loadWidgets()
+        .then((twttr) => {
+          embeds.forEach((embed) => {
+            const tweetId = embed.dataset.tweetId;
+            const target = embed.querySelector(".tweet-embed__target");
+            const fallback = embed.querySelector(".tweet-embed__fallback");
+
+            if (!tweetId || !target) {
+              return;
+            }
+
+            if (!force && embed.dataset.renderedTheme === theme && target.childElementCount > 0) {
+              return;
+            }
+
+            embed.removeAttribute("data-rendered");
+            target.innerHTML = "";
+            if (fallback) {
+              fallback.hidden = false;
+            }
+
+            twttr.widgets.createTweet(tweetId, target, {
+              align: "center",
+              dnt: true,
+              theme,
+            }).then((element) => {
+              if (!element) {
+                throw new Error(`Tweet ${tweetId} could not be rendered`);
+              }
+
+              styleEmbeddedTweet(target, element);
+              embed.dataset.rendered = "true";
+              embed.dataset.renderedTheme = theme;
+            }).catch(() => {
+              target.innerHTML = "";
+              embed.removeAttribute("data-rendered");
+              embed.removeAttribute("data-renderedTheme");
+              if (fallback) {
+                fallback.hidden = false;
+              }
+            });
+          });
+        })
+        .catch(() => {
+          document.querySelectorAll(`${embedSelector} .tweet-embed__fallback`).forEach((fallback) => {
+            fallback.hidden = false;
+          });
+        });
+    };
+
+    const rerenderTweetsIfThemeChanged = () => {
+      const nextTheme = resolveTheme();
+      if (nextTheme === renderedTheme) {
+        return;
+      }
+
+      renderedTheme = nextTheme;
+      renderTweets(true);
+    };
+
+    const initTweetEmbeds = () => {
+      renderedTheme = resolveTheme();
+      renderTweets();
+
+      const toggle = document.getElementById("theme-toggle");
+      if (toggle) {
+        toggle.addEventListener("click", () => {
+          window.setTimeout(rerenderTweetsIfThemeChanged, 0);
+        });
+      }
+
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      const handleMediaChange = () => {
+        if (!localStorage.getItem("pref-theme")) {
+          rerenderTweetsIfThemeChanged();
+        }
+      };
+
+      if (typeof mediaQuery.addEventListener === "function") {
+        mediaQuery.addEventListener("change", handleMediaChange);
+      } else if (typeof mediaQuery.addListener === "function") {
+        mediaQuery.addListener(handleMediaChange);
+      }
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initTweetEmbeds, { once: true });
+    } else {
+      initTweetEmbeds();
+    }
+  })();
+</script>
 
 
 <script>
