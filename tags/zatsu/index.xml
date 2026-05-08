@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Zatsu on shamaton</title>
+    <link>http://localhost:53727/tags/zatsu/</link>
+    <description>Recent content in Zatsu on shamaton</description>
+    <generator>Hugo</generator>
+    <language>ja-jp</language>
+    <copyright>CC BY-NC 4.0</copyright>
+    <lastBuildDate>Mon, 30 Aug 2021 08:23:09 +0000</lastBuildDate>
+    <atom:link href="http://localhost:53727/tags/zatsu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[雑] 逆指値付通常注文について</title>
+      <link>http://localhost:53727/posts/9999/</link>
+      <pubDate>Mon, 30 Aug 2021 08:23:09 +0000</pubDate>
+      <guid>http://localhost:53727/posts/9999/</guid>
+      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
+しゃまとんです😊&lt;/p&gt;
+&lt;p&gt;（雑記なんかも記録していきます。そもそも雑記か&amp;hellip;）&lt;/p&gt;
+&lt;p&gt;株についてお勉強しています。&lt;br&gt;
+注文の1つの種類に &lt;strong&gt;逆指値付通常&lt;/strong&gt; というものがありますが、これの使い方をミスった話です。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
