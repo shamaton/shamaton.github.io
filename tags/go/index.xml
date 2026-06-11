@@ -7,8 +7,16 @@
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <copyright>CC BY-NC 4.0</copyright>
-    <lastBuildDate>Sun, 11 Jun 2023 12:42:19 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jun 2026 01:23:09 +0000</lastBuildDate>
     <atom:link href="https://shamaton.dev/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🚀: msgpackgen を v1 に更新しました (Go)</title>
+      <link>https://shamaton.dev/posts/20260610/</link>
+      <pubDate>Wed, 10 Jun 2026 01:23:09 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/20260610/</guid>
+      <description>&lt;p&gt;こんにちは。&lt;br&gt;
+長らく &lt;del&gt;放置していた&lt;/del&gt; 更新が滞っていた &lt;a href=&#34;https://github.com/shamaton/msgpackgen&#34;&gt;msgpackgen&lt;/a&gt; という OSS を大幅に実装し直してバージョンを &lt;code&gt;v1&lt;/code&gt; にアップグレードしました。(細かいのを除いたら実に5年弱ぶり)&lt;/p&gt;</description>
+    </item>
     <item>
       <title>aws-dax-go を aws-sdk-go-v2 化してみた</title>
       <link>https://shamaton.dev/posts/2023061101/</link>
@@ -162,17 +170,6 @@ Go 周辺の界隈の方々だと、そんな流れがきていたのを目に�
 しゃまとんです。&lt;/p&gt;
 &lt;p&gt;Goで構造体をバイナリ化したいなぁと思って、調べてやってみていたのですが中々うまくいかない・・・
 ということがあったのでメモ。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[golang] MessagePackのシリアライザ(msgpack)を作りました</title>
-      <link>https://shamaton.dev/posts/570/</link>
-      <pubDate>Fri, 28 Sep 2018 13:02:59 +0000</pubDate>
-      <guid>https://shamaton.dev/posts/570/</guid>
-      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
-しゃまとんです。&lt;/p&gt;
-&lt;p&gt;ちょっとしたお知らせです。&lt;br&gt;
-タイトルの通りなんですが、golangで使えるMessagePackのシリアライザを作りました。&lt;br&gt;
-（🎉個人的にはパンパカパーン🎉）&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -7,8 +7,86 @@
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <copyright>CC BY-NC 4.0</copyright>
-    <lastBuildDate>Fri, 08 May 2026 01:23:45 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jun 2026 01:23:09 +0000</lastBuildDate>
     <atom:link href="https://shamaton.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🚀: msgpackgen を v1 に更新しました (Go)</title>
+      <link>https://shamaton.dev/posts/20260610/</link>
+      <pubDate>Wed, 10 Jun 2026 01:23:09 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/20260610/</guid>
+      <description>&lt;p&gt;こんにちは。&lt;br&gt;
+長らく &lt;del&gt;放置していた&lt;/del&gt; 更新が滞っていた &lt;a href=&#34;https://github.com/shamaton/msgpackgen&#34;&gt;msgpackgen&lt;/a&gt; という OSS を大幅に実装し直してバージョンを &lt;code&gt;v1&lt;/code&gt; にアップグレードしました。(細かいのを除いたら実に5年弱ぶり)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>🍳: 作ったごはん(2026/05)</title>
+      <link>https://shamaton.dev/posts/20260531/</link>
+      <pubDate>Sun, 31 May 2026 01:23:45 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/20260531/</guid>
+      <description>&lt;p&gt;2026年5月に作ったごはん。引き続き大勝利していきたい。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;tweet-embed&#34; data-tweet-id=&#34;2050472644416532964&#34;&gt;
+  &lt;span class=&#34;tweet-embed__target&#34; aria-live=&#34;polite&#34;&gt;&lt;/span&gt;
+  &lt;span class=&#34;tweet-embed__fallback&#34;&gt;
+    &lt;a href=&#34;https://x.com/i/web/status/2050472644416532964&#34;&gt;X のポストを開く&lt;/a&gt;
+  &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tweet-embed&#34; data-tweet-id=&#34;2052291004754170067&#34;&gt;
+  &lt;span class=&#34;tweet-embed__target&#34; aria-live=&#34;polite&#34;&gt;&lt;/span&gt;
+  &lt;span class=&#34;tweet-embed__fallback&#34;&gt;
+    &lt;a href=&#34;https://x.com/i/web/status/2052291004754170067&#34;&gt;X のポストを開く&lt;/a&gt;
+  &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tweet-embed&#34; data-tweet-id=&#34;2053005973791576126&#34;&gt;
+  &lt;span class=&#34;tweet-embed__target&#34; aria-live=&#34;polite&#34;&gt;&lt;/span&gt;
+  &lt;span class=&#34;tweet-embed__fallback&#34;&gt;
+    &lt;a href=&#34;https://x.com/i/web/status/2053005973791576126&#34;&gt;X のポストを開く&lt;/a&gt;
+  &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tweet-embed&#34; data-tweet-id=&#34;2053349014331122156&#34;&gt;
+  &lt;span class=&#34;tweet-embed__target&#34; aria-live=&#34;polite&#34;&gt;&lt;/span&gt;
+  &lt;span class=&#34;tweet-embed__fallback&#34;&gt;
+    &lt;a href=&#34;https://x.com/i/web/status/2053349014331122156&#34;&gt;X のポストを開く&lt;/a&gt;
+  &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tweet-embed&#34; data-tweet-id=&#34;2053662725113581611&#34;&gt;
+  &lt;span class=&#34;tweet-embed__target&#34; aria-live=&#34;polite&#34;&gt;&lt;/span&gt;
+  &lt;span class=&#34;tweet-embed__fallback&#34;&gt;
+    &lt;a href=&#34;https://x.com/i/web/status/2053662725113581611&#34;&gt;X のポストを開く&lt;/a&gt;
+  &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tweet-embed&#34; data-tweet-id=&#34;2055505054006972610&#34;&gt;
+  &lt;span class=&#34;tweet-embed__target&#34; aria-live=&#34;polite&#34;&gt;&lt;/span&gt;
+  &lt;span class=&#34;tweet-embed__fallback&#34;&gt;
+    &lt;a href=&#34;https://x.com/i/web/status/2055505054006972610&#34;&gt;X のポストを開く&lt;/a&gt;
+  &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tweet-embed&#34; data-tweet-id=&#34;2056167631795998780&#34;&gt;
+  &lt;span class=&#34;tweet-embed__target&#34; aria-live=&#34;polite&#34;&gt;&lt;/span&gt;
+  &lt;span class=&#34;tweet-embed__fallback&#34;&gt;
+    &lt;a href=&#34;https://x.com/i/web/status/2056167631795998780&#34;&gt;X のポストを開く&lt;/a&gt;
+  &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tweet-embed&#34; data-tweet-id=&#34;2058450021583065462&#34;&gt;
+  &lt;span class=&#34;tweet-embed__target&#34; aria-live=&#34;polite&#34;&gt;&lt;/span&gt;
+  &lt;span class=&#34;tweet-embed__fallback&#34;&gt;
+    &lt;a href=&#34;https://x.com/i/web/status/2058450021583065462&#34;&gt;X のポストを開く&lt;/a&gt;
+  &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tweet-embed&#34; data-tweet-id=&#34;2060661930675880184&#34;&gt;
+  &lt;span class=&#34;tweet-embed__target&#34; aria-live=&#34;polite&#34;&gt;&lt;/span&gt;
+  &lt;span class=&#34;tweet-embed__fallback&#34;&gt;
+    &lt;a href=&#34;https://x.com/i/web/status/2060661930675880184&#34;&gt;X のポストを開く&lt;/a&gt;
+  &lt;/span&gt;
+&lt;/span&gt;
+&lt;/p&gt;</description>
+    </item>
     <item>
       <title>🍛: CoCo壱番屋アプリの注文体験をネイティブUIで再設計してみた</title>
       <link>https://shamaton.dev/posts/20260508/</link>
@@ -232,33 +310,6 @@
   &lt;/span&gt;
 &lt;/span&gt;
 &lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>aws-dax-go を aws-sdk-go-v2 化してみた</title>
-      <link>https://shamaton.dev/posts/2023061101/</link>
-      <pubDate>Sun, 11 Jun 2023 12:42:19 +0000</pubDate>
-      <guid>https://shamaton.dev/posts/2023061101/</guid>
-      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
-しゃまとんです😊&lt;/p&gt;
-&lt;span class=&#34;tweet-embed&#34; data-tweet-id=&#34;1667539474149146624&#34;&gt;
-  &lt;span class=&#34;tweet-embed__target&#34; aria-live=&#34;polite&#34;&gt;&lt;/span&gt;
-  &lt;span class=&#34;tweet-embed__fallback&#34;&gt;
-    &lt;a href=&#34;https://x.com/i/web/status/1667539474149146624&#34;&gt;X のポストを開く&lt;/a&gt;
-  &lt;/span&gt;
-&lt;/span&gt;
-
-&lt;p&gt;約一年ぶりの投稿になりますが、今回はとある OSS に PR をしてみました。&lt;br&gt;
-aws-dax-go という OSS で aws が提供している DAX の Go 向けのライブラリです。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>litestream / minio を docker compose で試す</title>
-      <link>https://shamaton.dev/posts/2022052301/</link>
-      <pubDate>Mon, 23 May 2022 13:15:09 +0000</pubDate>
-      <guid>https://shamaton.dev/posts/2022052301/</guid>
-      <description>&lt;p&gt;お世話になっております。&lt;br&gt;
-しゃまとんです😊&lt;/p&gt;
-&lt;p&gt;最近 &lt;a href=&#34;https://litestream.io/&#34;&gt;litestream&lt;/a&gt; というソフトウェアが話題（？）ですね。&lt;br&gt;
-Go 周辺の界隈の方々だと、そんな流れがきていたのを目にされていたのではないでしょうか。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
