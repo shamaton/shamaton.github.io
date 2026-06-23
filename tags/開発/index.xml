@@ -7,8 +7,24 @@
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <copyright>CC BY-NC 4.0</copyright>
-    <lastBuildDate>Fri, 08 May 2026 01:23:45 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jun 2026 01:23:09 +0000</lastBuildDate>
     <atom:link href="https://shamaton.dev/tags/%E9%96%8B%E7%99%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>👨‍💻: エディタを Neovim にしてさらに VSCode にした</title>
+      <link>https://shamaton.dev/posts/20260623/</link>
+      <pubDate>Tue, 23 Jun 2026 01:23:09 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/20260623/</guid>
+      <description>&lt;h2 id=&#34;tl-dr&#34;&gt;TL; DR&lt;/h2&gt;
+&lt;p&gt;結論から言うと、筆者は直近で下記のようなエディタ変遷を辿っている。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;プログラミング言語に合わせて開発エディタを使い分け
+Goland, Intellij IDEA, VSCode&amp;hellip;&lt;/li&gt;
+&lt;li&gt;NeoVim によるエディタ統一 (半年くらい)&lt;/li&gt;
+&lt;li&gt;VSCode にさらにお引越し&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;なぜか&#34;&gt;なぜか？&lt;/h2&gt;
+&lt;p&gt;AI の台頭によりコーディング環境は劇的に変化しており、新しいツールだったり、「最近のこの組み合わせが最高」みたいな情報が飛び交っている。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>🍛: CoCo壱番屋アプリの注文体験をネイティブUIで再設計してみた</title>
       <link>https://shamaton.dev/posts/20260508/</link>
@@ -342,41 +358,6 @@
         class=&#34;mce_SELRES_start&#34;&gt;
     &lt;/span&gt;
 &lt;/iframe&gt;</description>
-    </item>
-    <item>
-      <title>[2016/06] 開発進捗まとめ</title>
-      <link>https://shamaton.dev/posts/193/</link>
-      <pubDate>Sun, 03 Jul 2016 01:07:15 +0000</pubDate>
-      <guid>https://shamaton.dev/posts/193/</guid>
-      <description>&lt;p&gt;2016年6月の進捗報告まとめです。&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;tweet-embed&#34; data-tweet-id=&#34;748530763813908480&#34;&gt;
-  &lt;span class=&#34;tweet-embed__target&#34; aria-live=&#34;polite&#34;&gt;&lt;/span&gt;
-  &lt;span class=&#34;tweet-embed__fallback&#34;&gt;
-    &lt;a href=&#34;https://x.com/i/web/status/748530763813908480&#34;&gt;X のポストを開く&lt;/a&gt;
-  &lt;/span&gt;
-&lt;/span&gt;
-
-&lt;span class=&#34;tweet-embed&#34; data-tweet-id=&#34;744496094479060992&#34;&gt;
-  &lt;span class=&#34;tweet-embed__target&#34; aria-live=&#34;polite&#34;&gt;&lt;/span&gt;
-  &lt;span class=&#34;tweet-embed__fallback&#34;&gt;
-    &lt;a href=&#34;https://x.com/i/web/status/744496094479060992&#34;&gt;X のポストを開く&lt;/a&gt;
-  &lt;/span&gt;
-&lt;/span&gt;
-
-&lt;span class=&#34;tweet-embed&#34; data-tweet-id=&#34;742011569735794688&#34;&gt;
-  &lt;span class=&#34;tweet-embed__target&#34; aria-live=&#34;polite&#34;&gt;&lt;/span&gt;
-  &lt;span class=&#34;tweet-embed__fallback&#34;&gt;
-    &lt;a href=&#34;https://x.com/i/web/status/742011569735794688&#34;&gt;X のポストを開く&lt;/a&gt;
-  &lt;/span&gt;
-&lt;/span&gt;
-
-&lt;span class=&#34;tweet-embed&#34; data-tweet-id=&#34;738744102032801793&#34;&gt;
-  &lt;span class=&#34;tweet-embed__target&#34; aria-live=&#34;polite&#34;&gt;&lt;/span&gt;
-  &lt;span class=&#34;tweet-embed__fallback&#34;&gt;
-    &lt;a href=&#34;https://x.com/i/web/status/738744102032801793&#34;&gt;X のポストを開く&lt;/a&gt;
-  &lt;/span&gt;
-&lt;/span&gt;
-&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -7,8 +7,24 @@
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <copyright>CC BY-NC 4.0</copyright>
-    <lastBuildDate>Wed, 10 Jun 2026 01:23:09 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jun 2026 01:23:09 +0000</lastBuildDate>
     <atom:link href="https://shamaton.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>👨‍💻: エディタを Neovim にしてさらに VSCode にした</title>
+      <link>https://shamaton.dev/posts/20260623/</link>
+      <pubDate>Tue, 23 Jun 2026 01:23:09 +0000</pubDate>
+      <guid>https://shamaton.dev/posts/20260623/</guid>
+      <description>&lt;h2 id=&#34;tl-dr&#34;&gt;TL; DR&lt;/h2&gt;
+&lt;p&gt;結論から言うと、筆者は直近で下記のようなエディタ変遷を辿っている。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;プログラミング言語に合わせて開発エディタを使い分け
+Goland, Intellij IDEA, VSCode&amp;hellip;&lt;/li&gt;
+&lt;li&gt;NeoVim によるエディタ統一 (半年くらい)&lt;/li&gt;
+&lt;li&gt;VSCode にさらにお引越し&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;なぜか&#34;&gt;なぜか？&lt;/h2&gt;
+&lt;p&gt;AI の台頭によりコーディング環境は劇的に変化しており、新しいツールだったり、「最近のこの組み合わせが最高」みたいな情報が飛び交っている。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>🚀: msgpackgen を v1 に更新しました (Go)</title>
       <link>https://shamaton.dev/posts/20260610/</link>
@@ -265,48 +281,6 @@
   &lt;span class=&#34;tweet-embed__target&#34; aria-live=&#34;polite&#34;&gt;&lt;/span&gt;
   &lt;span class=&#34;tweet-embed__fallback&#34;&gt;
     &lt;a href=&#34;https://x.com/i/web/status/2026084735081120054&#34;&gt;X のポストを開く&lt;/a&gt;
-  &lt;/span&gt;
-&lt;/span&gt;
-&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[2026/01] 作ったごはん🍳</title>
-      <link>https://shamaton.dev/posts/20260131/</link>
-      <pubDate>Sat, 31 Jan 2026 01:23:45 +0000</pubDate>
-      <guid>https://shamaton.dev/posts/20260131/</guid>
-      <description>&lt;p&gt;2026年1月に作ったごはん。&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;tweet-embed&#34; data-tweet-id=&#34;2010655545964052609&#34;&gt;
-  &lt;span class=&#34;tweet-embed__target&#34; aria-live=&#34;polite&#34;&gt;&lt;/span&gt;
-  &lt;span class=&#34;tweet-embed__fallback&#34;&gt;
-    &lt;a href=&#34;https://x.com/i/web/status/2010655545964052609&#34;&gt;X のポストを開く&lt;/a&gt;
-  &lt;/span&gt;
-&lt;/span&gt;
-
-&lt;span class=&#34;tweet-embed&#34; data-tweet-id=&#34;2012501502519357748&#34;&gt;
-  &lt;span class=&#34;tweet-embed__target&#34; aria-live=&#34;polite&#34;&gt;&lt;/span&gt;
-  &lt;span class=&#34;tweet-embed__fallback&#34;&gt;
-    &lt;a href=&#34;https://x.com/i/web/status/2012501502519357748&#34;&gt;X のポストを開く&lt;/a&gt;
-  &lt;/span&gt;
-&lt;/span&gt;
-
-&lt;span class=&#34;tweet-embed&#34; data-tweet-id=&#34;2013038479396258206&#34;&gt;
-  &lt;span class=&#34;tweet-embed__target&#34; aria-live=&#34;polite&#34;&gt;&lt;/span&gt;
-  &lt;span class=&#34;tweet-embed__fallback&#34;&gt;
-    &lt;a href=&#34;https://x.com/i/web/status/2013038479396258206&#34;&gt;X のポストを開く&lt;/a&gt;
-  &lt;/span&gt;
-&lt;/span&gt;
-
-&lt;span class=&#34;tweet-embed&#34; data-tweet-id=&#34;2015220463275045125&#34;&gt;
-  &lt;span class=&#34;tweet-embed__target&#34; aria-live=&#34;polite&#34;&gt;&lt;/span&gt;
-  &lt;span class=&#34;tweet-embed__fallback&#34;&gt;
-    &lt;a href=&#34;https://x.com/i/web/status/2015220463275045125&#34;&gt;X のポストを開く&lt;/a&gt;
-  &lt;/span&gt;
-&lt;/span&gt;
-
-&lt;span class=&#34;tweet-embed&#34; data-tweet-id=&#34;2015580151925666043&#34;&gt;
-  &lt;span class=&#34;tweet-embed__target&#34; aria-live=&#34;polite&#34;&gt;&lt;/span&gt;
-  &lt;span class=&#34;tweet-embed__fallback&#34;&gt;
-    &lt;a href=&#34;https://x.com/i/web/status/2015580151925666043&#34;&gt;X のポストを開く&lt;/a&gt;
   &lt;/span&gt;
 &lt;/span&gt;
 &lt;/p&gt;</description>
